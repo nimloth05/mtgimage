@@ -16,12 +16,14 @@ var base = require("xbase"),
 	GET_SOURCES = require("./sources").GET_SOURCES,
 	tiptoe = require("tiptoe");
 
-process.exit(1);
-var SET_PATH = "/mnt/compendium/DevLab/mtgimage/web/symbol/set";
+var SVG_PATH = path.join(__dirname, "..", "web", "actual", "symbol", "set");
 
-C.SETS.serialForEach(makeSetSymlinks,
+base.info("<html><head><title>svg links</title></head><body>");
+C.SETS.serialForEach(processSet,
 	function finish(err)
 	{
+		base.info("</body></html>");
+		
 		if(err)
 		{
 			base.error(err);
@@ -32,18 +34,18 @@ C.SETS.serialForEach(makeSetSymlinks,
 	}
 );
 
-function makeSetSymlinks(SET, cb)
+function processSet(SET, cb)
 {
 	tiptoe(
-		function makeLinks()
+		function step1()
 		{
-			if(SET.hasOwnProperty("oldCode"))
-				fs.symlink(SET.code.toLowerCase(), path.join(SET_PATH, SET.oldCode.toLowerCase()), this.parallel());
-			
-			if(SET.hasOwnProperty("gathererCode"))
-				fs.symlink(SET.code.toLowerCase(), path.join(SET_PATH, SET.gathererCode.toLowerCase()), this.parallel());
+			Object.keys(C.SYMBOL_RARITIES).forEach(function(RARITY)
+			{
+				if(fs.existsSync(path.join(SVG_PATH, SET.code.toLowerCase(), RARITY + ".svg")))
+					base.info("<a href='http://dev.mtgimage.com/symbol/set/%s/%s.svg'>%s %s</a><br>", SET.code.toLowerCase(), RARITY, SET.code.toLowerCase(), RARITY);
+			});
 
-			this.parallel()();
+			this();
 		},
 		function returnResult()
 		{

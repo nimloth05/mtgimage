@@ -1,12 +1,15 @@
 /---------------\
 | High Priority |
 \---------------/
-* After all symbols up online, make posts to both MTGIMAGE and MTGJSON threads (reply to the MTGJSON thread) and also the threads with the symbols too
+
+
 
 
 /-----------------\
 | Medium Priority |
 \-----------------/
+
+
 
 
 /----------------\
