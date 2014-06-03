@@ -19,8 +19,8 @@ var dustData =
 {
 	title : "Magic the Gathering card images",
 	sets  : [],
-	version : "5.0.1",
-	lastUpdated : "Jun 1, 2014"
+	version : "5.0.3",
+	lastUpdated : "Jun 2, 2014"
 };
 
 var ACTUAL_PATH = path.join(__dirname, "actual");
@@ -74,7 +74,8 @@ var EXTRA_MULTIVERSEID_SYMLINKS =
 
 var VALID_SETS = C.SETS.filter(function(SET) { return !C.SETS_WITH_NO_IMAGES.contains(SET.code); });
 var setSymbols = {};
-var SET_SYMBOL_PATH = path.join(__dirname, "actual", "symbol", "set");
+var SYMBOL_PATH = path.join(__dirname, "actual", "symbol");
+var SET_SYMBOL_PATH = path.join(SYMBOL_PATH, "set");
 
 tiptoe(
 	function reset()
@@ -86,6 +87,7 @@ tiptoe(
 		rimraf(CARD_PATH, this.parallel());
 		rimraf(SETNAME_PATH, this.parallel());
 		rimraf(MULTIVERSEID_PATH, this.parallel());
+		rimraf(path.join(SET_SYMBOL_PATH, "all"), this.parallel());
 	},
 	function setup()
 	{
@@ -96,6 +98,41 @@ tiptoe(
 		fs.mkdir(CARD_PATH, this.parallel());
 		fs.mkdir(SETNAME_PATH, this.parallel());
 		fs.mkdir(MULTIVERSEID_PATH, this.parallel());
+		fs.mkdir(path.join(SET_SYMBOL_PATH, "all"), this.parallel());
+	},
+	function createSymbolAllLinks()
+	{
+		if(!CREATE_LINKS)
+			return this();
+
+		Object.keys(C.SYMBOL_MANA).concat(Object.values(C.SYMBOL_MANA).flatten()).serialForEach(function(SYMBOL, subcb)
+		{
+			tiptoe(
+				function createManaSymbolAllLinks()
+				{
+					fs.symlink(path.join("..", "mana", SYMBOL), path.join(SYMBOL_PATH, "all", SYMBOL), this.parallel());
+					fs.symlink(path.join("..", "mana", SYMBOL + ".svg"), path.join(SYMBOL_PATH, "all", SYMBOL + ".svg"), this.parallel());
+				},
+				subcb
+			);
+		}.bind(this), this.parallel());
+
+		Object.keys(C.SYMBOL_OTHER).concat(Object.values(C.SYMBOL_OTHER).flatten()).serialForEach(function(SYMBOL, subcb)
+		{
+			tiptoe(
+				function createManaSymbolAllLinks()
+				{
+					fs.symlink(path.join("..", "other", SYMBOL), path.join(SYMBOL_PATH, "all", SYMBOL), this.parallel());
+					fs.symlink(path.join("..", "other", SYMBOL + ".svg"), path.join(SYMBOL_PATH, "all", SYMBOL + ".svg"), this.parallel());
+				},
+				subcb
+			);
+		}.bind(this), this.parallel());
+
+		VALID_SETS.serialForEach(function(SET, subcb)
+		{
+			fs.symlink(path.join("..", "set", SET.code.toLowerCase()), path.join(SYMBOL_PATH, "all", SET.code.toLowerCase()), subcb);
+		}.bind(this), this.parallel());
 	},
 	function createSetAndSetNameLinks()
 	{
