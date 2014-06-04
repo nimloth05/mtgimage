@@ -6,12 +6,17 @@
 	"private"				: true,
 	"dependencies"			:
 	{
-		"node-utils"		: "git://github.com/Sembiance/node-utils.git",
+		"xbase"				: "git://github.com/Sembiance/xbase.git",
+		"xutil"				: "git://github.com/Sembiance/xutil.git",
 		"moment"			: ">= 2.0.0",
 		"tiptoe"			: ">= 0.1.1",
 		"rimraf"			: ">= 2.2.2",
 		"glob"				: ">= 3.2.7",
-		"request"			: ">= 2.27.0"
+		"request"			: ">= 2.27.0",
+		"optimist"			: ">= 0.6.0",
+		"mkdirp"			: ">= 0.5.0",
+		"progress"			: ">= 1.1.2",
+		"hyperquest"		: ">= 0.1.8"
 	},
 	"engines"               :
 	{
