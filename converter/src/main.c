@@ -34,7 +34,7 @@ int main(int argc, char ** argv)
 {
 	char result[4096] = {0};
 	convert(argv[1], strlen(argv[1]), &result);
-	printf("%s", result);
+	printf("\n%s\n", result);
 
 	return 0;
 }

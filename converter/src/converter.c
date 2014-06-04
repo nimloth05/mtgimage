@@ -295,7 +295,7 @@ static const char * utf8_to_ascii[] =
 	[44] = ",",
 	[45] = "-",
 	[46] = ".",
-	[47] = " ",
+	[47] = "\t",
 	[48] = "0",
 	[49] = "1",
 	[50] = "2",
@@ -382,7 +382,8 @@ static const char * utf8_to_ascii[] =
 	[182] = "p",
 	[160] = " ",
 	[8220] = "\"",
-	[8221] = "\""
+	[8221] = "\"",
+	[8212] = "-"
 };
 
 #define MAX_UTF_CODE 8221
@@ -513,10 +514,22 @@ char * strstrstrip(char * haystack, char * needle)
 	return haystack;
 }
 
-static const char SET_PREFIX[] = " set ";
-static const char CARD_PREFIX[] = " card ";
-static const char SETNAME_PREFIX[] = " setname ";
-static const char MULTIVERSEID_PREFIX[] = " multiverseid ";
+char * strchrreplace(char * haystack, char needle, char replacement)
+{
+	char *loc=0;
+	while((loc=strchr(haystack, needle))!=NULL)
+	{
+		*loc++ = replacement;
+	}
+	return haystack;
+}
+
+/* I replace forward slashes with the 'tab' character so I can see where the slashes are in both the before and after versions. The replacement is done with code 47 above */
+
+static const char SET_PREFIX[] = "\tset\t";
+static const char CARD_PREFIX[] = "\tcard\t";
+static const char SETNAME_PREFIX[] = "\tsetname\t";
+static const char MULTIVERSEID_PREFIX[] = "\tmultiverseid\t";
 static const char UNKNOWN_UTF_CODE[] = "x";
 
 void convert(char * utf_src, ssize_t utfsrc_len, char (* result)[4096])
@@ -575,7 +588,7 @@ void convert(char * utf_src, ssize_t utfsrc_len, char (* result)[4096])
 		(*result)[4] = '/';
 		slash_loc = strchr(utf_src+5, '/');
 		if(slash_loc && slash_loc>utf_src && result_length>(size_t)(slash_loc-utf_src))
-			(*result)[(slash_loc-utf_src)-(strchrncount(utf_src+5, ':', slash_loc-(utf_src+5))+strchrncount(utf_src+5, '"', slash_loc-(utf_src+5))+strchrncount(utf_src+5, '?', slash_loc-(utf_src+5)))] = '/';
+			(*result)[(slash_loc-utf_src)-((slash_loc-utf_src)-(strchr((*result)+5, '\t') - *result))] = '/';
 	}
 	else if(!memcmp(CARD_PREFIX, *result, sizeof(CARD_PREFIX)-1))
 	{
@@ -593,6 +606,8 @@ void convert(char * utf_src, ssize_t utfsrc_len, char (* result)[4096])
 		(*result)[8] = '/';
 		slash_loc = strchr(utf_src+9, '/');
 		if(slash_loc && slash_loc>utf_src && result_length>(size_t)(slash_loc-utf_src))
-			(*result)[(slash_loc-utf_src)-(strchrncount(utf_src+9, ':', slash_loc-(utf_src+9))+strchrncount(utf_src+9, '"', slash_loc-(utf_src+9))+strchrncount(utf_src+9, '?', slash_loc-(utf_src+9)))] = '/';
+			(*result)[(slash_loc-utf_src)-((slash_loc-utf_src)-(strchr((*result)+9, '\t') - *result))] = '/';
 	}
+
+	strchrreplace((*result), '\t', ' ');
 }

@@ -19,8 +19,8 @@ var dustData =
 {
 	title : "Magic the Gathering card images",
 	sets  : [],
-	version : "5.0.3",
-	lastUpdated : "Jun 2, 2014"
+	version : "5.1.0",
+	lastUpdated : "Jun 4, 2014"
 };
 
 var ACTUAL_PATH = path.join(__dirname, "actual");
@@ -53,9 +53,10 @@ var EXTRA_CARD_SYMLINKS =
 
 var EXTRA_SETNAME_SYMLINKS =
 {
-	"cmd" : "commander",
+	"cmd" : ["magic: the gathering-commander", "commander"],
 	"pd2" : "premium deck series fire & lightning",
-	"md1" : "modern event deck"
+	"md1" : "modern event deck",
+	"cns" : ["magic the gathering-conspiracy", "conspiracy", "magic: the gathering-conspiracy", "magic: the gathering—conspiracy"]
 };
 
 var EXTRA_MULTIVERSEID_SYMLINKS =
@@ -87,7 +88,7 @@ tiptoe(
 		rimraf(CARD_PATH, this.parallel());
 		rimraf(SETNAME_PATH, this.parallel());
 		rimraf(MULTIVERSEID_PATH, this.parallel());
-		rimraf(path.join(SET_SYMBOL_PATH, "all"), this.parallel());
+		rimraf(path.join(SYMBOL_PATH, "all"), this.parallel());
 	},
 	function setup()
 	{
@@ -98,12 +99,14 @@ tiptoe(
 		fs.mkdir(CARD_PATH, this.parallel());
 		fs.mkdir(SETNAME_PATH, this.parallel());
 		fs.mkdir(MULTIVERSEID_PATH, this.parallel());
-		fs.mkdir(path.join(SET_SYMBOL_PATH, "all"), this.parallel());
+		fs.mkdir(path.join(SYMBOL_PATH, "all"), this.parallel());
 	},
 	function createSymbolAllLinks()
 	{
 		if(!CREATE_LINKS)
 			return this();
+
+		base.info("Creating symbol all links...");
 
 		Object.keys(C.SYMBOL_MANA).concat(Object.values(C.SYMBOL_MANA).flatten()).serialForEach(function(SYMBOL, subcb)
 		{
@@ -190,9 +193,12 @@ tiptoe(
 
 		base.info("Creating extra set name links...");
 
-		Object.forEach(EXTRA_SETNAME_SYMLINKS, function(setCode, setName)
+		Object.forEach(EXTRA_SETNAME_SYMLINKS, function(setCode, setNames)
 		{
-			fs.symlink(path.join("..", "set", setCode), path.join(SETNAME_PATH, setName), this.parallel());
+			Array.toArray(setNames).forEach(function(setName)
+			{
+				fs.symlink(path.join("..", "set", setCode), path.join(SETNAME_PATH, setName), this.parallel());
+			}.bind(this));
 		}.bind(this));
 	},
 	function getSetSymbols()

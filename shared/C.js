@@ -3,7 +3,7 @@
 (function(exports)
 {
 	exports.SUPERTYPES = ["Basic", "Legendary", "Snow", "World", "Ongoing"];
-	exports.TYPES = ["Instant", "Sorcery", "Artifact", "Creature", "Enchantment", "Land", "Planeswalker", "Tribal", "Plane", "Phenomenon", "Scheme", "Vanguard"];
+	exports.TYPES = ["Instant", "Sorcery", "Artifact", "Creature", "Enchantment", "Land", "Planeswalker", "Tribal", "Plane", "Phenomenon", "Scheme", "Vanguard", "Conspiracy"];
 
 	// Unglued/Unhinged types
 	exports.TYPES.push("Enchant", "Player", "Summon", "Interrupt", "Scariest", "You'll", "Ever", "See", "Eaturecray");
@@ -170,6 +170,7 @@
 		{
 			name : "Introductory Two-Player Set",
 			code : "ITP",
+			oldCode : "I2P",
 			releaseDate : "1996-12-31",
 			border : "white",
 			type : "starter"
@@ -1145,6 +1146,14 @@
 			releaseDate : "2014-05-30",
 			border : "black",
 			type : "box"
+		},
+		{
+			name : "Magic: The Gathering—Conspiracy",
+			code : "CNS",
+			releaseDate : "2014-06-06",
+			border : "black",
+			type : "expansion",
+			booster : [["rare", "mythic rare"], "uncommon", "uncommon", "uncommon", "common", "common", "common", "common", "common", "common", "common", "common", "common", "common", "draft-matters", "marketing"]
 		}
 	];
 
@@ -1839,6 +1848,26 @@
 			{ renumberImages : "Plains", order : [] },
 			{ renumberImages : "Swamp", order : [] }
 		]
+	};
+
+	exports.ARTIST_CORRECTIONS =
+	{
+		"Brian Snõddy" : ["Brian Snōddy", "Brian Snoddy", "Brian Snøddy"],
+		"Dennis Detwiller" : ["Dennis Detwiler", "Denise Detwiler"],
+		"Diana Vick" : ["Diane Vick"],
+		"Douglas Shuler" : ["Douglas Schuler"],
+		"Edward P. Beard, Jr." : ["Edward P. Beard, Jr", "Edward Beard, Jr."],
+		"Jon J. Muth" : ["Jon J Muth"],
+		"Ken Meyer, Jr." : ["Ken Meyer Jr."],
+		"Kerstin Kaman" : ["Kersten Kaman"],
+		"L. A. Williams" : ["L.A. Williams"],
+		"Melissa A. Benson" : ["Melissa Benson"],
+		"Ron Spencer" : ["ROn Spencer"],
+		"Richard Kane Ferguson" : ["Richard Kane-Ferguson"],
+		"Sam Wood" : ["Sam Woods"],
+		"Steve White" : ["Steven White"],
+		"Tim Hildebrandt" : ["Tim Hilderbrandt"],
+		"Zoltan Boros & Gabor Szikszai" : ["Zoltan Boras & Gabor Szikszai"]
 	};
 
 	exports.SYMBOL_RARITIES = {c:["common"], u : ["uncommon"], r : ["rare"], m : ["mythic", "mythic rare", "mythicrare"], s : ["special"]};
