@@ -320,7 +320,7 @@
 		<ul>
 			<li>Thank you <strong>VERY MUCH</strong> to these folks who reported bugs and helped in other ways:
 				<ul>
-					<li>Nathan Nelson</li>
+					<li>Nathan Nelson, Michael Wybrow</li>
 				</ul>
 			</li>
 			<li>HUGE thanks to <a href="http://www.slightlymagic.net/forum/viewforum.php?f=15">CCGHQ</a>. Without their awesome work, this site would not be possible.</li>
@@ -345,6 +345,7 @@
 			<li>Incorrect alternate basic land images for: Masters Edition and Masters Edition III</li>
 			<li>Incorrect alternate images for Masters Edition IV: Urza's Tower, Urza's Power Plant, Urza's Mine</li>
 			<li>Some of the card images in the 'Promo set for Gatherer' set are not in English</li>
+			<li>Tokens may be missing for some sets.</li>
 		</ul>
 		<br>
 		<p>If you know where images are available to fix any of the above known issues, let me know <a href="mailto:robert@cosmicrealms.com">robert@cosmicrealms.com</a></p>

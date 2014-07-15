@@ -75,6 +75,14 @@ node createNewImageSymlinks.js DDM
 # Flip any cards that need flipped
 # Also the .hq.jpg and .crop.hq.jpg versions for both all parts of splits and both flips!
 
-## IMPORTANT!!!
-# Make sure old sets that now have high resolution images are removed from nginx expiration and make sure any brand
-# new sets that are using lower resolution gatherer images are added to nginx for a 1 week expiration
+
+# If gatherer images: Update nginx/mtgimage.com.conf with 7d cache expiration rules for the new set code and set name
+
+node web/generate.js createlinks
+
+# Check dev.mtgimage.com
+
+node util/test_urls.js -s all
+
+cd deploy
+./deploy.sh

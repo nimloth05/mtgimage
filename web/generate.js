@@ -19,8 +19,8 @@ var dustData =
 {
 	title : "Magic the Gathering card images",
 	sets  : [],
-	version : "5.1.0",
-	lastUpdated : "Jun 4, 2014"
+	version : "5.3.1",
+	lastUpdated : "Jul 15, 2014"
 };
 
 var ACTUAL_PATH = path.join(__dirname, "actual");

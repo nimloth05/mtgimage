@@ -8,7 +8,7 @@
 	// Unglued/Unhinged types
 	exports.TYPES.push("Enchant", "Player", "Summon", "Interrupt", "Scariest", "You'll", "Ever", "See", "Eaturecray");
 
-	exports.LAST_PRINTINGS_RESET = "BNG";
+	exports.LAST_PRINTINGS_RESET = "M15";
 
 	exports.SETS_NOT_ON_GATHERER = ["HHO", "ATH", "ITP", "DKM", "RQS", "DPA"];
 	exports.SETS_WITH_NO_IMAGES = [];
@@ -660,7 +660,9 @@
 			code : "MED",
 			releaseDate : "2007-09-10",
 			border : "black",
-			type : "masters"
+			type : "masters",
+			onlineOnly : true,
+			booster : ["rare", "uncommon", "uncommon", "uncommon", "common", "common", "common", "common", "common", "common", "common", "common", "common", "common", "land"]
 		},
 		{
 			name : "Lorwyn",
@@ -717,7 +719,9 @@
 			code : "ME2",
 			releaseDate : "2008-09-22",
 			border : "black",
-			type : "masters"
+			type : "masters",
+			onlineOnly : true,
+			booster : ["rare", "uncommon", "uncommon", "uncommon", "common", "common", "common", "common", "common", "common", "common", "common", "common", "common", "land"]
 		},
 		{
 			name : "Shards of Alara",
@@ -791,7 +795,9 @@
 			code : "ME3",
 			releaseDate : "2009-09-07",
 			border : "black",
-			type : "masters"
+			type : "masters",
+			onlineOnly : true,
+			booster : ["rare", "uncommon", "uncommon", "uncommon", "common", "common", "common", "common", "common", "common", "common", "common", "common", "common", "land"]
 		},		
 		{
 			name : "Zendikar",
@@ -898,7 +904,9 @@
 			code : "ME4",
 			releaseDate : "2011-01-10",
 			border : "black",
-			type : "masters"
+			type : "masters",
+			onlineOnly : true,
+			booster : ["rare", "uncommon", "uncommon", "uncommon", "common", "common", "common", "common", "common", "common", "common", "common", "common", "common", "urza land"]
 		},
 		{
 			name : "Mirrodin Besieged",
@@ -1038,8 +1046,8 @@
 		},
 		{
 			name : "Commander's Arsenal",
-			code : "CMA",
-			gathererCode : "CM1",
+			code : "CM1",
+			oldCode : "CMA",
 			releaseDate : "2012-11-02",
 			border : "black",
 			type : "commander"
@@ -1152,8 +1160,25 @@
 			code : "CNS",
 			releaseDate : "2014-06-06",
 			border : "black",
-			type : "expansion",
+			type : "conspiracy",
 			booster : [["rare", "mythic rare"], "uncommon", "uncommon", "uncommon", "common", "common", "common", "common", "common", "common", "common", "common", "common", "common", "draft-matters", "marketing"]
+		},
+		{
+			name : "Vintage Masters",
+			code : "VMA",
+			releaseDate : "2014-06-16",
+			border : "black",
+			type : "masters",
+			onlineOnly : true,
+			booster : [["rare", "mythic rare"], "uncommon", "uncommon", "uncommon", "common", "common", "common", "common", "common", "common", "common", "common", "common", "common", ["power nine", "foil"]]
+		},
+		{
+			name : "Magic 2015 Core Set",
+			code : "M15",
+			releaseDate : "2014-07-18",
+			border : "black",
+			type : "core",
+			booster : [["rare", "mythic rare"], "uncommon", "uncommon", "uncommon", "common", "common", "common", "common", "common", "common", "common", "common", "common", "common", "land", "marketing"]
 		}
 	];
 
@@ -1532,9 +1557,7 @@
 		[
 			{ match : {name : "Beast", number : "1"}, replace : {number : "T1", layout : "token"}},
 			{ match : {name : "Beast", number : "2"}, replace : {number : "T2", layout : "token"}},
-			{ match : {name : "Elephant"}, replace : {number : "T3", layout : "token"}},
-			{ match : {name : "Basking Rootwalla"}, replace : {layout : "normal"}},
-			{ match : {name : "Garruk Wildspeaker"}, replace : {layout : "normal"}}
+			{ match : {name : "Elephant"}, replace : {number : "T3", layout : "token"}}
 		],
 		DDE :
 		[
@@ -1662,8 +1685,6 @@
 			{ match : {name : "Raksha Golden Cub"}, replace : {artist : "Pete Venters", flavor : "Some believe that Raksha, yougnest of the kha, is the reincarnation of Dakan, the first and mightiest of leonin leaders."}},
 			{ match : {name : "Reaper King"}, replace : {flavor : "It's harvest time."}},
 			{ match : {name : "Rith, the Awakener"}, replace : {flavor : ""}},
-			{ match : {multiverseid : 214827}, replace : {life : -3, artist : "Mark Zug", flavor : "Trained in the arts of stealth, royal assassins choose their victims carefully, relying on timing and precision rather than brute force."}},
-			{ match : {multiverseid : 182260}, replace : {flavor : "Trained in the arts of stealth, royal assassins choose their victims carefully, relying on timing and precision rather than brute force."}},
 			{ match : {name : "Rumbling Slum"}, replace : {artist : "Carl Critchlow", flavor : "The Orzhov contract the Izzet to animate slum districts and banish them to the wastes. The Gruul adopt them and send them back to the city for vengeance."}},
 			{ match : {name : "Sakashima the Impostor"}, replace : {artist : "rk post", flavor : ""}},
 			{ match : {multiverseid : 182282}, replace : {artist : "Greg Staples", flavor : "Her sword sings more beautifully than any choir."}},
