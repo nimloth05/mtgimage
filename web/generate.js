@@ -53,10 +53,10 @@ var EXTRA_CARD_SYMLINKS =
 
 var EXTRA_SETNAME_SYMLINKS =
 {
-	"cmd" : ["magic: the gathering-commander", "commander"],
+	"cmd" : ["commander"],
 	"pd2" : "premium deck series fire & lightning",
 	"md1" : "modern event deck",
-	"cns" : ["magic the gathering-conspiracy", "conspiracy", "magic: the gathering-conspiracy", "magic: the gathering—conspiracy"]
+	"cns" : ["magic the gathering-conspiracy", "conspiracy", "magic: the gathering-conspiracy"]
 };
 
 var EXTRA_MULTIVERSEID_SYMLINKS =
@@ -147,8 +147,10 @@ tiptoe(
 		VALID_SETS.serialForEach(function(SET, subcb)
 		{
 			var setSrcPath = path.join("..", "set", SET.code.toLowerCase());
-			fs.symlink(setSrcPath, path.join(SETNAME_PATH, SET.name.strip(":\"?").toLowerCase()), subcb);
-		}.bind(this), this);
+			var destPaths = [path.join(SETNAME_PATH, SET.name.strip(":\"'?").toLowerCase()), path.join(SETNAME_PATH, SET.name.strip("?").toLowerCase())];
+			destPaths = destPaths.concat(destPaths.map(function(destPath) { return destPath.replaceAll(" core set", ""); }));
+			destPaths.unique().serialForEach(function(destPath, destcb) { fs.symlink(setSrcPath, destPath, destcb); }, subcb);
+		}.bind(this), this.parallel());
 	},
 	function createOldSetCodeLinks()
 	{
