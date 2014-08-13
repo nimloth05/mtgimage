@@ -15,6 +15,8 @@ var base = require("xbase"),
 	GET_SOURCES = require("./sources").GET_SOURCES,
 	tiptoe = require("tiptoe");
 
+process.exit(0);		// Safety from accidental invocation
+
 var JSON_PATH = "/mnt/compendium/DevLab/mtgjson/json";
 var SET_PATH = "/mnt/compendium/DevLab/mtgimage/web/actual/set";
 var RUN_OPTIONS = {silent : true};

@@ -1,7 +1,7 @@
 /---------------\
 | High Priority |
-\---------------/
-
+\---------------/ 
+* Add all promo and token images now that MTGJSON has them. (This will also end up removing HHO and PPR)
 
 
 

@@ -242,7 +242,7 @@
 			{/otherCodes}
 			<p>
 			<br>
-			You can also spell out some codes, such as 'tap' for 't' and 'untap' for 'q'.<br>
+			Some alternative names you can use include 'tap' for 't', 'untap' for 'q' and 'c' or 'chaos' for 'chaosdice'.<br>
 			<br>
 			The card types (enchantment, instant, etc) come from Future Sight.<br>
 			The power and toughness come from Portal.<br>
@@ -320,7 +320,7 @@
 		<ul>
 			<li>Thank you <strong>VERY MUCH</strong> to these folks who reported bugs and helped in other ways:
 				<ul>
-					<li>Nathan Nelson, Michael Wybrow</li>
+					<li>Nathan Nelson, Michael Wybrow, Eric Richards</li>
 				</ul>
 			</li>
 			<li>HUGE thanks to <a href="http://www.slightlymagic.net/forum/viewforum.php?f=15">CCGHQ</a>. Without their awesome work, this site would not be possible.</li>

@@ -1972,7 +1972,7 @@
 		sorcery : [],
 		power : [],
 		toughness : [],
-		chaosdice : [],
+		chaosdice : ["chaos", "c"],
 		planeswalk : [],
 		forwardslash : []
 	};
