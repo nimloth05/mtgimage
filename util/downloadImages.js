@@ -7,6 +7,7 @@ var base = require("xbase"),
 	fs = require("fs"),
 	url = require("url"),
 	moment = require("moment"),
+	runUtil = require("xutil").run,
 	unicodeUtil = require("xutil").unicode,
 	path = require("path"),
 	querystring = require("querystring"),
@@ -70,11 +71,11 @@ function downloadImages(setCode, cb)
 			var set = JSON.parse(setJSON);
 			set.cards.serialForEach(function(card, subcb)
 			{
+				var targetImagePath = path.join(IMAGES_PATH, setCode.toLowerCase(), card.imageName + ".jpg");
+
 				tiptoe(
 					function downloadImage()
 					{
-						var targetImagePath = path.join(IMAGES_PATH, setCode.toLowerCase(), card.imageName + ".jpg");
-
 						if(fs.existsSync(targetImagePath))
 						{
 							base.warn("Image already exists, skipping: %s", targetImagePath);
@@ -82,32 +83,68 @@ function downloadImages(setCode, cb)
 							return;
 						}
 
-						var imageURL = url.format(
+						var imageURL = null;
+						if(set.isMCISet)
 						{
-							protocol : "http",
-							host     : "gatherer.wizards.com",
-							pathname : "/Handlers/Image.ashx",
-							query    :
+							imageURL = url.format(
 							{
-								multiverseid : card.multiverseid,
-								type         : "card"
-							}
-						});
+								protocol : "http",
+								host     : "magiccards.info",
+								pathname : "/scans/en/" + set.magicCardsInfoCode.toLowerCase() + "/" + card.number + ".jpg"
+							});
+						}
+						else
+						{
+							imageURL = url.format(
+							{
+								protocol : "http",
+								host     : "gatherer.wizards.com",
+								pathname : "/Handlers/Image.ashx",
+								query    :
+								{
+									multiverseid : card.multiverseid,
+									type         : "card"
+								}
+							});
+						}
 
-						base.info("Downloading image for card: %s", card.name);
+						base.info("Downloading image for card: %s (from %s)", card.name, imageURL);
 
 						var requester = request(imageURL);
 						requester.pipe(fs.createWriteStream(targetImagePath));
-						requester.on("end", this);
+						requester.on("finish", this);
 
 						request(imageURL, this);
+					},
+					function checkFileType()
+					{
+						runUtil.run("file", ["-b", targetImagePath], {silent : true}, this);
+					},
+					function convertToJPGIfNeeded(type)
+					{
+						if(type.toLowerCase().trim().startsWith("png "))
+						{
+							fs.renameSync(targetImagePath, targetImagePath.replaceAll(".jpg", ".png"));
+							runUtil.run("convert", [targetImagePath.replaceAll(".jpg", ".png"), "-quality", "100", targetImagePath], {silent : true}, this);
+						}
+						else
+						{
+							this();
+						}
+					},
+					function removePNGFiles()
+					{
+						if(fs.existsSync(targetImagePath.replaceAll(".jpg", ".png")))
+							fs.unlink(targetImagePath.replaceAll(".jpg", ".png"), this);
+						else
+							this();
 					},
 					function finish(err)
 					{
 						setImmediate(function() { subcb(err); });
 					}
 				);
-			}, cb);
+			}, function() { setTimeout(cb, base.SECOND*4); });
 		}
 	);
 	

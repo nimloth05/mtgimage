@@ -18,9 +18,7 @@ var JSON_PATH = "/mnt/compendium/DevLab/mtgjson/json";
 var dustData = 
 {
 	title : "Magic the Gathering card images",
-	sets  : [],
-	version : "5.3.2",
-	lastUpdated : "Aug 13, 2014"
+	sets  : []
 };
 
 var ACTUAL_PATH = path.join(__dirname, "actual");
@@ -260,7 +258,9 @@ tiptoe(
 		});
 
 		dustData.sets = dustData.sets.sort(function(a, b) { return moment(a.releaseDate, "YYYY-MM-DD").unix()-moment(b.releaseDate, "YYYY-MM-DD").unix(); });
-		dustData.changeLog = fs.readFileSync(path.join(__dirname, "changelog.html"), {encoding : "utf8"});
+		dustData.changeLog = JSON.parse(fs.readFileSync(path.join(__dirname, "changelog.json"), {encoding : "utf8"})).map(function(o) { o.when = moment(o.when, "YYYY-MM-DD").format("MMM D, YYYY"); return o; });
+		dustData.lastUpdated = dustData.changeLog[0].when;
+		dustData.version = dustData.changeLog[0].version;
 		dustUtil.render(__dirname, "index", dustData, { keepWhitespace : true }, this);
 	},
 	function saveIndex(html)

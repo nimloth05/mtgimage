@@ -1,0 +1,227 @@
+[
+	{
+		"version" : "5.3.3",
+		"when" : "2014-08-18",
+		"changes": [
+			"M15: Images are now correctly JPG files instead of PNG"
+		]
+	},
+	{
+		"version" : "5.3.2",
+		"when" : "2014-08-13",
+		"changes": [
+			"Added aliases 'chaos' and 'c' for the chaosdice symbol."
+		]
+	},
+	{
+		"version" : "5.3.1",
+		"when" : "2014-07-15",
+		"changes": [
+			"Duel Decks: Jace vs. Vraska (DDM) images are now high resolution",
+			"Journey into Nyx (JOU) images are now high resolution",
+			"Commander's Arsenal has the set code CM1 now instead of CMA to match the official set code."
+		]
+	},
+	{
+		"version" : "5.3.0",
+		"when" : "2014-07-08",
+		"changes": [
+			"Added set: Magic 2015 Core Set (M15)"
+		]
+	},
+	{
+		"version" : "5.2.0",
+		"when" : "2014-06-14",
+		"changes": [
+			"Added set: Vintage Masters (VMA)"
+		]
+	},
+	{
+		"version" : "5.1.0",
+		"when" : "2014-06-04",
+		"changes": [
+			"Added set: Magic: The Gathering—Conspiracy (CNS)",
+			"Added an 'I2P' alias for 'ITP'"
+		]
+	},
+	{
+		"version" : "5.0.3",
+		"when" : "2014-06-02",
+		"changes": [
+			"Added an 'all' directory for symbols that contains all symbols of all types (set, mana and other)."
+		]
+	},
+	{
+		"version" : "5.0.2",
+		"when" : "2014-06-02",
+		"changes": [
+			"UNH, PPR, PCH, HHO, DPA, DKM, ATH: The full 'special.svg' is now present (before only s.svg existed for those sets)"
+		]
+	},
+	{
+		"version" : "5.0.1",
+		"when" : "2014-06-01",
+		"changes": [
+			"C13, JOU: Fixed bugs in the SVG files that prevented opening in some programs"
+		]
+	},
+	{
+		"version" : "5.0.0",
+		"when" : "2014-05-28",
+		"changes": [
+			"Added set symbols, mana symbols and other symbols."
+		]
+	},
+	{
+		"version" : "4.5.0",
+		"when" : "2014-05-13",
+		"changes": [
+			"Added set: Modern Event Deck 2014 (MD1)"
+		]
+	},
+	{
+		"version" : "4.4.0",
+		"when" : "2014-04-25",
+		"changes": [
+			"Added set: Journey into Nyx (JOU)"
+		]
+	},
+	{
+		"version" : "4.3.0",
+		"when" : "2014-04-18",
+		"changes": [
+			"Added set: Duels of the Planeswalkers (DPA)"
+		]
+	},
+	{
+		"version" : "4.2.1",
+		"when" : "2014-04-11",
+		"changes": [
+			"Born of the Gods (BNG) images are now high resolution"
+		]
+	},
+	{
+		"version" : "4.2.0",
+		"when" : "2014-03-30",
+		"changes": [
+			"Added set: Rivals Quick Start Set (RQS)"
+		]
+	},
+	{
+		"version" : "4.1.0",
+		"when" : "2014-03-30",
+		"changes": [
+			"Added set: Introductory Two-Player Set (ITP)",
+			"Added set: Deckmasters (DKM)"
+		]
+	},
+	{
+		"version" : "4.0.0",
+		"when" : "2014-03-29",
+		"changes": [
+			"Added set: Anthologies (ATH)",
+			"Version number is now three digits in major.minor.bug format. \"minor\" will be updated whenever a new set is added. \"bug\" will be updated when small changes take place."
+		]
+	},
+	{
+		"version" : "3.3",
+		"when" : "2014-02-26",
+		"changes": [
+			"Added set: Duel Decks: Jace vs. Vraska (DDM)"
+		]
+	},
+	{
+		"version" : "3.2",
+		"when" : "2014-02-25",
+		"changes": [
+			"Added set: Happy Holidays (HHO)",
+			"Added last remaining crops for Schemes, Planes, Phenomenon and tokens. Now every card has crops.",
+			"Sets can now also be accessed via their legacy gatherer 2-digit set codes"
+		]
+	},
+	{
+		"version" : "3.1",
+		"when" : "2014-02-15",
+		"changes": [
+			"Images now have a 2 year HTTP cache expiration date (instead of 1 week). Sets that don't have high resolution images yet will only have a 1 week HTTP cache expiration so when high resolution images are available people get the new ones in less than a week if cached."
+		]
+	},
+	{
+		"version" : "3.0",
+		"when" : "2014-02-13",
+		"changes": [
+			"V13, C13: Images are now higher resolution",
+			"Crops have been added for ALL sets that were missing them (V13, C13, THS, UNH, UGL, MED, ME2, ME3, ME4, VAN, PPR)",
+			"Images have been compressed in order to load faster. There is very little visual difference. Uncompressed versions are still available, see: <a href=\"#imageCompression\">Image Compression</a>",
+			"Fixed bugs when accessing via multiverseid (crops were missing, case was sensitive and the expires header was missing)"
+		]
+	},
+	{
+		"version" : "2.6",
+		"when" : "2014-02-11",
+		"changes": [
+			"Added support for 'old' set codes: 9E, 8E, 7E, 6E, 5E, 4E, D2, COM, P02, NEM, PCH, FVR, FVL, FVE, CFX",
+			"Added an 'Expires' HTTP header to all images for better caching"
+		]
+	},
+	{
+		"version" : "2.5",
+		"when" : "2014-01-29",
+		"changes": [
+			"Added set: Born of the Gods (BNG)"
+		]
+	},
+	{
+		"version" : "2.4",
+		"when" : "2014-01-07",
+		"changes": [
+			"Theros images are now higher resolution."
+		]
+	},
+	{
+		"version" : "2.3",
+		"when" : "2013-12-23",
+		"changes": [
+			"“Curly quotes” are now correctly handled for cards like: <a href=\"http://dev.mtgimage.com/set/PTK/Kongming, “Sleeping Dragon”.jpg\">Kongming, “Sleeping Dragon”</a>"
+		]
+	},
+	{
+		"version" : "2.2",
+		"when" : "2013-12-16",
+		"changes": [
+			"Added set: Vanguard (VAN)",
+			"Added set: Masters Edition (MED)",
+			"Added set: Masters Edition II (ME2)",
+			"Added set: Masters Edition III (ME3)",
+			"Added set: Masters Edition IV (ME4)",
+			"Added crops for most sets and cards.",
+			"Fixed the /multiverseid/ lookup for Planechase 'planes' and Archenemy 'schemes'"
+		]
+	},
+	{
+		"version" : "2.1",
+		"when" : "2013-12-10",
+		"changes": [
+			"Added set: Promo set for Gatherer (PPR)",
+			"Underscores \"_\" can be used instead of spaces \" \" in card names"
+		]
+	},
+	{
+		"version" : "2.0",
+		"when" : "2013-12-10",
+		"changes": [
+			"Card names, set codes and set names are now case insensitive",
+			"CCGHQ and Cockatrice naming conventions are now support",
+			"Added tokens and planes",
+			"Added multiverseid access",
+			"Removed zips, see <a href=\"http://www.slightlymagic.net/forum/viewforum.php?f=15\">CCGHQ</a> for zips"
+		]
+	},
+	{
+		"version" : "1.0",
+		"when" : "2013-11-15",
+		"changes" : [
+			"First release!"
+		]
+	}
+]

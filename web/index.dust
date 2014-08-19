@@ -277,7 +277,21 @@
 					<th>Changes</th>
 				</tr>
 			</thead>
-			<tbody>{changeLog|s}</tbody>
+			<tbody>
+				{#changeLog}
+					<tr>
+						<td>{version}</td>
+						<td>{when}</td>
+						<td>
+							<ul>
+								{#changes}
+									<li>{.|s}</li>
+								{/changes}
+							</ul>
+						</td>
+					</tr>
+				{/changeLog}
+			</tbody>
 		</table>
 		<hr>
 		<a name="setList"></a>
@@ -320,7 +334,7 @@
 		<ul>
 			<li>Thank you <strong>VERY MUCH</strong> to these folks who reported bugs and helped in other ways:
 				<ul>
-					<li>Nathan Nelson, Michael Wybrow, Eric Richards</li>
+					<li>Nathan Nelson, Michael Wybrow, Eric Richards, Eric</li>
 				</ul>
 			</li>
 			<li>HUGE thanks to <a href="http://www.slightlymagic.net/forum/viewforum.php?f=15">CCGHQ</a>. Without their awesome work, this site would not be possible.</li>
