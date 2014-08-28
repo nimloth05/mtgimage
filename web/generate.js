@@ -46,15 +46,20 @@ var EXTRA_CARD_SYMLINKS =
 	"ugl/squirrel token card.jpg",
 	"ugl/zombie token card.jpg",
 	"nph/tresspassing souleater.crop.jpg",
-	"nph/tresspassing souleater.crop.hq.jpg"
+	"nph/tresspassing souleater.crop.hq.jpg",
+	"pcel/1996 world champion.jpg",
+	"pcel/1996 world champion.hq.jpg",
+	"pcel/1996 world champion.crop.jpg",
+	"pcel/1996 world champion.crop.hq.jpg"
 ];
 
 var EXTRA_SETNAME_SYMLINKS =
 {
-	"cmd" : ["commander"],
+	"cmd" : "commander",
 	"pd2" : "premium deck series fire & lightning",
 	"md1" : "modern event deck",
-	"cns" : ["magic the gathering-conspiracy", "conspiracy", "magic: the gathering-conspiracy"]
+	"cns" : ["magic the gathering-conspiracy", "conspiracy", "magic: the gathering-conspiracy"],
+	"v14" : ["from the vault annihilation", "from the vault: annihilation"]
 };
 
 var EXTRA_MULTIVERSEID_SYMLINKS =
@@ -237,7 +242,7 @@ tiptoe(
 		var args=arguments;
 
 		dustData.symbolSizes = C.SYMBOL_SIZES.join(", ");
-		dustData.manaCodes = Object.keys(C.SYMBOL_MANA).map(function(MANA_SYMBOL) { if(Number.isNumber(MANA_SYMBOL[0])) { return {code : MANA_SYMBOL, className : C.SYMBOL_MANA[MANA_SYMBOL][0]}; } else { return {code : MANA_SYMBOL, className : MANA_SYMBOL}; } });
+		dustData.manaCodes = Object.keys(C.SYMBOL_MANA).map(function(MANA_SYMBOL) { if(Number.isNumber(MANA_SYMBOL[0])) { return {code : MANA_SYMBOL, className : C.SYMBOL_MANA[MANA_SYMBOL][0]}; } else { return {code : (MANA_SYMBOL.startsWith("p") ? MANA_SYMBOL.reverse() : MANA_SYMBOL), className : MANA_SYMBOL}; } });
 		dustData.otherCodes = Object.keys(C.SYMBOL_OTHER).map(function(OTHER_SYMBOL) { if(Number.isNumber(OTHER_SYMBOL[0])) { return {code : OTHER_SYMBOL, className : C.SYMBOL_OTHER[OTHER_SYMBOL][0]}; } else { return {code : OTHER_SYMBOL, className : OTHER_SYMBOL}; } });
 
 		VALID_SETS.serialForEach(function(SET, subcb, i)
@@ -254,7 +259,9 @@ tiptoe(
 
 		dustData.sets.forEach(function(dustDataSet, i)
 		{
-			dustDataSet.resolution = Object.keys(widthHeightCountMaps[i]).sort(function(a, b) { return a.length-b.length; }).join("<br>");
+			dustDataSet.resolution = Object.keys(widthHeightCountMaps[i]).sort(function(a, b) { return (+(b.split("x")[0]))-(+(a.split("x")[0])); }).join("<br>");
+			if(dustDataSet.code.length===3)
+				dustDataSet.shortCode = true;
 		});
 
 		dustData.sets = dustData.sets.sort(function(a, b) { return moment(a.releaseDate, "YYYY-MM-DD").unix()-moment(b.releaseDate, "YYYY-MM-DD").unix(); });

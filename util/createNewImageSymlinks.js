@@ -43,30 +43,43 @@ function processSet(setCode, cb)
 		{
 			var set = JSON.parse(setRaw);
 
-			var variations = [];
+			var link = null;
+			var links = {};
+			var suffixes = [".jpg", ".hq.jpg", ".crop.jpg", ".crop.hq.jpg"];
 
 			set.cards.forEach(function(card)
 			{
 				if(card.layout==="split")
 				{
-					base.error("TODO: Split card: %s", card.name);
+					base.info("Found split card: %s", card.name);
+
+					addLink(card.names.join(" ").toLowerCase(), card.imageName, links);
+					card.names.forEach(function(name)
+					{
+						addLink(name.toLowerCase(), card.imageName, links);
+					});
 				}
-				else if(card.variations || (C.SETS_NOT_ON_GATHERER.contains(setCode) && card.rarity==="Basic Land"))
+				else if(card.layout==="flip")
 				{
-					variations.push(card.imageName.trim("0123456789"));
-					variations = variations.uniqueBySort();
+					base.info("Found flip card: %s", card.name);
+					addLink(card.names.join(" ").toLowerCase().replaceAll("/", " ").strip(":\"?"), card.imageName, links);
+				}
+				else if(card.variations || (C.SETS_NOT_ON_GATHERER.concat(getMCISetCodes()).contains(setCode) && card.rarity==="Basic Land"))
+				{
+					base.info("Found card with variations or a basic land: %s", card.name);
+					addLink(card.imageName.trim("0123456789"), card.imageName.trim("0123456789") + "1", links);
 				}
 			}.bind(this));
 
-			variations.forEach(function(variation)
+			Object.forEach(links, function(dest, src)
 			{
-				var prefix = path.join(SET_PATH, setCode.toLowerCase(), variation);
-				fs.symlink(variation + "1.jpg", prefix + ".jpg", this.parallel());
-				fs.symlink(variation + "1.hq.jpg", prefix + ".hq.jpg", this.parallel());
-				fs.symlink(variation + "1.crop.jpg", prefix + ".crop.jpg", this.parallel());
-				fs.symlink(variation + "1.crop.hq.jpg", prefix + ".crop.hq.jpg", this.parallel());
+				var prefix = path.join(SET_PATH, setCode.toLowerCase(), dest);
+				suffixes.forEach(function(suffix)
+				{
+					fs.symlink(src + suffix, prefix + suffix, this.parallel());
+				}.bind(this));
 			}.bind(this));
-
+			
 			this.parallel()();
 		},
 		function finish(err)
@@ -76,3 +89,13 @@ function processSet(setCode, cb)
 	);
 }
 
+function addLink(dest, src, links)
+{
+	if(!links.hasOwnProperty(dest))
+		links[dest] = src;
+}
+
+function getMCISetCodes()
+{
+	return C.SETS.filter(function(SET) { return SET.isMCISet; }).map(function(SET) { return SET.code; });
+}

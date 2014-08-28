@@ -48,9 +48,7 @@ if(!fs.existsSync(svgFile))
 base.info("Importing set [%s] rarity [%s] from file: %s", targetSet.name, rarityLetter, svgFile);
 
 var TARGET_PATH = path.join(SET_PATH, targetSet.code.toLowerCase(), rarityLetter);
-var runOptions = {silent:true};
-
-
+var RUN_OPTIONS = {silent:true};
 
 tiptoe(
 	function clearTargetDir()
@@ -78,7 +76,7 @@ tiptoe(
 			else if(size[1]>size[0])
 				targetWidth = Math.round((size[0]*(SYMBOL_SIZE/size[1])));
 
-			runUtil.run("inkscape", ["--export-png=" + path.join(TARGET_PATH, SYMBOL_SIZE + ".png"), "--export-width=" + targetWidth, "--export-height=" + targetHeight, svgFile], runOptions, self.parallel());
+			runUtil.run("inkscape", ["--export-png=" + path.join(TARGET_PATH, SYMBOL_SIZE + ".png"), "--export-width=" + targetWidth, "--export-height=" + targetHeight, svgFile], RUN_OPTIONS, self.parallel());
 		});
 	},
 	function createGIFs()
@@ -87,7 +85,7 @@ tiptoe(
 
 		C.SYMBOL_SIZES.forEach(function(SYMBOL_SIZE)
 		{
-			runUtil.run("convert", [path.join(TARGET_PATH, SYMBOL_SIZE + ".png"), path.join(TARGET_PATH, SYMBOL_SIZE + ".gif")], runOptions, self.parallel());
+			runUtil.run("convert", [path.join(TARGET_PATH, SYMBOL_SIZE + ".png"), path.join(TARGET_PATH, SYMBOL_SIZE + ".gif")], RUN_OPTIONS, self.parallel());
 		});
 	},
 	function compressImages()

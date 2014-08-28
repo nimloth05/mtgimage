@@ -217,7 +217,7 @@
 			<br>
 			You can also spell out the mana codes, such as 'green' for 'g', 'bluewhite' for 'uw', 'infinity' for '∞', "halfwhite" for "hw", etc.<br>
 			<br>
-			You can also reverse any dual symbols, such as 'ru' for 'ur', 'r2' for '2r', etc.<br>
+			You can also reverse any dual symbols, such as 'ru' for 'ur', 'r2' for '2r', 'pg' for 'gp', etc.<br>
 			</p>
 		</div>
 		<br>
@@ -313,7 +313,7 @@
 				{#sets}
 					<tr>
 						<td>{name}</td>
-						<td>{code}</td>
+						<td>{#shortCode}&nbsp;{/shortCode}{code}</td>
 						<td>{releaseDate}</td>
 						<td>{resolution|s}</td>
 						<td>{setSymbols}</td>

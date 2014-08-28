@@ -1,0 +1,36 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<!--[if IE]><![endif]-->
+<html>
+	<head>
+		<title>{count} cards</title>
+		<style>
+			div
+			{
+				margin: 100px;
+			}
+
+			body
+			{
+				text-align: center;
+				background-color: black;
+			}
+
+			img
+			{
+				margin: 0 25px;
+			}
+
+		</style>
+	</head>
+	<body>
+		<center>
+		<table>
+			{#images}
+				<tr>
+					<td><img src="http://dev.mtgimage.com/set/{codeBefore}/{imageName}.jpg"></td>
+					<td><img src="http://dev.mtgimage.com/set/{codeAfter}/{imageName}.jpg"></td>
+				</tr>
+			{/images}
+		</table></center>
+	</body>
+</html>

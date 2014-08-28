@@ -1,5 +1,21 @@
 [
 	{
+		"version" : "5.5.0",
+		"when" : "2014-08-27",
+		"changes" : [
+			"Added set: Duel Decks: Speed vs. Cunning (DDN)"
+		]
+	},
+	{
+		"version" : "5.4.0",
+		"when" : "2014-08-21",
+		"changes" : [
+			"Added promo cards! Added 27 new promo sets with 4-letter set codes that begin with a lowercase 'p'.",
+			"As part of promo cards being added, the HHO and PPR sets have been removed. HHO is now pHHO and PPR's cards are spread across different promo sets.",
+			"Added set: From the Vault: Annihilation (2014) (V14)"
+		]
+	},
+	{
 		"version" : "5.3.3",
 		"when" : "2014-08-18",
 		"changes": [
