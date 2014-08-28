@@ -1,5 +1,12 @@
 [
 	{
+		"version" : "5.5.1",
+		"when" : "2014-08-28",
+		"changes" : [
+			"Added set icons for MD1, CNS, VMA, M15, V14 and DDN. Note: These are low quality icons as high quality SVG versions do not yet exist. They will be upgraded to high quality versions when they become available."
+		]
+	},
+	{
 		"version" : "5.5.0",
 		"when" : "2014-08-27",
 		"changes" : [

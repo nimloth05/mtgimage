@@ -2880,6 +2880,8 @@
 
 	exports.SYMBOL_RARITIES = {c:["common"], u : ["uncommon"], r : ["rare"], m : ["mythic", "mythic rare", "mythicrare"], s : ["special"]};
 	exports.SYMBOL_SIZES = [8, 16, 24, 32, 48, 64, 96, 128, 256, 512, 768, 1024];
+	exports.SETS_WITH_BONUS_RARITIES = ["VMA"];
+	exports.SETS_LACKING_HQ_SVG_SYMBOL_ICONS = ["MD1", "CNS", "VMA", "M15", "V14", "DDN"];
 
 	exports.SYMBOL_MANA =
 	{

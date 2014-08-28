@@ -316,7 +316,7 @@
 						<td>{#shortCode}&nbsp;{/shortCode}{code}</td>
 						<td>{releaseDate}</td>
 						<td>{resolution|s}</td>
-						<td>{setSymbols}</td>
+						<td>{setSymbols}{#lowQuality}<br><span class="lowQuality">low quality</span>{/lowQuality}</td>
 					</tr>
 				{/sets}
 			</tbody>

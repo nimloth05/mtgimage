@@ -180,6 +180,11 @@ table td:last-child {
 table.setListTable td:nth-child(2) {
   text-align: center;
 }
+.lowQuality {
+  font-size: 56%;
+  color: #666;
+  position: absolute;
+}
 .symbolsSection div.symbol {
   display: inline-block;
   text-align: center;

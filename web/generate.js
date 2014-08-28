@@ -248,7 +248,10 @@ tiptoe(
 		VALID_SETS.serialForEach(function(SET, subcb, i)
 		{
 			base.info("Getting width/heights for: %s", SET.name);
-			dustData.sets.push({code : SET.code, name : SET.name, releaseDate : SET.releaseDate, setSymbols : setSymbols[SET.code]});
+			var setData = {code : SET.code, name : SET.name, releaseDate : SET.releaseDate, setSymbols : setSymbols[SET.code]};
+			if(C.SETS_LACKING_HQ_SVG_SYMBOL_ICONS.contains(SET.code))
+				setData.lowQuality = true;
+			dustData.sets.push(setData);
 			getWidthHeights(args[i].filter(function(a) { return !a.endsWith(".crop.jpg") && !a.endsWith(".hq.jpg"); }), subcb);
 		}, this);
 
