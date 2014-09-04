@@ -1,5 +1,14 @@
 [
 	{
+		"version" : "5.5.2",
+		"when" : "2014-09-04",
+		"changes" : [
+			"M15, CNS: Updated set symbols to high quality versions.",
+			"Added a SetSymbols.json file that lists which rarity symbols are available for each set.",
+			"pMEI: Replaced a german language card with an english one."
+		]
+	},
+	{
 		"version" : "5.5.1",
 		"when" : "2014-08-28",
 		"changes" : [

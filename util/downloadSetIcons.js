@@ -9,6 +9,7 @@ var base = require("xbase"),
 	runUtil = require("xutil").run,
 	httpUtil = require("xutil").http,
 	imageUtil = require("xutil").image,
+	rimraf = require("rimraf"),
 	fileUtil = require("xutil").file,
 	path = require("path"),
 	querystring = require("querystring"),
@@ -90,10 +91,10 @@ function downloadSetIcons(setCode, cb)
 							type   : "symbol",
 							size   : "large",
 							set    : setCode.toUpperCase(),
-							rarity : raritySymbol.toUpperCase()
+							rarity : (raritySymbol==="s" && C.SETS_WITH_BONUS_RARITIES.contains(setCode.toUpperCase())) ? "B" : raritySymbol.toUpperCase()
 						}
 					});
-
+					base.info(setImageURL);
 					httpUtil.download(setImageURL, raritySourceImage, this.parallel());
 				}.bind(this));
 			}.bind(this));
@@ -130,8 +131,13 @@ function downloadSetIcons(setCode, cb)
 				runUtil.run("node", [path.join(__dirname, "import_set_symbol.js"), setCode, raritySymbol, path.join(tmpDir, raritySymbol + ".svg")], RUN_OPTIONS, subcb);
 			}, this);
 		},
+		function cleanup()
+		{
+			rimraf(tmpDir, this);
+		},
 		function finish(err)
 		{
+			base.info("\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\nMAKE SURE TO UPDATE mtgimage.com.conf AND ALSO C.SETS_LACKING_HQ_SVG_SYMBOL_ICONS\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n");
 			return setImmediate(function() { cb(err); });
 		}
 	);

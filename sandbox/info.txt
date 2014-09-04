@@ -27,6 +27,7 @@ http://www.slightlymagic.net/forum/viewtopic.php?f=15&t=11086
 rename .full.jpg .jpg *.full.jpg
 bfr eval "newFilename = filename.toLowerCase();" *.jpg
 
+# IF have any 'flip' cards, manually flip them with 'convert card.jpg -rotate 180 otherside.jpg'
 
 # IF not have crops, make them:
 
@@ -48,14 +49,23 @@ find ./ -type f -name "*.jpg" -exec convert {} -crop 421x300+30+163 {}.crop.jpg 
 #Token CARD With text box
 find ./ -type f -name "*.jpg" -exec convert {} -crop 421x184+30+163 {}.crop.jpg \;
 
-#OLD CARD:
+#OLD CARD (480x680):
 find ./ -type f -name "*.jpg" -exec convert {} -crop 392x316+45+54 {}.crop.jpg \;
 
-#NEW CARD:
+#NEW CARD (480x680):
 find ./ -type f -name "*.jpg" -exec convert {} -crop 421x309+30+70 {}.crop.jpg \;
 
 #Gatherer New Card:
 find ./ -type f -name "*.jpg" -exec convert {} -crop 182x134+20+37 {}.crop.jpg \;
+
+#Promo LARGE ART full-Size NEW card (480x480)
+find ./ -type f -name "*.jpg" -exec convert {} -crop 421x372+30+70 {}.crop.jpg \;
+
+#Promo New Card small (312x445)
+find ./ -type f -name "*.jpg" -exec convert {} -crop 276x203+18+45 {}.crop.jpg \;
+
+#Promo Old Card small (312x445)
+find ./ -type f -name "*.jpg" -exec convert {} -crop 253x206+29+34 {}.crop.jpg \;
 
 
 # For all cards after making crops
@@ -69,12 +79,6 @@ find ./ -type f -exec chmod 644 {} \;
 cd util
 node createNewImageSymlinks.js DDM
 
-# ALERT!!!! I have not addded support to the above script for split/flip cards, here are the rules:
-# If it has any split/flip cards make sure it's named right. Good: roughtumble.jpg   Bad: rough.jpg or tumble.jpg
-# Also make symlinks for the different parts
-# Flip any cards that need flipped
-# Also the .hq.jpg and .crop.hq.jpg versions for both all parts of splits and both flips!
-
 
 # If gatherer images: Update nginx/mtgimage.com.conf with 7d cache expiration rules for the new set code and set name
 
@@ -86,3 +90,19 @@ node util/test_urls.js -s all
 
 cd deploy
 ./deploy.sh
+
+
+
+
+ln -s forest1.jpg forest.jpg && ln -s forest1.hq.jpg forest.hq.jpg && ln -s forest1.crop.jpg forest.crop.jpg && ln -s forest1.crop.hq.jpg forest.crop.hq.jpg
+ln -s island1.jpg island.jpg && ln -s island1.hq.jpg island.hq.jpg && ln -s island1.crop.jpg island.crop.jpg && ln -s island1.crop.hq.jpg island.crop.hq.jpg
+ln -s mountain1.jpg mountain.jpg && ln -s mountain1.hq.jpg mountain.hq.jpg && ln -s mountain1.crop.jpg mountain.crop.jpg && ln -s mountain1.crop.hq.jpg mountain.crop.hq.jpg
+ln -s swamp1.jpg swamp.jpg && ln -s swamp1.hq.jpg swamp.hq.jpg && ln -s swamp1.crop.jpg swamp.crop.jpg && ln -s swamp1.crop.hq.jpg swamp.crop.hq.jpg
+ln -s plains1.jpg plains.jpg && ln -s plains1.hq.jpg plains.hq.jpg && ln -s plains1.crop.jpg plains.crop.jpg && ln -s plains1.crop.hq.jpg plains.crop.hq.jpg
+ln -s vindicate1.jpg vindicate.jpg && ln -s vindicate1.hq.jpg vindicate.hq.jpg && ln -s vindicate1.crop.jpg vindicate.crop.jpg && ln -s vindicate1.crop.hq.jpg vindicate.crop.hq.jpg
+
+Set symbols:
+phho = the shooting star (that isn't a star)
+p2hg = dci logo
+pWPN, pPro, pFNM, pGPX, pJGP === 50% shooting star and 50% dci
+

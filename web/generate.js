@@ -223,7 +223,7 @@ tiptoe(
 				}
 			});
 			if(!setSymbols[SET.code])
-				setSymbols[SET.code] = "None";
+				setSymbols[SET.code] = "";
 		});
 
 		this();
@@ -245,16 +245,25 @@ tiptoe(
 		dustData.manaCodes = Object.keys(C.SYMBOL_MANA).map(function(MANA_SYMBOL) { if(Number.isNumber(MANA_SYMBOL[0])) { return {code : MANA_SYMBOL, className : C.SYMBOL_MANA[MANA_SYMBOL][0]}; } else { return {code : (MANA_SYMBOL.startsWith("p") ? MANA_SYMBOL.reverse() : MANA_SYMBOL), className : MANA_SYMBOL}; } });
 		dustData.otherCodes = Object.keys(C.SYMBOL_OTHER).map(function(OTHER_SYMBOL) { if(Number.isNumber(OTHER_SYMBOL[0])) { return {code : OTHER_SYMBOL, className : C.SYMBOL_OTHER[OTHER_SYMBOL][0]}; } else { return {code : OTHER_SYMBOL, className : OTHER_SYMBOL}; } });
 
+		fs.writeFileSync(path.join(__dirname, "SetSymbols.json"), JSON.stringify(Object.map(setSymbols, function(key, value) { return [key, value.split(" ").filterEmpty()] })), {encoding:"utf8"});
+
 		VALID_SETS.serialForEach(function(SET, subcb, i)
 		{
 			base.info("Getting width/heights for: %s", SET.name);
-			var setData = {code : SET.code, name : SET.name, releaseDate : SET.releaseDate, setSymbols : setSymbols[SET.code]};
+			var setData =
+			{
+				code        : SET.code,
+				codeLink    : SET.code.toLowerCase(),
+				name        : SET.name,
+				nameLink    : SET.name.toLowerCase(),
+				releaseDate : SET.releaseDate,
+				setSymbols  : setSymbols[SET.code].split(" ")
+			};
 			if(C.SETS_LACKING_HQ_SVG_SYMBOL_ICONS.contains(SET.code))
 				setData.lowQuality = true;
 			dustData.sets.push(setData);
 			getWidthHeights(args[i].filter(function(a) { return !a.endsWith(".crop.jpg") && !a.endsWith(".hq.jpg"); }), subcb);
 		}, this);
-
 	},
 	function renderIndex(widthHeightCountMaps)
 	{

@@ -189,6 +189,8 @@
 			<br>
 			The <a href="#setList">set list</a> denotes which rarities are available for which sets.<br>
 			<br>
+			The JSON file <a href="/SetSymbols.json">SetSymbols.json</a> also list which rarity symbols are available for each set.<br>
+			<br>
 			Set symbols are rendered in 'accurate' style.<br>
 			</p>
 		</div>
@@ -312,11 +314,11 @@
 			<tbody>
 				{#sets}
 					<tr>
-						<td>{name}</td>
-						<td>{#shortCode}&nbsp;{/shortCode}{code}</td>
+						<td><a href="/setname/{nameLink}">{name}</a></td>
+						<td>{#shortCode}&nbsp;{/shortCode}<a href="/set/{codeLink}">{code}</a></td>
 						<td>{releaseDate}</td>
 						<td>{resolution|s}</td>
-						<td>{setSymbols}{#lowQuality}<br><span class="lowQuality">low quality</span>{/lowQuality}</td>
+						<td>{#setSymbols}<a href="/symbol/set/{codeLink}/{.}">{.}</a> {/setSymbols}{#lowQuality}<br><span class="lowQuality">low quality</span>{/lowQuality}</td>
 					</tr>
 				{/sets}
 			</tbody>
