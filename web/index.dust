@@ -121,6 +121,17 @@
 		<br>
 		<br>
 		<hr>
+		<h1>Card Back</h1>
+		<p>
+		The back of a card is available here:<br>
+		<ul>
+			<li><a href="/card/cardback.jpg">http://mtgimage.com/card/cardback.jpg</a></li>
+			<li><a href="/card/cardback.hq.jpg">http://mtgimage.com/card/cardback.hq.jpg</a></li>
+		</ul>
+		<br>
+		</p>
+		<br>
+		<hr>
 		<h1>Crops</h1>
 		For artwork crops instead of full cards, change the image name to end with '-crop.jpg' or '.crop.jpg' instead of '.jpg'<br>
 		<br>

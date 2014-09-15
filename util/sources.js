@@ -244,6 +244,9 @@ exports.GET_SOURCES =
 						}
 					});
 				});
+				
+				sources.push(TEST_URL + "/card/cardback.jpg");
+				sources.push(TEST_URL + "/card/cardback.hq.jpg");
 
 				setImmediate(function() { cb(null, sources); });
 			}

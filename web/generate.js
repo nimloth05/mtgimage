@@ -325,6 +325,9 @@ tiptoe(
 				fs.symlink(path.relative(CARD_PATH, path.join(SET_PATH, srcSymlinkPath + ".crop.hq.jpg")), path.join(CARD_PATH, path.basename(srcSymlinkPath + ".crop.hq.jpg")), subcb);
 			}
 		}, this.parallel());
+
+		fs.symlink(path.relative(CARD_PATH, path.join(__dirname, "actual", "cardback.jpg")), path.join(CARD_PATH, path.basename("cardback.jpg")), this.parallel());
+		fs.symlink(path.relative(CARD_PATH, path.join(__dirname, "actual", "cardback.hq.jpg")), path.join(CARD_PATH, path.basename("cardback.hq.jpg")), this.parallel());
 	},
 	function finish(err)
 	{

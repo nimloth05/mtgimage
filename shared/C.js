@@ -10,6 +10,8 @@
 
 	exports.LAST_PRINTINGS_RESET = "M15";
 
+	exports.SETS_LACKING_HQ_SVG_SYMBOL_ICONS = ["VMA", "V14"];
+
 	exports.SETS_NOT_ON_GATHERER = ["ATH", "ITP", "DKM", "RQS", "DPA"];
 	exports.SETS_WITH_NO_IMAGES = [];
 
@@ -1783,7 +1785,7 @@
 			{ match : {name : "Pearled Unicorn"}, replace : {flavor : "\"‘Do you know, I always thought Unicorns were fabulous monsters, too? I never saw one alive before!' ‘Well, now that we have seen each other,' said the Unicorn, ‘if you'll believe in me, I'll believe in you.'\" —Lewis Carroll"}},
 			{ match : {name : "Segovian Leviathan"}, replace : {flavor : "\"Leviathan, too! Can you catch him with a fish-hook or run a line round his tongue?\" —Job 40:25"} },
 			{ match : {name : "Winter Blast"}, replace : {flavor : "\"Blow, winds, and crack your cheeks! rage! blow!\" —William Shakespeare, King Lear"} },
-			{ match : {name : "Hypnotic Specter"}, replace : {flavor : "\"...There was no trace/ Of aught on that illumined face...\" —Samuel Coleridge, \"Phantom\""} },
+			{ match : {name : "Hypnotic Specter"}, replace : {flavor : "\"...There was no trace\nOf aught on that illumined face...\"\n—Samuel Coleridge, \"Phantom\""} },
 			{ match : {name : "Marsh Viper"}, replace : {flavor : "\"All we had left were their black and bloated bodies.\" —Maeveen O'Donagh, Memoirs of a Soldier"} },
 			{ match : {name : "Gaseous Form"}, replace : {flavor : "\". . . [A]nd gives to airy nothing\nA local habitation and a name.\"\n—William Shakespeare, A Midsummer-Night's Dream"} },
 			{ match : {name : "Scathe Zombies"}, replace : {flavor : "\"They groaned, they stirred, they all uprose,/ Nor spake, nor moved their eyes;/ It had been strange, even in a dream,/ To have seen those dead men rise.\"/ —Samuel Coleridge, \"The Rime of the Ancient Mariner\""}},
@@ -2470,9 +2472,9 @@
 		[
 			{ match : {name : "Super Secret Tech"}, replace : {rarity : "Rare"}},
 			{ match : {name : "Cheap Ass"}, replace : {text : "Spells you play cost {½} less to play."}},
-			{ match : {name : "\"Ach!, Hans, Run\""}, replace : {
+			{ match : {name : "\"Ach! Hans, Run!\""}, replace : {
 				text : "At the beginning of your upkeep, you may say \"Ach! Hans, run! It's the . . .\" and name a creature card. If you do, search your library for the named card, put it into play, then shuffle your library. That creature has haste. Remove it from the game at end of turn.",
-				originalText : ""
+				originalText : "At the beginning of your upkeep, you may say \"Ach! Hans, run! It's the . . .\" and name a creature card. If you do, search your library for the named card, put it into play, then shuffle your library. That creature has haste. Remove it from the game at end of turn."
 			}},
 			{ match : {name : "Flaccify"}, replace : {text : "Counter target spell unless its controller pays {3}{½}."}},
 			{ match : {name : "Kill Destroy"}, replace : {name : "Kill! Destroy!", imageName : "kill! destroy!"}},
@@ -2691,9 +2693,9 @@
 				}
 			},
 			{ match : {name : "Gifts Given"}, replace : {text : "Search target opponent's library for four cards with different names and reveal them. That player chooses two of those cards. Put the chosen cards into the player's graveyard and the rest into your hand. Then that player shuffles his or her library."}},
-			{ match : {name : "Evil Presents"}, replace : {text : "'Tis better to give than to receive."}},
-			{ match : {name : "Gifts Given"}, replace : {text : "\"Thanks! You shouldn't have.\""}},
-			{ match : {name : "Season's Beatings"}, replace : {text : "Arriving home, he suddenly longed for the bloodsoaked battlefields behind him."}}
+			{ match : {name : "Evil Presents"}, replace : {flavor : "'Tis better to give than to receive."}},
+			{ match : {name : "Gifts Given"}, replace : {flavor : "\"Thanks! You shouldn't have.\""}},
+			{ match : {name : "Season's Beatings"}, replace : {flavor : "Arriving home, he suddenly longed for the bloodsoaked battlefields behind him."}}
 		],
 		PLC :
 		[
@@ -2900,7 +2902,6 @@
 	exports.SYMBOL_RARITIES = {c:["common"], u : ["uncommon"], r : ["rare"], m : ["mythic", "mythic rare", "mythicrare"], s : ["special"]};
 	exports.SYMBOL_SIZES = [8, 16, 24, 32, 48, 64, 96, 128, 256, 512, 768, 1024];
 	exports.SETS_WITH_BONUS_RARITIES = ["VMA"];
-	exports.SETS_LACKING_HQ_SVG_SYMBOL_ICONS = ["MD1", "VMA", "V14", "DDN"];
 
 	exports.SYMBOL_MANA =
 	{
@@ -3027,4 +3028,7 @@
 	exports.ORACLE_FIELDS = ["layout", "name", "names", "manaCost", "cmc", "colors", "type", "supertypes", "types", "subtypes", "text", "power", "toughness", "loyalty", "hand", "life", "rulings", "foreignNames", "printings", "legalities"];
 	exports.EXTRA_FIELDS = ["rulings", "foreignNames", "printings", "originalText", "originalType", "legalities", "source"];
 	exports.SET_SPECIFIC_FIELDS = ["rarity", "artist", "flavor", "number", "multiverseid", "variations", "watermark", "border", "timeshifted", "reserved", "releaseDate", "originalText", "originalType"];
+
+	exports.VINTAGE_BANNED = ["Advantageous Proclamation", "Amulet of Quoz", "Backup Plan", "Brago's Favor", "Bronze Tablet", "Chaos Orb", "Contract from Below", "Darkpact", "Demonic Attorney", "Double Stroke", "Falling Star", "Immediate Action", "Iterative Analysis", "Jeweled Bird", "Muzzio's Preparations", "Power Play", "Rebirth", "Secret Summoning", "Secrets of Paradise", "Sentinel Dispatch", "Shahrazad", "Tempest Efreet", "Timmerian Fiends", "Unexpected Potential", "Worldknit"];
+	exports.VINTAGE_RESTRICTED = ["Ancestral Recall", "Balance", "Black Lotus", "Brainstorm", "Channel", "Demonic Consultation", "Demonic Tutor", "Fastbond", "Flash", "Gifts Ungiven", "Imperial Seal", "Library of Alexandria", "Lion’s Eye Diamond", "Lotus Petal", "Mana Crypt", "Mana Vault", "Memory Jar", "Merchant Scroll", "Mind’s Desire", "Mox Emerald", "Mox Jet", "Mox Pearl", "Mox Ruby", "Mox Sapphire", "Mystical Tutor", "Necropotence", "Ponder", "Sol Ring", "Strip Mine", "Thirst for Knowledge", "Time Vault", "Time Walk", "Timetwister", "Tinker", "Tolarian Academy", "Trinisphere", "Vampiric Tutor", "Wheel of Fortune", "Windfall", "Yawgmoth’s Bargain", "Yawgmoth’s Will"];
 })(typeof exports==="undefined" ? window.C={} : exports);
