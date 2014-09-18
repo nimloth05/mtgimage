@@ -1,5 +1,14 @@
 [
 	{
+		"version" : "5.6.0",
+		"when" : "2014-09-18",
+		"changes" : [
+			"Added set: Khans of Tarkir (KTK)",
+			"VMA, V14: Updated set symbols to high quality versions.",
+			"pMEI: Replaced a german language card with an english one."
+		]
+	},
+	{
 		"version" : "5.5.4",
 		"when" : "2014-09-10",
 		"changes" : [

@@ -24,6 +24,10 @@ http://www.slightlymagic.net/forum/viewtopic.php?f=15&t=11086
 /-------------------\
 | New Image Process |
 \-------------------/
+# IF GATHERER IMAGES:
+find ./ -type f -name "*.jpg" -exec convert {} -crop 223x310+0+0 {} \;
+
+# IF CCGHQ IMAGES:
 rename .full.jpg .jpg *.full.jpg
 bfr eval "newFilename = filename.toLowerCase();" *.jpg
 
