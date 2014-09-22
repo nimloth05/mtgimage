@@ -10,7 +10,7 @@ var base = require("xbase"),
 	GET_SOURCES = require("./sources").GET_SOURCES,
 	optimist = require("optimist");
 
-var VALID_SOURCES = ["mtgjson", "ccghq", "cardnames", "cockatrice", "multiverseid", "all"];
+var VALID_SOURCES = ["mtgjson", "mtgjsonallcards", "ccghq", "cardnames", "cockatrice", "multiverseid", "all"];
 
 optimist = optimist.usage("Usage: $0");
 optimist = optimist.describe({ "s" : "Source of URL's. Valid: " + VALID_SOURCES.join(", "),

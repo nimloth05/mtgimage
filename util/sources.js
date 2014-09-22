@@ -134,6 +134,33 @@ exports.GET_SOURCES =
 			}
 		);
 	},
+	mtgjsonallcards : function(cb)
+	{
+		tiptoe(
+			function loadJSON()
+			{
+				fs.readFile(path.join(__dirname, "mtgjson", "AllCards.json"), { encoding : "utf8" }, this);
+			},
+			function processJSON(err, setsRaw)
+			{
+				if(err)
+					return setImmediate(function() { cb(err); });
+
+				var sources = [];
+				var allCards = JSON.parse(setsRaw);
+
+				Object.values(allCards).forEach(function(card)
+				{
+					sources.push(TEST_URL + "/card/" + card.imageName + ".jpg");
+					sources.push(TEST_URL + "/card/" + card.imageName + ".hq.jpg");
+					sources.push(TEST_URL + "/card/" + card.imageName + "-crop.jpg");
+					sources.push(TEST_URL + "/card/" + card.imageName + "-crop.hq.jpg");
+				});
+
+				setImmediate(function() { cb(null, sources); });
+			}
+		);
+	},
 	multiverseid : function(cb)
 	{
 		tiptoe(
@@ -352,6 +379,9 @@ exports.GET_SOURCES =
 				JSON.parse(urlsJSON).forEach(function(urlRaw)
 				{
 					if(!urlRaw)
+						return;
+
+					if(urlRaw.toLowerCase().contains("promo set for gatherer"))
 						return;
 
 					sources.push(TEST_URL + decodeURIComponent(url.parse(urlRaw).path));
