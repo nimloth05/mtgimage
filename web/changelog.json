@@ -1,5 +1,13 @@
 [
 	{
+		"version" : "5.6.1",
+		"when" : "2014-09-21",
+		"changes" : [
+			"KTK, V14, M15, CNS: Updated card images to slightly higher resolution spoiler versions.",
+			"Added new promotion cards."
+		]
+	},
+	{
 		"version" : "5.6.0",
 		"when" : "2014-09-18",
 		"changes" : [

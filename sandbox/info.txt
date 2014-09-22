@@ -1,3 +1,15 @@
+/--------------------\
+| Locate Best Images |
+\--------------------/
+Check: http://mythicspoiler.com/ddn/cards/
+Run: node util/downloadMythicSpoilerImages.js
+
+Check: http://copper-dog.com/mtg-generator/cns/
+Run (in console on page): Array.prototype.slice.call(document.querySelectorAll(".card img")).map(function(img) { return "wget -O \"" + img.getAttribute("alt").toLowerCase().replace(/[":\"?"]/g, "") + ".jpg\" \"" + img.getAttribute("src") + "\""; }).join("\n")
+ Save that in a script and execute it in actual/set/XXX/test.sh
+
+
+
 /-------\
 | Links |
 \-------/
@@ -71,13 +83,15 @@ find ./ -type f -name "*.jpg" -exec convert {} -crop 276x203+18+45 {}.crop.jpg \
 #Promo Old Card small (312x445)
 find ./ -type f -name "*.jpg" -exec convert {} -crop 253x206+29+34 {}.crop.jpg \;
 
+#Spoiler New Card (265x370)
+find ./ -type f -name "*.jpg" -exec convert {} -crop 223x163+22+43 {}.crop.jpg \;
+
 
 # For all cards after making crops
 rename .jpg.crop.jpg .crop.jpg *.jpg
 
 # Make the HQ and non HQ versions
 find ./ -type f -name "*.jpg" -exec node /mnt/compendium/DevLab/mtgimage/util/compressImages.js {} \;
-find ./ -type f -exec chmod 644 {} \;
 
 # Make symlinks
 cd util

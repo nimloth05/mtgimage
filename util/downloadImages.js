@@ -3,11 +3,11 @@
 
 var base = require("xbase"),
 	C = require("C"),
-	request = require("request"),
 	fs = require("fs"),
 	url = require("url"),
 	moment = require("moment"),
 	runUtil = require("xutil").run,
+	httpUtil = require("xutil").http,
 	unicodeUtil = require("xutil").unicode,
 	path = require("path"),
 	querystring = require("querystring"),
@@ -79,7 +79,8 @@ function downloadImages(setCode, cb)
 						if(fs.existsSync(targetImagePath))
 						{
 							base.warn("Image already exists, skipping: %s", targetImagePath);
-							this();
+							setImmediate(subcb);
+							this.exit();
 							return;
 						}
 
@@ -110,14 +111,11 @@ function downloadImages(setCode, cb)
 
 						base.info("Downloading image for card: %s (from %s)", card.name, imageURL);
 
-						var requester = request(imageURL);
-						requester.pipe(fs.createWriteStream(targetImagePath));
-						requester.on("finish", this);
-
-						request(imageURL, this);
+						httpUtil.download(imageURL, targetImagePath, this);
 					},
 					function checkFileType()
 					{
+						base.info("Processing: " + targetImagePath);
 						runUtil.run("file", ["-b", targetImagePath], {silent : true}, this);
 					},
 					function convertToJPGIfNeeded(type)
@@ -138,6 +136,15 @@ function downloadImages(setCode, cb)
 							fs.unlink(targetImagePath.replaceAll(".jpg", ".png"), this);
 						else
 							this();
+					},
+					function makeCrop()
+					{
+						runUtil.run("convert", [targetImagePath, "-crop", (set.isMCISet ? "276x203+18+45" : "182x134+20+37"), targetImagePath.replaceAll(".jpg", ".crop.jpg")], {silent:true}, this);
+					},
+					function compressImages()
+					{
+						runUtil.run("node", [path.join(__dirname, "compressImages.js"), targetImagePath], {silent:true}, this.parallel());
+						runUtil.run("node", [path.join(__dirname, "compressImages.js"), targetImagePath.replaceAll(".jpg", ".crop.jpg")], {silent:true}, this.parallel());
 					},
 					function finish(err)
 					{

@@ -38,6 +38,10 @@ tiptoe(
 		fs.rmdir(TEMP_PATH, this.parallel());
 		runUtil.run("jpegoptim", ["-m70", TARGET_FILE], this.parallel());
 	},
+	function changeOwnership()
+	{
+		runUtil.run("chmod", ["644", TARGET_FILE], this);
+	},
 	function finish(err)
 	{
 		if(err)
