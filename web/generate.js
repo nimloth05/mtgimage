@@ -9,6 +9,8 @@ var base = require("xbase"),
 	rimraf = require("rimraf"),
 	dustUtil = require("xutil").dust,
 	printUtil = require("xutil").print,
+	httpUtil = require("xutil").http,
+	fileUtil = require("xutil").file,
 	runUtil = require("xutil").run,
 	moment = require("moment"),
 	tiptoe = require("tiptoe");
@@ -23,7 +25,9 @@ var dustData =
 
 var ACTUAL_PATH = path.join(__dirname, "actual");
 var CREATE_LINKS = process.argv.length>2 && process.argv[2].toLowerCase().startsWith("createlinks");
+var CREATE_ZIPS = process.argv.length>2 && process.argv[2].toLowerCase().startsWith("createzips");
 
+var ZIP_PATH = path.join(__dirname, "zip");
 var CARD_PATH = path.join(ACTUAL_PATH, "card");
 var SET_PATH = path.join(ACTUAL_PATH, "set");
 var MULTIVERSEID_PATH = path.join(ACTUAL_PATH, "multiverseid");
@@ -228,6 +232,13 @@ tiptoe(
 
 		this();
 	},
+	function createZipsStep()
+	{
+		if(!CREATE_ZIPS)
+			return this();
+
+		createZips(this);
+	},
 	function countImages()
 	{
 		base.info("Counting images...");
@@ -261,6 +272,8 @@ tiptoe(
 			};
 			if(C.SETS_LACKING_HQ_SVG_SYMBOL_ICONS.contains(SET.code))
 				setData.lowQuality = true;
+			if(SET.code==="CON")
+				setData.isCON = true;
 			dustData.sets.push(setData);
 			getWidthHeights(args[i].filter(function(a) { return !a.endsWith(".crop.jpg") && !a.endsWith(".hq.jpg"); }), subcb);
 		}, this);
@@ -280,6 +293,7 @@ tiptoe(
 		dustData.changeLog = JSON.parse(fs.readFileSync(path.join(__dirname, "changelog.json"), {encoding : "utf8"})).map(function(o) { o.when = moment(o.when, "YYYY-MM-DD").format("MMM D, YYYY"); return o; });
 		dustData.lastUpdated = dustData.changeLog[0].when;
 		dustData.version = dustData.changeLog[0].version;
+		dustData.allSetsZipSize = printUtil.toSize(fs.statSync(path.join(__dirname, "zip", "AllSets.zip")).size, 1);
 		dustUtil.render(__dirname, "index", dustData, { keepWhitespace : true }, this);
 	},
 	function saveIndex(html)
@@ -491,6 +505,105 @@ function getWidthHeight(file, cb)
 			}
 
 			setImmediate(function() { cb(null, [+matches[1], +matches[2]]); });
+		}
+	);
+}
+
+function createZips(cb)
+{
+	var ZIP_WORK_PATH = path.join(__dirname, "zipwork");
+	base.info("Creating zips...");
+
+	tiptoe(
+		function prepareZipDirectories()
+		{
+			base.info("Preparing zip directories...");
+			rimraf(ZIP_WORK_PATH, this.parallel());
+			rimraf(ZIP_PATH, this.parallel());
+		},
+		function createWorkDirectory()
+		{
+			fs.mkdir(ZIP_WORK_PATH, this.parallel());
+			fs.mkdir(ZIP_PATH, this.parallel());
+		},
+		function createSetDirectories()
+		{
+			C.SETS.serialForEach(function(SET, subcb) { fs.mkdir(path.join(ZIP_WORK_PATH, SET.code), subcb); }, this);
+		},
+		function loadJSON()
+		{
+			C.SETS.serialForEach(function(SET, subcb) { fs.readFile(path.join(JSON_PATH, SET.code + ".json"), {encoding : "utf8"}, subcb); }, this);
+		},
+		function downloadImages(setJSON)
+		{
+			C.SETS.serialForEach(function(SET, subcb, i)
+			{
+				base.info("Dowloading images for %s...", SET.code);
+				JSON.parse(setJSON[i]).cards.serialForEach(function(card, cardcb)
+				{
+					httpUtil.download("http://dev.mtgimage.com/set/" + SET.code + "/" + card.imageName + ".hq.jpg", path.join(ZIP_WORK_PATH, SET.code, card.imageName + ".hq.jpg"), cardcb);
+				}, subcb);
+			}, this);
+		},
+		function zipSets()
+		{
+			C.SETS.serialForEach(function(SET, subcb, i)
+			{
+				base.info("Zipping images for %s...", SET.code);
+				runUtil.run("zip", ["-r", SET.code + ".zip", SET.code], {cwd : ZIP_WORK_PATH, silent : true}, subcb);
+			}, this);
+		},
+		function moveSetZips()
+		{
+			C.SETS.serialForEach(function(SET, subcb)
+			{
+				base.info("Moving set zip %s...", SET.code);
+				fileUtil.move(path.join(ZIP_WORK_PATH, SET.code + ".zip"), path.join(ZIP_PATH, SET.code + ".zip"), subcb);
+			}, this);
+		},
+		function zipAllSets()
+		{
+			base.info("Zipping all sets...");
+			runUtil.run("zip", ["-r", "AllSets.zip"].concat(C.SETS.map(function(SET) { return SET.code; })), {cwd : ZIP_WORK_PATH, silent : true}, this);
+		},
+		function moveAllSetsZip()
+		{
+			base.info("Moving AllSets.zip...");
+			fileUtil.move(path.join(ZIP_WORK_PATH, "AllSets.zip"), path.join(ZIP_PATH, "AllSets.zip"), this);
+		},
+		function createWindowsCon()
+		{
+			base.info("Creating windows _CON...");
+			fs.rename(path.join(ZIP_WORK_PATH, "CON"), path.join(ZIP_WORK_PATH, "_CON"), this);
+		},
+		function zipWindowsCon()
+		{
+			base.info("Zipping Windows _CON...");
+			runUtil.run("zip", ["-r", "_CON.zip", "_CON"], {cwd : ZIP_WORK_PATH, silent : true}, this);
+		},
+		function moveWindowsCon()
+		{
+			base.info("Moving Windows _CON.zip...");
+			fileUtil.move(path.join(ZIP_WORK_PATH, "_CON.zip"), path.join(ZIP_PATH, "_CON.zip"), this);
+		},
+		function zipWindowsAllSets()
+		{
+			base.info("Zipping windows all sets...");
+			runUtil.run("zip", ["-r", "AllSetsWindows.zip"].concat(C.SETS.map(function(SET) { return (SET.code==="CON" ? "_CON" : SET.code); })), {cwd : ZIP_WORK_PATH, silent : true}, this);
+		},
+		function moveAllSetsZip()
+		{
+			base.info("Moving AllSetsWindows.zip...");
+			fileUtil.move(path.join(ZIP_WORK_PATH, "AllSetsWindows.zip"), path.join(ZIP_PATH, "AllSetsWindows.zip"), this);
+		},
+		function deleteZipWorkDirectory()
+		{
+			base.info("Deleting zip work path...");
+			rimraf(ZIP_WORK_PATH, this);
+		},
+		function finish(err)
+		{
+			return setImmediate(function() { cb(err); });
 		}
 	);
 }

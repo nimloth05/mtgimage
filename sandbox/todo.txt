@@ -7,13 +7,10 @@
   For more details see e-mail from: mysterious.mister.p@gmail.com   (reply to him when the feature is added)
 
 
+
 /-----------------\
 | Medium Priority |
 \-----------------/
-* Add image zips backs. Create versions for both the compressed and the non-compressed images. Add them for each set along with 'All Sets'. Have the all sets be the directory be the set codes. For the image names.... just offer the imageName that mtgjson uses for now. Mention this of course, and remember I'll need to 'download' the image via dev.mtgimage.com to disk, and zip them that way, in order for the imageName.jpg to be correct and also so that I don't have lots of symlinks and weird names.
-util/create_zips.js already has this functionality, but because cockatrice doesn't have set codes, it doesn't support that yet
-and because CCGHQ differs from MTGJSON set codes (PO2 vs P02) then that doesn't work 100% right either
-Will probably need to convert/standardize on the MTJSON set codes since that's what I use to generate the index HTML
 
 
 

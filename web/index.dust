@@ -60,7 +60,7 @@
 		</ul>
 		<br>
 		<br>
-		Images are available via <strong>3</strong> different methods:<br>
+		Images are available via <strong>4</strong> different methods:<br>
 		<br>
 		</p>
 		<div class="code">
@@ -116,6 +116,21 @@
 				<li><a href="/multiverseid/174859.jpg">Elspeth, Knight-Errant</a> &nbsp;&nbsp;http://mtgimage.com/multiverseid/174859.jpg</li>
 				<li><a href="/multiverseid/279712.jpg">Akroma's Memorial</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;http://mtgimage.com/multiverseid/279712.jpg</li>
 			</ul>
+		</div>
+		<br>
+		<br>
+		<div class="code">
+			<h2>Download as Zip</h2>
+			<p>
+			<br>
+			High quality, full card images are available in zip files. Images are named in <a href="mtgjson.com">mtgjson.com</a> imageName format.<br>
+			<br>
+			Individual set zip file links can be found on the <a href="#setList">set list</a>.<br>
+			<br>
+			All sets can be downloaded in a single zip file: <a href="/zip/AllSets.zip">AllSets.zip</a> (<span class="size">{allSetsZipSize}</span>)<br>
+			WARNING: This file is HUGE at <span class="size">{allSetsZipSize}</span><br>
+			<br>
+			<strong>Windows Warning</strong>: Microsoft Windows does not allow files or folders to be named 'CON' (<a href="http://superuser.com/questions/86999/unable-to-rename-a-folder-or-a-file-as-con">see here</a>). Thus the AllSets.zip file can't be extracted on windows (it contains the Conflux set folder 'CON'). Windows users should instead download: <a href="/zip/AllSetsWindows.zip">AllSetsWindows.zip</a> which has renamed 'CON' to '_CON'. Likewise the individual set zip file can be downloaded as <a href="/zip/_CON.zip">_CON.zip</a><br>
 			</p>
 		</div>
 		<br>
@@ -319,6 +334,7 @@
 					<th>Code</th>
 					<th>Release Date</th>
 					<th>Resolution</th>
+					<th>Zip</th>
 					<th>Symbols</th>
 				</tr>
 			</thead>
@@ -329,6 +345,12 @@
 						<td>{#shortCode}&nbsp;{/shortCode}<a href="/set/{codeLink}">{code}</a></td>
 						<td>{releaseDate}</td>
 						<td>{resolution|s}</td>
+						<td>
+							{#shortCode}&nbsp;{/shortCode}<a href="/zip/{code}.zip">{code}.zip</a>
+							{#isCON}
+								<br><a href="/zip/_{code}.zip">_{code}.zip</a>&nbsp;
+							{/isCON}
+						</td>
 						<td>{#setSymbols}<a href="/symbol/set/{codeLink}/{.}">{.}</a> {/setSymbols}{#lowQuality}<br><span class="lowQuality">low quality</span>{/lowQuality}</td>
 					</tr>
 				{/sets}
