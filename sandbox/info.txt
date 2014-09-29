@@ -7,7 +7,7 @@ Run: node util/downloadMythicSpoilerImages.js
 Check: http://copper-dog.com/mtg-generator/cns/
 Run (in console on page): Array.prototype.slice.call(document.querySelectorAll(".card img")).map(function(img) { return "wget -O \"" + img.getAttribute("alt").toLowerCase().replace(/[":\"?"]/g, "") + ".jpg\" \"" + img.getAttribute("src") + "\""; }).join("\n")
  Save that in a script and execute it in actual/set/XXX/test.sh
-
+Then remove the rounded borders with `composite -gravity center /mnt/compendium/DevLab/mtgimage/util/spoiler_square_card_frame.png card.jpg`
 
 
 /-------\
