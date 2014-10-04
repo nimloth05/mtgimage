@@ -284,7 +284,6 @@ tiptoe(
 		dustData.changeLog = JSON.parse(fs.readFileSync(path.join(__dirname, "changelog.json"), {encoding : "utf8"})).map(function(o) { o.when = moment(o.when, "YYYY-MM-DD").format("MMM D, YYYY"); return o; });
 		dustData.lastUpdated = dustData.changeLog[0].when;
 		dustData.version = dustData.changeLog[0].version;
-		dustData.allSetsZipSize = printUtil.toSize(fs.statSync(path.join(__dirname, "zip", "AllSets.zip")).size, 1);
 		dustUtil.render(__dirname, "index", dustData, { keepWhitespace : true }, this);
 	},
 	function saveIndex(html)

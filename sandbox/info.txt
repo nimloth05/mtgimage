@@ -9,6 +9,8 @@ Run (in console on page): Array.prototype.slice.call(document.querySelectorAll("
  Save that in a script and execute it in actual/set/XXX/test.sh
 Then remove the rounded borders with `composite -gravity center /mnt/compendium/DevLab/mtgimage/util/spoiler_square_card_frame.png card.jpg`
 
+Promos: http://www.slightlymagic.net/forum/viewtopic.php?f=15&t=453&start=1125
+If resolution is 745x1040 and rounded corners, crop corners to squaare with: convert Card.jpg -crop 705x1000+20+20 -quality 100 Card.jpg
 
 /-------\
 | Links |
@@ -82,6 +84,9 @@ find ./ -type f -name "*.jpg" -exec convert {} -crop 276x203+18+45 {}.crop.jpg \
 
 #Promo Old Card small (312x445)
 find ./ -type f -name "*.jpg" -exec convert {} -crop 253x206+29+34 {}.crop.jpg \;
+
+#Promo large, cropped (705x1000)
+find ./ -type f -name "*.jpg" -exec convert {} -crop 616x453+45+103 {}.crop.jpg \;
 
 #Spoiler New Card (265x370)
 find ./ -type f -name "*.jpg" -exec convert {} -crop 223x163+22+43 {}.crop.jpg \;

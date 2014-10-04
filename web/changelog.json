@@ -1,5 +1,19 @@
 [
 	{
+		"version" : "5.6.5",
+		"when" : "2014-10-02",
+		"changes" : [
+			"Updated a few promo cards to higher resolution versions."
+		]
+	},
+	{
+		"version" : "5.6.4",
+		"when" : "2014-10-02",
+		"changes" : [
+			"KTK: Set symbols are now high quality."
+		]
+	},
+	{
 		"version" : "5.6.3",
 		"when" : "2014-09-29",
 		"changes" : [
