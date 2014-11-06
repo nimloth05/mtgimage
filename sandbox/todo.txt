@@ -1,6 +1,10 @@
 /---------------\
 | High Priority |
 \---------------/ 
+* Add symbols for the new sets: 8BS, 9BS, CST and MGB
+
+* Download an older version of 8ED and 9ED json files, delete all cards from it except the 'box set' cards, then place that into the legacy json, then ensure multiverseid's get created for them in mtgimage
+
 * Add all tokens and ensure sliver token in M14 is working then e-mail Darek Gołąb
 
 * Crop gatherer images so that they don't have rounded borders. This introduces consistency to the card images.

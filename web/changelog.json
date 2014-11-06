@@ -1,5 +1,52 @@
 [
 	{
+		"version" : "5.8.0",
+		"when" : "2014-11-04",
+		"changes" : [
+			"Added set: Commander 2014 (C14)"
+		]
+	},
+	{
+		"version" : "5.7.1",
+		"when" : "2014-10-27",
+		"changes" : [
+			"8BS, 9BS, MGB: Added set symbols"
+		]
+	},
+	{
+		"version" : "5.7.0",
+		"when" : "2014-10-22",
+		"changes" : [
+			"Added set: Ninth Edition Box Set (9BS)",
+			"Added set: Eighth Edition Box Set (8BS)",
+			"Added set: Coldsnap Theme Decks (CST)",
+			"Added set: Multiverse Gift Box (MGB)"
+		]
+	},
+	{
+		"version" : "5.6.8",
+		"when" : "2014-10-13",
+		"changes" : [
+			"Added several new promo images."
+		]
+	},
+	{
+		"version" : "5.6.7",
+		"when" : "2014-10-13",
+		"changes" : [
+			"DDM: Images are now color corrected.",
+			"Added multiverseid access to images from the Gatherer PPR set.",
+			"Added missing 'all' symbols for 'c' and 'chaos'."
+		]
+	},
+	{
+		"version" : "5.6.6",
+		"when" : "2014-10-05",
+		"changes" : [
+			"MD1: Updated card images to high resolution versions."
+		]
+	},
+	{
 		"version" : "5.6.5",
 		"when" : "2014-10-02",
 		"changes" : [

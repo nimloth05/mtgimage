@@ -13,11 +13,14 @@ var base = require("xbase"),
 	fileUtil = require("xutil").file,
 	assert = require("assert"),
 	querystring = require("querystring"),
+	optimist = require("optimist"),
 	tiptoe = require("tiptoe");
+
+optimist = optimist.boolean("prod");
 
 var runOptions = {silent : true};
 
-var TEST_URL = "http://dev.mtgimage.com";
+var TEST_URL = optimist.argv.prod ? "http://mtgimage.com" : "http://dev.mtgimage.com";
 
 var CARDNAMES_SKIP = ["Which of You Burns Brightest?"];
 

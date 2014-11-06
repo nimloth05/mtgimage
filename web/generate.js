@@ -16,6 +16,7 @@ var base = require("xbase"),
 	tiptoe = require("tiptoe");
 
 var JSON_PATH = "/mnt/compendium/DevLab/mtgjson/json";
+var LEGACY_JSON_PATH = "/mnt/compendium/DevLab/mtgjson/util/legacy_json";
 
 var dustData = 
 {
@@ -207,6 +208,13 @@ tiptoe(
 				fs.symlink(path.join("..", "set", setCode), path.join(SETNAME_PATH, setName), this.parallel());
 			}.bind(this));
 		}.bind(this));
+	},
+	function processLegacySets()
+	{
+		if(!CREATE_LINKS)
+			return this();
+		
+		createLegacySetSymlinks(this);
 	},
 	function getSetSymbols()
 	{
@@ -422,6 +430,50 @@ function createSetCardSymlinks(setCode, cb)
 			}, cb);
 		}
 	);
+}
+
+function createLegacySetSymlinks(cb)
+{
+	base.info("Creating legacy set symlinks for PPR and HHO...");
+
+	var SET_CODES_TO_MATCH = ["pMEI", "pPRE"];
+	var LEGACY_SET_CODES = ["PPR"];
+	var SET_DATA = {};
+	LEGACY_SET_CODES.concat(SET_CODES_TO_MATCH).forEach(function(SET_CODE)
+	{
+		SET_DATA[SET_CODE] = JSON.parse(fs.readFileSync(path.join(LEGACY_SET_CODES.contains(SET_CODE) ? LEGACY_JSON_PATH : JSON_PATH, SET_CODE + ".json"), {encoding : "utf8"}));
+	});
+
+	LEGACY_SET_CODES.forEach(function(SET_CODE)
+	{
+		SET_DATA[SET_CODE].cards.forEach(function(card)
+		{
+			var cardMatched = false;
+			SET_CODES_TO_MATCH.forEach(function(SET_CODE_TO_MATCH)
+			{
+				SET_DATA[SET_CODE_TO_MATCH].cards.forEach(function(possibleCardMatch)
+				{
+					if(possibleCardMatch.name!==card.name)
+						return;
+
+					cardMatched = true;
+
+					if(card.multiverseid)
+					{
+						fs.symlinkSync(path.relative(CARD_PATH, path.join(SET_PATH, SET_CODE_TO_MATCH.toLowerCase(), possibleCardMatch.imageName) + ".jpg"), path.join(MULTIVERSEID_PATH, card.multiverseid + ".jpg"));
+						fs.symlinkSync(path.relative(CARD_PATH, path.join(SET_PATH, SET_CODE_TO_MATCH.toLowerCase(), possibleCardMatch.imageName) + ".hq.jpg"), path.join(MULTIVERSEID_PATH, card.multiverseid + ".hq.jpg"));
+						fs.symlinkSync(path.relative(CARD_PATH, path.join(SET_PATH, SET_CODE_TO_MATCH.toLowerCase(), possibleCardMatch.imageName) + ".crop.jpg"), path.join(MULTIVERSEID_PATH, card.multiverseid + ".crop.jpg"));
+						fs.symlinkSync(path.relative(CARD_PATH, path.join(SET_PATH, SET_CODE_TO_MATCH.toLowerCase(), possibleCardMatch.imageName) + ".crop.hq.jpg"), path.join(MULTIVERSEID_PATH, card.multiverseid + ".crop.hq.jpg"));
+					}
+				});
+			});
+
+			if(!cardMatched)
+				base.info("NOT MATCHED %s: %s", SET_CODE, card.name);
+		});
+	});
+
+	return setImmediate(cb);
 }
 
 function makeSymlink(symlinkSrcPath, symlinkDestPath, cb)

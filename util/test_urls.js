@@ -16,7 +16,6 @@ optimist = optimist.usage("Usage: $0");
 optimist = optimist.describe({ "s" : "Source of URL's. Valid: " + VALID_SOURCES.join(", "),
 							   "prod" : "Check production instead of dev" });
 optimist = optimist.demand(["s"]);
-optimist = optimist.boolean("prod");
 optimist = optimist.alias({ "s" : "source"});
 
 function showUsageAndExit()

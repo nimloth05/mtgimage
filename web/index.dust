@@ -127,8 +127,8 @@
 			<br>
 			Individual set zip file links can be found on the <a href="#setList">set list</a>.<br>
 			<br>
-			All sets can be downloaded in a single zip file: <a href="/zip/AllSets.zip">AllSets.zip</a> (<span class="size">4.2GB</span>)<br>
-			WARNING: This file is HUGE at <span class="size">{4.2GB}</span><br>
+			All sets can be downloaded in a single zip file: <a href="/zip/AllSets.zip">AllSets.zip</a> (<span class="size">4.5GB</span>)<br>
+			WARNING: This file is HUGE at <span class="size">{4.5GB}</span><br>
 			<br>
 			<strong>Windows Warning</strong>: Microsoft Windows does not allow files or folders to be named 'CON' (<a href="http://superuser.com/questions/86999/unable-to-rename-a-folder-or-a-file-as-con">see here</a>). Thus the AllSets.zip file can't be extracted on windows (it contains the Conflux set folder 'CON'). Windows users should instead download: <a href="/zip/AllSetsWindows.zip">AllSetsWindows.zip</a> which has renamed 'CON' to '_CON'. Likewise the individual set zip file can be downloaded as <a href="/zip/_CON.zip">_CON.zip</a><br>
 			</p>
@@ -369,7 +369,7 @@
 		<ul>
 			<li>Thank you <strong>VERY MUCH</strong> to these folks who reported bugs and helped in other ways:
 				<ul>
-					<li>Nathan Nelson, Michael Wybrow, Eric Richards, Eric</li>
+					<li>Nathan Nelson, Michael Wybrow, Eric Richards, Eric, Adam Blinkinsop</li>
 				</ul>
 			</li>
 			<li>HUGE thanks to <a href="http://www.slightlymagic.net/forum/viewforum.php?f=15">CCGHQ</a>. Without their awesome work, this site would not be possible.</li>

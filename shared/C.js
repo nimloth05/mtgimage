@@ -8,7 +8,7 @@
 	// Unglued/Unhinged types
 	exports.TYPES.push("Enchant", "Player", "Summon", "Interrupt", "Scariest", "You'll", "Ever", "See", "Eaturecray");
 
-	exports.LAST_PRINTINGS_RESET = "M15";
+	exports.LAST_PRINTINGS_RESET = "V14";
 
 	exports.SETS_LACKING_HQ_SVG_SYMBOL_ICONS = [];
 
@@ -145,6 +145,7 @@
 			code : "4ED",
 			gathererCode : "4E",
 			magicCardsInfoCode : "4e",
+			essentialMagicCode : "6",
 			releaseDate : "1995-04-01",
 			border : "white",
 			type : "core",
@@ -229,6 +230,16 @@
 			type : "expansion",
 			block : "Mirage",
 			booster : ["rare", "uncommon", "uncommon", "uncommon", "common", "common", "common", "common", "common", "common", "common", "common", "common", "common", "common"]
+		},
+		{
+			name : "Multiverse Gift Box",
+			code : "MGB",
+			magicCardsInfoCode : "mgbc",
+			magicRaritiesCodes : "145-rarities-multiverse-gift-box-cards",
+			isMCISet : true,
+			releaseDate : "1996-11-01",
+			border : "black",
+			type : "box"
 		},
 		{
 			name : "Introductory Two-Player Set",
@@ -629,6 +640,7 @@
 			code : "ODY",
 			gathererCode : "OD",
 			magicCardsInfoCode : "od",
+			essentialMagicCode : "41",
 			releaseDate : "2001-10-01",
 			border : "black",
 			type : "expansion",
@@ -714,6 +726,16 @@
 			booster : ["rare", "uncommon", "uncommon", "uncommon", "common", "common", "common", "common", "common", "common", "common", "common", "common", "common", "land"]
 		},
 		{
+			name : "Eighth Edition Box Set",
+			code : "8BS",
+			magicCardsInfoCode : "8eb",
+			magicRaritiesCodes : "540-rarities-eighth-edition-box-set-cards",
+			isMCISet : true,
+			releaseDate : "2003-07-28",
+			border : "white",
+			type : "box"
+		},
+		{
 			name : "Mirrodin",
 			code : "MRD",
 			magicCardsInfoCode : "mi",
@@ -793,6 +815,16 @@
 			booster : ["rare", "uncommon", "uncommon", "uncommon", "common", "common", "common", "common", "common", "common", "common", "common", "common", "common", "land"]
 		},
 		{
+			name : "Ninth Edition Box Set",
+			code : "9BS",
+			magicCardsInfoCode : "9eb",
+			magicRaritiesCodes : "531-rarities-ninth-edition-box-set-cards",
+			isMCISet : true,
+			releaseDate : "2005-07-29",
+			border : "white",
+			type : "box"
+		},
+		{
 			name : "Ravnica: City of Guilds",
 			code : "RAV",
 			magicCardsInfoCode : "rav",
@@ -861,6 +893,17 @@
 			type : "expansion",
 			block : "Ice Age",
 			booster : ["rare", "uncommon", "uncommon", "uncommon", "common", "common", "common", "common", "common", "common", "common", "common", "common", "common", "common"]
+		},
+		{
+			name : "Coldsnap Theme Decks",
+			code : "CST",
+			magicCardsInfoCode : "cstd",
+			magicRaritiesCodes : "230-rarities-coldsnap-preconstructed-reprint-cards",
+			isMCISet : true,
+			useMagicRaritiesNumber : true,
+			releaseDate : "2006-07-21",
+			border : "black",
+			type : "box"
 		},
 		{
 			name : "Time Spiral",
@@ -1604,16 +1647,23 @@
 			type : "expansion",
 			block : "Khans of Tarkir",
 			booster : [["rare", "mythic rare"], "uncommon", "uncommon", "uncommon", "common", "common", "common", "common", "common", "common", "common", "common", "common", "common", "land", "marketing"]
-		}
+		},
+		{
+			name : "Commander 2014",
+			code : "C14",
+			releaseDate : "2014-11-07",
+			border : "black",
+			type : "commander"
+		},
 	];
 
-	exports.EXTRA_SET_CARD_PRINTINGS =
+	exports.NON_GATHERER_SET_CARD_LISTS =
 	{
-		"Anthologies" : [ "Aesthir Glider", "Armageddon", "Armored Pegasus", "Benalish Knight", "Black Knight", "Brushland", "Canopy Spider", "Carnivorous Plant", "Combat Medic", "Cuombajj Witches", "Disenchant", "Drifting Meadow", "Erhnam Djinn", "Feast of the Unicorn", "Fireball", "Forest", "Freewind Falcon", "Giant Growth", "Giant Spider", "Goblin Balloon Brigade", "Goblin Digging Team", "Goblin Grenade", "Goblin Hero", "Goblin King", "Goblin Matron", "Goblin Mutant", "Goblin Offensive", "Goblin Recruiter", "Goblin Snowman", "Goblin Tinkerer", "Goblin Vandal", "Goblin Warrens", "Gorilla Chieftain", "Hurricane", "Hymn to Tourach", "Hypnotic Specter", "Icatian Javelineers", "Ihsan's Shade", "Infantry Veteran", "Jalum Tome", "Knight of Stromgald", "Lady Orca", "Lightning Bolt", "Llanowar Elves", "Mirri, Cat Warrior", "Mogg Fanatic", "Mogg Flunkies", "Mogg Raider", "Mountain", "Nevinyrral's Disk", "Order of the White Shield", "Overrun", "Pacifism", "Pegasus Charger", "Pegasus Stampede", "Pendelhaven", "Plains", "Polluted Mire", "Pyrokinesis", "Pyrotechnics", "Raging Goblin", "Ranger en-Vec", "Samite Healer", "Scavenger Folk", "Serra Angel", "Serrated Arrows", "Slippery Karst", "Smoldering Crater", "Spectral Bears", "Strip Mine", "Swamp", "Swords to Plowshares", "Terror", "Unholy Strength", "Uthden Troll", "Volcanic Dragon", "Warrior's Honor", "White Knight", "Woolly Spider", "Youthful Knight" ],
-		"Introductory Two-Player Set" : [ "Alabaster Potion", "Battering Ram", "Bog Imp", "Bog Wraith", "Circle of Protection: Black", "Circle of Protection: Red", "Clockwork Beast", "Cursed Land", "Dark Ritual", "Detonate", "Disintegrate", "Durkwood Boars", "Elven Riders", "Elvish Archers", "Energy Flux", "Feedback", "Fireball", "Forest", "Glasses of Urza", "Grizzly Bears", "Healing Salve", "Hill Giant", "Ironclaw Orcs", "Island", "Jayemdae Tome", "Lost Soul", "Merfolk of the Pearl Trident", "Mesa Pegasus", "Mons's Goblin Raiders", "Mountain", "Murk Dwellers", "Orcish Artillery", "Orcish Oriflamme", "Pearled Unicorn", "Phantom Monster", "Plains", "Power Sink", "Pyrotechnics", "Raise Dead", "Reverse Damage", "Rod of Ruin", "Scathe Zombies", "Sorceress Queen", "Swamp", "Terror", "Twiddle", "Unsummon", "Untamed Wilds", "Vampire Bats", "Wall of Bone", "War Mammoth", "Warp Artifact", "Weakness", "Whirling Dervish", "Winter Blast", "Zephyr Falcon", "Scryb Sprites" ],
-		"Deckmasters" : ["Abyssal Specter", "Balduvian Bears", "Balduvian Horde", "Barbed Sextant", "Bounty of the Hunt", "Contagion", "Dark Banishing", "Dark Ritual", "Death Spark", "Elkin Bottle", "Elvish Bard", "Folk of the Pines", "Forest", "Foul Familiar", "Fyndhorn Elves", "Giant Growth", "Giant Trap Door Spider", "Goblin Mutant", "Guerrilla Tactics", "Hurricane", "Icy Manipulator", "Incinerate", "Jokulhaups", "Karplusan Forest", "Lava Burst", "Lhurgoyf", "Lim-Dul's High Guard", "Mountain", "Necropotence", "Orcish Cannoneers", "Phantasmal Fiend", "Phyrexian War Beast", "Pillage", "Pyroclasm", "Shatter", "Soul Burn", "Storm Shaman", "Sulfurous Springs", "Swamp", "Underground River", "Walking Wall", "Woolly Spider", "Yavimaya Ancients", "Yavimaya Ants"],
-		"Rivals Quick Start Set" : ["Alabaster Potion", "Battering Ram", "Bog Imp", "Bog Wraith", "Circle of Protection: Black", "Circle of Protection: Red", "Clockwork Beast", "Cursed Land", "Dark Ritual", "Detonate", "Disintegrate", "Durkwood Boars", "Elven Riders", "Elvish Archers", "Energy Flux", "Feedback", "Fireball", "Forest", "Glasses of Urza", "Grizzly Bears", "Healing Salve", "Hill Giant", "Ironclaw Orcs", "Island", "Jayemdae Tome", "Lost Soul", "Merfolk of the Pearl Trident", "Mesa Pegasus", "Mons's Goblin Raiders", "Mountain", "Murk Dwellers", "Orcish Artillery", "Orcish Oriflamme", "Pearled Unicorn", "Plains", "Power Sink", "Pyrotechnics", "Raise Dead", "Reverse Damge", "Rod of Ruin", "Scath Zombies", "Scryb Sprites", "Sorceress Queen", "Swamp", "Terror", "Twiddle", "Unsummon", "Untamed Wilds", "Vampire Bats", "Wall of Bone", "War Mammoth", "Warp Artifact", "Weakness", "Whirling Dervish", "Winter Blast", "Zephyr Falcon"],
-		"Duels of the Planeswalkers" : ["Abyssal Specter", "Act of Treason", "Air Elemental", "Ascendant Evincar", "Banefire", "Blanchwood Armor", "Blaze", "Bloodmark Mentor", "Boomerang", "Cancel", "Cinder Pyromancer", "Civic Wayfinder", "Cloud Sprite", "Coat of Arms", "Consume Spirit", "Counterbore", "Crowd of Cinders", "Deluge", "Demon's Horn", "Denizen of the Deep", "Dragon's Claw", "Drove of Elves", "Drudge Skeletons", "Dusk Imp", "Duskdale Wurm", "Earth Elemental", "Elven Riders", "Elvish Champion", "Elvish Eulogist", "Elvish Promenade", "Elvish Visionary", "Elvish Warrior", "Enrage", "Essence Drain", "Essence Scatter", "Evacuation", "Eyeblight's Ending", "Forest", "Furnace of Rath", "Gaea's Herald", "Giant Growth", "Giant Spider", "Goblin Piker", "Goblin Sky Raider", "Greenweaver Druid", "Hill Giant", "Howl of the Night Pack", "Immaculate Magistrate", "Imperious Perfect", "Incinerate", "Island", "Jagged-Scar Archers", "Kamahl, Pit Fighter", "Kraken's Eye", "Lightning Elemental", "Loxodon Warhammer", "Lys Alana Huntmaster", "Mahamoti Djinn", "Megrim", "Mind Control", "Mind Rot", "Mind Shatter", "Mind Spring", "Molimo, Maro-Sorcerer", "Moonglove Winnower", "Mortivore", "Mountain", "Natural Spring", "Naturalize", "Nature's Spiral", "Negate", "Overrun", "Phantom Warrior", "Prodigal Pyromancer", "Rage Reflection", "Rampant Growth", "Ravenous Rats", "River Boa", "Roughshod Mentor", "Runeclaw Bear", "Sengir Vampire", "Severed Legion", "Shivan Dragon", "Shock", "Snapping Drake", "Spined Wurm", "Swamp", "Talara's Battalion", "Terror", "The Rack", "Thieving Magpie", "Trained Armodon", "Troll Ascetic", "Underworld Dreams", "Unholy Strength", "Unsummon", "Verdant Force", "Vigor", "Wall of Spears", "Wall of Wood", "Wurm's Tooth"]
+		ATH : ["Aesthir Glider", "Armageddon", "Armored Pegasus", "Benalish Knight", "Black Knight", "Brushland", "Canopy Spider", "Carnivorous Plant", "Combat Medic", "Cuombajj Witches", "Disenchant", "Drifting Meadow", "Erhnam Djinn", "Feast of the Unicorn", "Fireball", "Forest", "Freewind Falcon", "Giant Growth", "Giant Spider", "Goblin Balloon Brigade", "Goblin Digging Team", "Goblin Grenade", "Goblin Hero", "Goblin King", "Goblin Matron", "Goblin Mutant", "Goblin Offensive", "Goblin Recruiter", "Goblin Snowman", "Goblin Tinkerer", "Goblin Vandal", "Goblin Warrens", "Gorilla Chieftain", "Hurricane", "Hymn to Tourach", "Hypnotic Specter", "Icatian Javelineers", "Ihsan's Shade", "Infantry Veteran", "Jalum Tome", "Knight of Stromgald", "Lady Orca", "Lightning Bolt", "Llanowar Elves", "Mirri, Cat Warrior", "Mogg Fanatic", "Mogg Flunkies", "Mogg Raider", "Mountain", "Nevinyrral's Disk", "Order of the White Shield", "Overrun", "Pacifism", "Pegasus Charger", "Pegasus Stampede", "Pendelhaven", "Plains", "Polluted Mire", "Pyrokinesis", "Pyrotechnics", "Raging Goblin", "Ranger en-Vec", "Samite Healer", "Scavenger Folk", "Serra Angel", "Serrated Arrows", "Slippery Karst", "Smoldering Crater", "Spectral Bears", "Strip Mine", "Swamp", "Swords to Plowshares", "Terror", "Unholy Strength", "Uthden Troll", "Volcanic Dragon", "Warrior's Honor", "White Knight", "Woolly Spider", "Youthful Knight" ],
+		ITP : ["Alabaster Potion", "Battering Ram", "Bog Imp", "Bog Wraith", "Circle of Protection: Black", "Circle of Protection: Red", "Clockwork Beast", "Cursed Land", "Dark Ritual", "Detonate", "Disintegrate", "Durkwood Boars", "Elven Riders", "Elvish Archers", "Energy Flux", "Feedback", "Fireball", "Forest", "Glasses of Urza", "Grizzly Bears", "Healing Salve", "Hill Giant", "Ironclaw Orcs", "Island", "Jayemdae Tome", "Lost Soul", "Merfolk of the Pearl Trident", "Mesa Pegasus", "Mons's Goblin Raiders", "Mountain", "Murk Dwellers", "Orcish Artillery", "Orcish Oriflamme", "Pearled Unicorn", "Phantom Monster", "Plains", "Power Sink", "Pyrotechnics", "Raise Dead", "Reverse Damage", "Rod of Ruin", "Scathe Zombies", "Sorceress Queen", "Swamp", "Terror", "Twiddle", "Unsummon", "Untamed Wilds", "Vampire Bats", "Wall of Bone", "War Mammoth", "Warp Artifact", "Weakness", "Whirling Dervish", "Winter Blast", "Zephyr Falcon", "Scryb Sprites" ],
+		DKM : ["Abyssal Specter", "Balduvian Bears", "Balduvian Horde", "Barbed Sextant", "Bounty of the Hunt", "Contagion", "Dark Banishing", "Dark Ritual", "Death Spark", "Elkin Bottle", "Elvish Bard", "Folk of the Pines", "Forest", "Foul Familiar", "Fyndhorn Elves", "Giant Growth", "Giant Trap Door Spider", "Goblin Mutant", "Guerrilla Tactics", "Hurricane", "Icy Manipulator", "Incinerate", "Jokulhaups", "Karplusan Forest", "Lava Burst", "Lhurgoyf", "Mountain", "Mountain", "Mountain", "Necropotence", "Orcish Cannoneers", "Phantasmal Fiend", "Phyrexian War Beast", "Pillage", "Pyroclasm", "Shatter", "Soul Burn", "Storm Shaman", "Sulfurous Springs", "Swamp", "Swamp", "Swamp", "Underground River", "Walking Wall", "Woolly Spider", "Yavimaya Ancients", "Yavimaya Ants", "Lim-Dûl's High Guard"],
+		RQS : ["Alabaster Potion", "Battering Ram", "Bog Imp", "Bog Wraith", "Circle of Protection: Black", "Circle of Protection: Red", "Clockwork Beast", "Cursed Land", "Dark Ritual", "Detonate", "Disintegrate", "Durkwood Boars", "Elven Riders", "Elvish Archers", "Energy Flux", "Feedback", "Fireball", "Forest", "Glasses of Urza", "Grizzly Bears", "Healing Salve", "Hill Giant", "Ironclaw Orcs", "Island", "Jayemdae Tome", "Lost Soul", "Merfolk of the Pearl Trident", "Mesa Pegasus", "Mons's Goblin Raiders", "Mountain", "Murk Dwellers", "Orcish Artillery", "Orcish Oriflamme", "Pearled Unicorn", "Plains", "Power Sink", "Pyrotechnics", "Raise Dead", "Reverse Damge", "Rod of Ruin", "Scath Zombies", "Scryb Sprites", "Sorceress Queen", "Swamp", "Terror", "Twiddle", "Unsummon", "Untamed Wilds", "Vampire Bats", "Wall of Bone", "War Mammoth", "Warp Artifact", "Weakness", "Whirling Dervish", "Winter Blast", "Zephyr Falcon"],
+		DPA : ["Abyssal Specter", "Act of Treason", "Air Elemental", "Ascendant Evincar", "Banefire", "Blanchwood Armor", "Blaze", "Bloodmark Mentor", "Boomerang", "Cancel", "Cinder Pyromancer", "Civic Wayfinder", "Cloud Sprite", "Coat of Arms", "Consume Spirit", "Counterbore", "Crowd of Cinders", "Deluge", "Demon's Horn", "Denizen of the Deep", "Dragon's Claw", "Drove of Elves", "Drudge Skeletons", "Dusk Imp", "Duskdale Wurm", "Earth Elemental", "Elven Riders", "Elvish Champion", "Elvish Eulogist", "Elvish Promenade", "Elvish Visionary", "Elvish Warrior", "Enrage", "Essence Drain", "Essence Scatter", "Evacuation", "Eyeblight's Ending", "Forest", "Forest", "Forest", "Forest", "Furnace of Rath", "Gaea's Herald", "Giant Growth", "Giant Spider", "Goblin Piker", "Goblin Sky Raider", "Greenweaver Druid", "Hill Giant", "Howl of the Night Pack", "Immaculate Magistrate", "Imperious Perfect", "Incinerate", "Island", "Island", "Island", "Island", "Jagged-Scar Archers", "Kamahl, Pit Fighter", "Kraken's Eye", "Lightning Elemental", "Loxodon Warhammer", "Lys Alana Huntmaster", "Mahamoti Djinn", "Megrim", "Mind Control", "Mind Rot", "Mind Shatter", "Mind Spring", "Molimo, Maro-Sorcerer", "Moonglove Winnower", "Mortivore", "Mountain", "Mountain", "Mountain", "Mountain", "Natural Spring", "Naturalize", "Nature's Spiral", "Negate", "Overrun", "Phantom Warrior", "Prodigal Pyromancer", "Rage Reflection", "Rampant Growth", "Ravenous Rats", "River Boa", "Roughshod Mentor", "Runeclaw Bear", "Sengir Vampire", "Severed Legion", "Shivan Dragon", "Shock", "Snapping Drake", "Spined Wurm", "Swamp", "Swamp", "Swamp", "Swamp", "Talara's Battalion", "Terror", "The Rack", "Thieving Magpie", "Trained Armodon", "Troll Ascetic", "Underworld Dreams", "Unholy Strength", "Unsummon", "Verdant Force", "Vigor", "Wall of Spears", "Wall of Wood", "Wurm's Tooth"]
 	};
 
 	exports.SET_CORRECTIONS =
@@ -1650,6 +1700,7 @@
 		ARN :
 		[
 			{ match : {name : "Bazaar of Baghdad"}, replace : {artist : "Jeff A. Menges"} },
+			{ match : {name : "Bottle of Suleiman"}, replace : {originalText : "{1}: Flip a coin, with opponent calling heads or tails while coin is in the air. If the flip ends up in opponent's favor, Bottle of Suleiman does 5 damage to you. Otherwise, a 5/5 flying Djinn immediately comes into play on your side. Use a counter to represent Djinn. Djinn is treated exactly like a normal artifact creature except that if it leaves play it is removed from the game entirely. No matter how the flip turns out, Bottle of Suleiman is discarded after use."} },
 			{ match : {name : "Library of Alexandria"}, replace : {artist : "Mark Poole"} },
 			{ match : {name : "Ali Baba"}, replace : {flavor : "\"When he reached the entrance of the cavern, he pronounced the words, ‘Open, Sesame!'\" —The Arabian Nights, Junior Classics trans."} },
 			{ match : {name : ["Aladdin's Ring", "Juzám Djinn", "King Suleiman", "Repentant Blacksmith"]}, flavorAddDash : true},
@@ -1682,7 +1733,7 @@
 			{ match : {name : "Grizzly Bears"}, replace : {flavor : "Don't try to outrun one of Dominia's Grizzlies; it'll catch you, knock you down, and eat you. Of course, you could run up a tree. In that case you'll get a nice view before it knocks the tree down and eats you."}},
 			{ match : {name : "Plateau"}, replace : {artist : "Cornelius Brudi"} },
 			{ match : {name : "Nightmare"}, replace : {flavor : "The Nightmare arises from its lair in the swamps. As the poisoned land spreads, so does the Nightmare's rage and terrifying strength."} },
-			{ match : {name : "Hypnotic Specter"}, replace : {flavor : "\"...There was no trace/ Of aught on that illumined face...\" —Samuel Coleridge, \"Phantom\""} },
+			{ match : {name : "Hypnotic Specter"}, replace : {flavor : "\"...There was no trace/ Of aught on that illumined face....\" —Samuel Coleridge, \"Phantom\""} },
 			{ match : {name : "Uthden Troll"}, replace : {flavor : "\"Oi oi oi, me gotta hurt in 'ere,\nOi oi oi, me smell a ting is near,\nGonna bosh 'n gonna nosh 'n da\nhurt'll disappear.\"\n—Traditional"}},
 			{ match : {name : "Scathe Zombies"}, replace : {flavor : "\"They groaned, they stirred, they all uprose,/ Nor spake, nor moved their eyes;/ It had been strange, even in a dream,/ To have seen those dead men rise.\"/ —Samuel Coleridge, \"The Rime of the Ancient Mariner\""}},
 			{ match : {name : "Granite Gargoyle"}, replace : {flavor : "\"While most overworlders fortunately don't realize this, Gargoyles can be most delicious, providing you have the appropriate tools to carve them.\"\n—The Underworld Cookbook, by Asmoranomardicadaistinaculdacar"}},
@@ -1740,7 +1791,9 @@
 			{match : {name : ["Bloodthrone Vampire", "Kor Skyfisher", "Merfolk Mesmerist"]}, replace : {flavor : "www.MagicTheGathering.com"}},
 			{match : {name : "Knight Exemplar"}, replace : {flavor : "\"If you think you are brave enough to walk the path of honor, follow me into the dragon's den.\""}},
 			{match : {name : ["Blue Elemental Blast", "Fireball", "Spined Wurm"]}, replace : {border : "white"}},
-			{match : {name : "Wash Out"}, replace : {releaseDate : "2014-01-15"}}
+			{match : {name : "Wash Out"}, replace : {releaseDate : "2014-01-15"}},
+			{match : {name : "Duress"}, replace : {artist : "Michael Komarck"}},
+			{match : {name : "Avalance Tusker"}, replace : {name:"Avalanche Tusker", imageName : "avalanche tusker", manaCost : "{2}{G}{U}{R}"}}
 		],
 		FEM :
 		[
@@ -1796,10 +1849,10 @@
 			{ match : {name : "Pearled Unicorn"}, replace : {flavor : "\"‘Do you know, I always thought Unicorns were fabulous monsters, too? I never saw one alive before!' ‘Well, now that we have seen each other,' said the Unicorn, ‘if you'll believe in me, I'll believe in you.'\" —Lewis Carroll"}},
 			{ match : {name : "Segovian Leviathan"}, replace : {flavor : "\"Leviathan, too! Can you catch him with a fish-hook or run a line round his tongue?\" —Job 40:25"} },
 			{ match : {name : "Winter Blast"}, replace : {flavor : "\"Blow, winds, and crack your cheeks! rage! blow!\" —William Shakespeare, King Lear"} },
-			{ match : {name : "Hypnotic Specter"}, replace : {flavor : "\"...There was no trace\nOf aught on that illumined face...\"\n—Samuel Coleridge, \"Phantom\""} },
+			{ match : {name : "Hypnotic Specter"}, replace : {flavor : "\"...There was no trace\nOf aught on that illumined face....\"\n—Samuel Coleridge, \"Phantom\""} },
 			{ match : {name : "Marsh Viper"}, replace : {flavor : "\"All we had left were their black and bloated bodies.\" —Maeveen O'Donagh, Memoirs of a Soldier"} },
 			{ match : {name : "Gaseous Form"}, replace : {flavor : "\". . . [A]nd gives to airy nothing\nA local habitation and a name.\"\n—William Shakespeare, A Midsummer-Night's Dream"} },
-			{ match : {name : "Scathe Zombies"}, replace : {flavor : "\"They groaned, they stirred, they all uprose,/ Nor spake, nor moved their eyes;/ It had been strange, even in a dream,/ To have seen those dead men rise.\"/ —Samuel Coleridge, \"The Rime of the Ancient Mariner\""}},
+			{ match : {name : "Scathe Zombies"}, replace : {flavor : "\"They groaned, they stirred, they all uprose, Nor spake, nor moved their eyes; It had been strange, even in a dream, To have seen those dead men rise.\" —Samuel Coleridge, \"The Rime of the Ancient Mariner\""}},
 			{ match : {name : "Ali Baba"}, replace : {flavor : "\"When he reached the entrance of the cavern, he pronounced the words, ‘Open, Sesame!'\"\n—The Arabian Nights, Junior Classics trans."}},
 			{ match : {name : ["Elvish Archers", "Goblin Balloon Brigade", "Visions", "Wall of Air"]}, flavorAddExclamation : true },
 			{ match : {name : ["Dragon Whelp", "Northern Paladin"]}, flavorAddDash : true }
@@ -1929,6 +1982,10 @@
 							   "Seeds of Innocence", "Shallow Grave", "Shauku, Endbringer", "Shimmer", "Sidar Jabari", "Soul Echo", "Spectral Guardian", "Spirit of the Night", "Subterranean Spirit", "Tainted Specter", "Taniwha", "Teeka's Dragon",
 							   "Teferi's Imp", "Teferi's Isle", "Telim'Tor", "Telim'Tor's Edict", "Tombstone Stairwell", "Torrent of Lava", "Unfulfilled Desires", "Ventifact Bottle", "Warping Wurm", "Wellspring",
 							   "Yare", "Zirilan of the Claw", "Zuberi, Golden Feather"]}, replace : {reserved : true}}
+		],
+		MGB :
+		[
+			{ match : "*", remove : ["source", "releaseDate", "number"]}
 		],
 		ITP :
 		[
@@ -2193,6 +2250,7 @@
 			{ match : {name : "Pegasus Charger"}, replace : {flavor : "\"The clouds came alive and dove to the earth! Hooves flashed among the dark army, who fled before the spectacle of fury.\"\n—Song of All, canto 211"}},
 			{ match : {name : "Bulwark"}, replace : {flavor : "\"It will be the goblin's first bath, and its last.\" —Fire Eye, viashino bey"}},
 			{ match : {name : "Priest of Titania"}, replace : {flavor : "Titania rewards all those who honor the forest by making them a living part of it."}},
+			{ match : {name : "Phyrexian Colossus"}, replace : {number : "305"}},
 			{ match : {name : "Sanguine Guard"}, replace : {flavor : "\"Father of Machines! Your filigree gaze carves us, and the scars dance upon our grateful flesh.\"\n—Phyrexian Scriptures"}},
 			{ match : {name : ["Argothian Wurm", "Barrin, Master Wizard", "Citanul Centaurs", "Gaea's Cradle", "Gilded Drake", "Great Whale", "Herald of Serra", "Karn, Silver Golem", "Lifeline", "Lightning Dragon", "Morphling", "Opal Archangel",
 							   "Serra's Sanctum", "Tolarian Academy", "Temporal Aperture", "Time Spiral", "Yawgmoth's Will", "Zephid"]}, replace : {reserved : true}},
@@ -2263,7 +2321,7 @@
 			{ match : {name : ["Fallen Angel", "Goblin Warrens", "Inferno"]}, flavorAddDash : true },
 			{ match : {name : "Anaba Shaman"}, replace : {flavor : "\"The shamans? Ha! They are craven cows not capable of true magic.\"\n—Irini Sengir"}},
 			{ match : {name : "Daraja Griffin"}, replace : {flavor : "\"And the flamingos said, ‘Get out of our nest—we can't be seen with the likes of you!' So, the griffin ate them.\"\n—Azeworai, \"The Ugly Bird\""}},
-			{ match : {name : "Aladdin's Ring"}, replace : {flavor : "\". . . [T]he magician drew a ring off his finger . . . , saying: 'It is a talisman against all evil, so long as you obey me.'\"\n—The Arabian Nights,\nJunior Classics trans."}},
+			{ match : {name : "Aladdin's Ring"}, replace : {flavor : "\". . . The magician drew a ring off his finger . . . , saying: 'It is a talisman against all evil, so long as you obey me.'\"\n—The Arabian Nights,\nJunior Classics trans."}},
 			{ match : {name : "Elvish Archers"}, replace : {flavor : "\"I tell you, there was so many arrows flying about you couldn't hardly see the sun. So I says to young Angus, ‘Well, at least now we're fighting in the shade!'\""}},
 			{ match : {name : "Giant Strength"}, replace : {flavor : "\"O! it is excellent / To have a giant's strength, but it is tyrannous / To use it like a giant.\"\n—William Shakespeare,\nMeasure for Measure"}},
 			{ match : {name : "Polymorph"}, replace : {flavor : "\"Ahh! Opposable digits!\""}},
@@ -2279,6 +2337,8 @@
 			{ match : {name : "Imperial Edict"}, replace : {flavor : "Frustrated with Cao Cao's control of the imperial court, Emporer Xian secretly issued an edict condemning him, using his own blood as ink."}},
 			{ match : {name : "Lady Zhurong, Warrior Queen"}, replace : {flavor : "\"A man, and such a fool! I, a woman, will fight them for you.\"\n—Lady Zhurong to her husband Meng Huo, before leading an army against the Shu"}},
 			{ match : {name : "Meng Huo's Horde"}, replace : {artist : "Li Tie"}},
+			{ match : {name : "Trip Wire"}, replace : {number : "156"}},
+			{ match : {name : "Trained Cheetah"}, replace : {number : "154"}},
 			{ match : {name : "Shu Defender"}, replace : {flavor : "Confronting Cao Cao's army at Steepslope Bridge, Zhang Fei bellowed, \"I am Zhang Fei of Yan! Who dares fight me to the death?\" Cao Cao's army cowered and fled."}},
 			{ match : {name : "Shu Foot Soldiers"}, replace : {flavor : "Liu Bei lost many men at the battle of Runan because of his lack of strategy. It wasn't until he met Kongming that he began to truly succeed as a leader."}},
 			{ match : {name : "Xun Yu, Wei Advisor"}, replace : {flavor : "\"A splendid talent, admired of all men! His folly lay in serving Cao Cao's power.\""}},
@@ -2362,7 +2422,7 @@
 					text : "You may have Rhox assign its combat damage as though it weren't blocked.\n{2}{G}: Regenerate Rhox. (The next time this creature would be destroyed this turn, it isn't. Instead tap it, remove all damage from it, and remove it from combat.)",
 					originalText : "You may have Rhox deal combat damage to defending player as though it weren't blocked.\n{2}{G}: Regenerate Rhox."
 				},
-				remove : ["multiverseid", "flavor"]
+				remove : ["multiverseid", "flavor", "number"]
 			},	
 		],
 		PCY :
@@ -2392,7 +2452,8 @@
 		[
 			{ renumberImages : "Ertai, the Corrupted", order : [25614, 29292] },
 			{ renumberImages : "Skyship Weatherlight", order : [26480, 29293] },
-			{ renumberImages : "Tahngarth, Talruum Hero", order : [26408, 29291] }
+			{ renumberImages : "Tahngarth, Talruum Hero", order : [26408, 29291] },
+			{ match : {name : "Gaea's Herald"}, replace : {flavor : "\"I bring word from Gaea. Fight on! She will never allow her children to die alone.\""}}
 		],
 		pMPR :
 		[
@@ -2409,6 +2470,10 @@
 		ODY :
 		[
 			{ match : {name : "Impulsive Maneuvers"}, replace : {artist : "Dave Dorman"}},
+			{ match : {name : "Cursed Monstrosity"}, replace: {flavor : {"un away" : "un away!"}}},
+			{ match : {name : "Psionic Gift"}, replace : {flavor : {"spellcrafting" : "spellcrafting!"}}},
+			{ match : {name : "Decompose"}, replace : {flavor : {"Sheesh" : "Sheesh!"}}},
+			{ match : {name : "Gorilla Titan"}, flavorAddExclamation : true},
 			{ match : {name : "Dusk Imp"}, replace : {flavor : "It despises humans and squirrels and beasts and dwarves and cephalids . . . well, it despises just about everything."}}
 		],
 		DKM :
@@ -2422,7 +2487,7 @@
 			{ match : {name : "Dark Banishing"}, replace : {number : "3", originalText : "Destroy target nonblack creature. It can't be regenerated."}},
 			{ match : {name : "Dark Ritual"}, replace : {number : "4"}},
 			{ match : {name : "Death Spark"}, replace : {number : "11", originalText : "Death Spark deals 1 damage to target creature or player.\nAt the beginning of your upkeep, if Death Spark is in your graveyard with a creature card directly above it, you may pay {1}. If you do, return Death Spark to your hand."}},
-			{ match : {name : "Elkin Bottle"}, replace : {number : "33", originalText : "{3}, {T}: Remove the top card of your library from the game face up. Until the beginning of your next upkeep, you may play that card as though it were in your hand. At the beginning of your next upkeep, if you haven't played the card, put it into your graveyard."}},
+			{ match : {name : "Elkin Bottle"}, replace : {number : "35", originalText : "{3}, {T}: Remove the top card of your library from the game face up. Until the beginning of your next upkeep, you may play that card as though it were in your hand. At the beginning of your next upkeep, if you haven't played the card, put it into your graveyard."}},
 			{ match : {name : "Elvish Bard"}, replace : {number : "24", originalText : "All creatures able to block Elvish Bard do so."}},
 			{ match : {name : "Folk of the Pines"}, replace : {number : "25", originalText : "{1}{G}: Folk of the Pines gets +1/+0 until end of turn."}},
 			{ match : {name : "Forest"}, replace : {number : "48", originalText : "{G}"}},
@@ -2438,8 +2503,9 @@
 			{ match : {name : "Jokulhaups"}, replace : {number : "15", originalText : "Destroy all artifacts, creatures, and lands. They can't be regenerated."}},
 			{ match : {name : "Karplusan Forest"}, replace : {number : "39", originalText : "{T}: Add one colorless mana to your mana pool.\n{T}: Add {R} or {G} to your mana pool. Karplusan Forest deals 1 damage to you."}},
 			{ match : {name : "Lava Burst"}, replace : {number : "16", originalText : "Lava Burst deals X damage to target creature or player. If Lava Burst would deal damage to a creature, that damage can't be prevented or dealt instead to another creature or player."}},
+			{ match : {name : "Lim-Dûl's High Guard"}, replace : {number : "6"}},
 			{ match : {name : "Lhurgoyf"}, replace : {border : "black", number : "29", originalText : "Lhurgoyf's power is equal to the number of creature cards in all graveyards and its toughness is equal to that number plus 1."}},
-			{ match : {name : "Mountain"}, replace : {number : "45", originalText : "{R}"}},
+			{ match : {name : "Mountain"}, replace : {number : "45", originalText : "{R}"}, incrementNumber : true},
 			{ match : {name : "Necropotence"}, replace : {border : "black", number : "7", originalText : "Skip your draw step.\nIf you would discard a card from your hand, remove that card from the game instead.\nPay 1 life: Remove the top card of your library from the game face down. At the end of your turn, put that card into your hand."}},
 			{ match : {name : "Orcish Cannoneers"}, replace : {number : "17"}},
 			{ match : {name : "Phantasmal Fiend"}, replace : {number : "8a", originalText : "{B}: Phantasmal Fiend gets +1/-1 until end of turn.\n{1}{U}: Switch Phantasmal Fiend's power and toughness until end of turn. Effects that would alter Phantasmal Fiend's power this turn alter its toughness instead, and vice versa."}},
@@ -2450,7 +2516,7 @@
 			{ match : {name : "Soul Burn"}, replace : {number : "9", originalText : "Spend only black and/or red mana on X.\nSoul Burn deals X damage to target creature or player. You gain life equal to the damage dealt, but not more than the amount of {B} spent on X, the player's life total before Soul Burn dealt damage, or the creature's toughness."}},
 			{ match : {name : "Storm Shaman"}, replace : {number : "21a", flavor : "\"Embrace the storm. Its voice shall echo within you, and its fire shall become your touch!\"\n—Lovisa Coldeyes, Balduvian chieftain", originalText : "{R}: Storm Shaman gets +1/+0 until end of turn."}},
 			{ match : {name : "Sulfurous Springs"}, replace : {number : "40", originalText : "{T}: Add one colorless mana to your mana pool.\n{T}: Add {B} or {R} to your mana pool. Sulfurous Springs deals 1 damage to you."}},
-			{ match : {name : "Swamp"}, replace : {number : "42", originalText : "{B}"}},
+			{ match : {name : "Swamp"}, replace : {number : "42", originalText : "{B}"}, incrementNumber : true},
 			{ match : {name : "Underground River"}, replace : {number : "41", originalText : "{T}: Add one colorless mana to your mana pool.\n{T}: Add {U} or {B} to your mana pool. Underground River deals 1 damage to you."}},
 			{ match : {name : "Walking Wall"}, replace : {number : "38", originalText : "(Walls can't attack.)\n{3}: Walking Wall gets +3/-1 until end of turn and may attack this turn as though it weren't a Wall. Play this ability only once each turn.", artist : "Anthony S. Waters"}},
 			{ match : {name : "Woolly Spider"}, replace : {number : "30", originalText : "Woolly Spider may block as though it had flying.\nWhenever Woolly Spider blocks a creature with flying, Woolly Spider gets +0/+2 until end of turn."}},
@@ -2475,7 +2541,15 @@
 		],
 		"8ED" :
 		[
-			{ match : {name : "Lhurgoyf"}, replace : {flavor : "\"Ach! Hans, run! It's the Lhurgoyf!\"\n—Saffi Eriksdotter, last words"}}
+			{ match : {name : "Lhurgoyf"}, replace : {flavor : "\"Ach! Hans, run! It's the Lhurgoyf!\"\n—Saffi Eriksdotter, last words"}},
+			{ match : {multiverseid:[47784, 47788, 47785, 47786, 47789, 47787, 49056]}, removeCard : true}
+		],
+		"8BS" :
+		[
+			{ match : "*", remove : ["source", "releaseDate"], prefixNumber : "S"},
+			{ match : {name : ["Eager Cadet", "Giant Octopus", "Sea Eagle"]}, replace : {rarity : "Common"}},
+			{ match : {name : ["Enormous Baloth", "Silverback Ape", "Vengeance"]}, replace : {rarity : "Uncommon"}},
+			{ match : {name : ["Vizzerdrix"]}, replace : {rarity : "Rare"}}
 		],
 		CHK :
 		[
@@ -2623,7 +2697,12 @@
 			{ match : {name : ["Holy Day", "Inspirit", "Lava Axe", "Might of Oaks"]}, flavorAddExclamation : true },
 			{ match : {name : "Blinking Spirit"}, replace : {flavor : "\"Don't look at it! Maybe it'll go away!\"\n—Ib Halfheart, goblin tactician"}},
 			{ match : {name : "Sea's Claim"}, replace : {flavor : "\"Who's the crazy one now!?\"\n—Torgle, mountaintop boatmaker"}},
-			{ match : {name : "Swarm of Rats"}, replace : {flavor : "\"Rats, rats, rats! Hundreds, thousands, millions of them, and every one a life.\"\n—Bram Stoker, Dracula"}}
+			{ match : {name : "Swarm of Rats"}, replace : {flavor : "\"Rats, rats, rats! Hundreds, thousands, millions of them, and every one a life.\"\n—Bram Stoker, Dracula"}},
+			{ match : {multiverseid:[83064, 83319, 84073, 83104, 94912, 94911, 94910, 83075, 94914]}, removeCard : true}
+		],
+		"9BS" :
+		[
+			{ match : "*", remove : ["source", "releaseDate"], prefixNumber : "S"}
 		],
 		RAV :
 		[
@@ -2663,7 +2742,15 @@
 		[
 			{ match : {name : ["Heidar, Rimewind Master", "Lovisa Coldeyes"]}, flavorAddExclamation : true },
 			{ match : {name : "Flashfreeze"}, replace : {flavor : "\"Nature? Fire? Bah! Both are chaotic and difficult to control. Ice is structured, latticed, light as a feather, massive as a glacier. In ice, there is power!\"\n—Heidar, Rimewind master"}},
-			{ match : {name : ["Snow-Covered Forest", "Snow-Covered Island", "Snow-Covered Mountain", "Snow-Covered Plain", "Snow-Covered Swamp"]}, replace : {rarity : "Common"}}
+			{ match : {name : ["Snow-Covered Forest", "Snow-Covered Island", "Snow-Covered Mountain", "Snow-Covered Plain", "Snow-Covered Swamp"]}, replace : {rarity : "Common"}},
+			{ match : {name : "Blizzard Specter"}, replace : {text : {"owner's hand" : "owner's hand."}}}
+		],
+		CST :
+		[
+			"sortCards",
+			{ match : {name : ["Forest", "Island", "Mountain", "Plains", "Swamp"]}, incrementNumber : true},
+			{ match : {name : "Legions of Lim-Dûl"}, replace : {number : "142", source : "Snowscape Theme Deck"}},
+			{ match : "*", remove : ["releaseDate"]}
 		],
 		TSP :
 		[
@@ -2771,6 +2858,7 @@
 			{ match : {name : "Ludevic's Test Subject"}, replace : {names :["Ludevic's Test Subject", "Ludevic's Abomination"]}},
 			{ match : {name : "Mondronen Shaman"}, replace : {names :["Mondronen Shaman", "Tovolar's Magehunter"]}},
 			{ match : {name : "Tovolar's Magehunter"}, replace : {layout : "double-faced", names :["Mondronen Shaman", "Tovolar's Magehunter"]}},
+			{ match : {name : "Dragone Throne of Tarkir"}, replace : {name : "Dragon Throne of Tarkir", imageName : "dragon throne of tarkir"}}
 		],
 		MOR :
 		[
@@ -2850,14 +2938,15 @@
 		DPA :
 		[
 			"numberCards",
+			"sortCards",
 			{ match : {name : ["Duskdale Wurm", "Molimo, Maro-Sorcerer", "Mortivore", "Roughshod Mentor", "Talara's Battalion", "Troll Ascetic"]}, remove : ["flavor"] },
-			{ match : {name : "Forest"}, replace : {number : "110"}},
-			{ match : {name : "Island"}, replace : {number : "98"}},
+			{ match : {name : "Forest"}, replace : {number : "110"}, incrementNumber : true},
+			{ match : {name : "Island"}, replace : {number : "98"}, incrementNumber : true},
 			{ match : {name : "Mind Control"}, replace : {artist : "Ryan Pancoast"}},
-			{ match : {name : "Mountain"}, replace : {number : "106"}},
+			{ match : {name : "Mountain"}, replace : {number : "106"}, incrementNumber : true},
 			{ match : {name : "River Boa"}, replace : {artist : "Paul Bonner"}, remove : ["flavor"]},
 			{ match : {name : "Shock"}, replace : {artist : "Jon Foster"}},
-			{ match : {name : "Swamp"}, replace : {number : "102"}},
+			{ match : {name : "Swamp"}, replace : {number : "102"}, incrementNumber : true},
 			{ match : {name : "The Rack"}, replace : {artist : "Nic Klein"}, remove : ["flavor"]}
 		],
 		GTC :
@@ -3017,7 +3106,7 @@
 		sorcery : [],
 		power : [],
 		toughness : [],
-		chaosdice : [],
+		chaosdice : ["chaos", "c"],
 		planeswalk : [],
 		forwardslash : []
 	};

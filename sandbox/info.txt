@@ -5,12 +5,17 @@ Check: http://mythicspoiler.com/ddn/cards/
 Run: node util/downloadMythicSpoilerImages.js
 
 Check: http://copper-dog.com/mtg-generator/cns/
-Run (in console on page): Array.prototype.slice.call(document.querySelectorAll(".card img")).map(function(img) { return "wget -O \"" + img.getAttribute("alt").toLowerCase().replace(/[":\"?"]/g, "") + ".jpg\" \"" + img.getAttribute("src") + "\""; }).join("\n")
- Save that in a script and execute it in actual/set/XXX/test.sh
-Then remove the rounded borders with `composite -gravity center /mnt/compendium/DevLab/mtgimage/util/spoiler_square_card_frame.png card.jpg`
+Run (in console on page): var imageCommands = {}; var finalCommands=[]; Array.prototype.slice.call(document.querySelectorAll(".card img")).forEach(function(img) { var imageName = img.getAttribute("alt").toLowerCase().replace(/[":\"?"]/g, ""); if(!imageCommands.hasOwnProperty(imageName)) { imageCommands[imageName] = []; } imageCommands[imageName].push("wget -O \"" + imageName + ".jpg\" \"" + img.getAttribute("src") + "\""); }); Object.keys(imageCommands).forEach(function(imageName) { if(imageCommands[imageName].length>1) { imageCommands[imageName] = imageCommands[imageName].map(function(imageCommand, i) { return imageCommand.replace(/[.]jpg/, (i+1) + ".jpg"); }); } finalCommands = finalCommands.concat(imageCommands[imageName]); }); console.log(finalCommands.join("\n"));
+Save that in a script, chmod 755 dl.sh and execute it in actual/set/XXX/dl.sh
+rename "æ" "ae" *.jpg
+rename "’" "'" *.jpg
+Then remove the rounded borders with: find ./ -type f -name "*.jpg" -exec composite {} -gravity center /mnt/compendium/DevLab/mtgimage/util/spoiler_square_card_frame.png {}.jpg \;
+mkdir tmp && mv *.jpg.jpg tmp && rm *.jpg && mv tmp/*.jpg ./ && rm -rf tmp && rename .jpg.jpg .jpg *.jpg.jpg && rm dl.sh
 
 Promos: http://www.slightlymagic.net/forum/viewtopic.php?f=15&t=453&start=1125
 If resolution is 745x1040 and rounded corners, crop corners to squaare with: convert Card.jpg -crop 705x1000+20+20 -quality 100 Card.jpg
+
+New promo images from magic cards info: 'node downloadImages.js p???' will need to run per set that has new images
 
 /-------\
 | Links |
@@ -102,8 +107,10 @@ find ./ -type f -name "*.jpg" -exec node /mnt/compendium/DevLab/mtgimage/util/co
 cd util
 node createNewImageSymlinks.js DDM
 
+# If gatherer/spoiler images: Update nginx/mtgimage.com.conf with 7d cache expiration rules for the new set code and set name
 
-# If gatherer images: Update nginx/mtgimage.com.conf with 7d cache expiration rules for the new set code and set name
+# Generate SVG symbol set icons: node util/downloadSetIcons.js <code>
+# MAKE SURE TO UPDATE mtgimage.com.conf expiration AND ALSO C.SETS_LACKING_HQ_SVG_SYMBOL_ICONS
 
 node web/generate.js createlinks
 
