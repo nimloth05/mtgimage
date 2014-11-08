@@ -15,7 +15,7 @@
 /-----------------\
 | Medium Priority |
 \-----------------/
-
+* Add HTTPS support (Then e-mail alessandro.pezze@hotmail.com)
 
 
 /----------------\

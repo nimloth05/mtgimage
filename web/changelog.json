@@ -1,5 +1,12 @@
 [
 	{
+		"version" : "5.8.1",
+		"when" : "2014-11-07",
+		"changes" : [
+			"Added multiverseid access to images from the 'Box Set' cards from 9ED/8ED (9BS/8BS)"
+		]
+	},
+	{
 		"version" : "5.8.0",
 		"when" : "2014-11-04",
 		"changes" : [

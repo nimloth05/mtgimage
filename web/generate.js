@@ -436,20 +436,19 @@ function createLegacySetSymlinks(cb)
 {
 	base.info("Creating legacy set symlinks for PPR and HHO...");
 
-	var SET_CODES_TO_MATCH = ["pMEI", "pPRE"];
-	var LEGACY_SET_CODES = ["PPR"];
+	var LEGACY_SET_CODES = {"PPR":["pMEI", "pPRE"],"9ED":["9BS"],"8ED":["8BS"]};
 	var SET_DATA = {};
-	LEGACY_SET_CODES.concat(SET_CODES_TO_MATCH).forEach(function(SET_CODE)
+	Object.keys(LEGACY_SET_CODES).concat(Object.values(LEGACY_SET_CODES).flatten()).forEach(function(SET_CODE)
 	{
-		SET_DATA[SET_CODE] = JSON.parse(fs.readFileSync(path.join(LEGACY_SET_CODES.contains(SET_CODE) ? LEGACY_JSON_PATH : JSON_PATH, SET_CODE + ".json"), {encoding : "utf8"}));
+		SET_DATA[SET_CODE] = JSON.parse(fs.readFileSync(path.join(Object.keys(LEGACY_SET_CODES).contains(SET_CODE) ? LEGACY_JSON_PATH : JSON_PATH, SET_CODE + ".json"), {encoding : "utf8"}));
 	});
 
-	LEGACY_SET_CODES.forEach(function(SET_CODE)
+	Object.keys(LEGACY_SET_CODES).forEach(function(SET_CODE)
 	{
 		SET_DATA[SET_CODE].cards.forEach(function(card)
 		{
 			var cardMatched = false;
-			SET_CODES_TO_MATCH.forEach(function(SET_CODE_TO_MATCH)
+			LEGACY_SET_CODES[SET_CODE].forEach(function(SET_CODE_TO_MATCH)
 			{
 				SET_DATA[SET_CODE_TO_MATCH].cards.forEach(function(possibleCardMatch)
 				{
