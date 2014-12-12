@@ -1,5 +1,33 @@
 [
 	{
+		"version" : "5.8.5",
+		"when" : "2014-12-11",
+		"changes" : [
+			"M15, CNS, KTK, DDN: Updated card images to high resolution versions."
+		]
+	},
+	{
+		"version" : "5.8.4",
+		"when" : "2014-12-09",
+		"changes" : [
+			"CM1: Fixed the crop images for 'Command Tower'"
+		]
+	},
+	{
+		"version" : "5.8.3",
+		"when" : "2014-12-09",
+		"changes" : [
+			"Added seperate zip files for crops and also different zips for HQ and non-HQ images (the default zip file now contains the non-HQ images)."
+		]
+	},
+	{
+		"version" : "5.8.2",
+		"when" : "2014-11-15",
+		"changes" : [
+			"C14: Fixed the crops for planeswalkers"
+		]
+	},
+	{
 		"version" : "5.8.1",
 		"when" : "2014-11-07",
 		"changes" : [

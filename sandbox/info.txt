@@ -22,6 +22,7 @@ New promo images from magic cards info: 'node downloadImages.js p???' will need 
 \-------/
 
 Card Images:
+http://bit.ly/ccghq-releases
 http://www.slightlymagic.net/forum/viewforum.php?f=15
 http://www.mediafire.com/folder/qifk53rxg2dhx/Magic_The_Gathering_sets
 
@@ -69,8 +70,14 @@ find ./ -type f -name "*.jpg" -exec convert {} -crop 494x519+93+104 {}.crop.jpg 
 #Token CARD No text box
 find ./ -type f -name "*.jpg" -exec convert {} -crop 421x300+30+163 {}.crop.jpg \;
 
+#NEW Token Layout (post KTK) CARD No text box
+find ./ -type f -name "*.jpg" -exec convert {} -crop 420x380+29+176 {}.crop.jpg \;
+
 #Token CARD With text box
 find ./ -type f -name "*.jpg" -exec convert {} -crop 421x184+30+163 {}.crop.jpg \;
+
+#NEW Token Layout (post KTK) CARD WITH text box
+find ./ -type f -name "*.jpg" -exec convert {} -crop 420x280+29+176 {}.crop.jpg \;
 
 #OLD CARD (480x680):
 find ./ -type f -name "*.jpg" -exec convert {} -crop 392x316+45+54 {}.crop.jpg \;
@@ -95,6 +102,10 @@ find ./ -type f -name "*.jpg" -exec convert {} -crop 616x453+45+103 {}.crop.jpg 
 
 #Spoiler New Card (265x370)
 find ./ -type f -name "*.jpg" -exec convert {} -crop 223x163+22+43 {}.crop.jpg \;
+
+#Spoiler New Card COMANDER PLANESWALKERS ONLY (265x370)
+find ./ -type f -name "*.jpg" -exec convert {} -crop 208x141+28+38 {}.crop.jpg \;
+
 
 
 # For all cards after making crops

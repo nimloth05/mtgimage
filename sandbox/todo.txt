@@ -1,9 +1,12 @@
 /---------------\
 | High Priority |
 \---------------/ 
-* Add symbols for the new sets: 8BS, 9BS, CST and MGB
+* Fix the crops for Rough/Tumble under C13. Right now they are just the full cards but smaller.
+  Other split cards in other sets may also have this issue, so double check them.
+  I should make an imageMagick line in info.txt that can handle new card split layout crops automatically
 
-* Download an older version of 8ED and 9ED json files, delete all cards from it except the 'box set' cards, then place that into the legacy json, then ensure multiverseid's get created for them in mtgimage
+* Vintage Masters images may be wrong according to luis_neto@yahoo.com
+  Compare http://mtgimage.com/actual/setname/vintage%20masters/ vs http://magiccards.info/vma/en.html 
 
 * Add all tokens and ensure sliver token in M14 is working then e-mail Darek Gołąb
 

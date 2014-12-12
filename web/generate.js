@@ -434,7 +434,7 @@ function createSetCardSymlinks(setCode, cb)
 
 function createLegacySetSymlinks(cb)
 {
-	base.info("Creating legacy set symlinks for PPR and HHO...");
+	base.info("Creating legacy set symlinks for PPR and 8/9 Boxed sets...");
 
 	var LEGACY_SET_CODES = {"PPR":["pMEI", "pPRE"],"9ED":["9BS"],"8ED":["8BS"]};
 	var SET_DATA = {};
@@ -466,9 +466,6 @@ function createLegacySetSymlinks(cb)
 					}
 				});
 			});
-
-			if(!cardMatched)
-				base.info("NOT MATCHED %s: %s", SET_CODE, card.name);
 		});
 	});
 

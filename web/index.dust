@@ -123,14 +123,24 @@
 			<h2>Download as Zip</h2>
 			<p>
 			<br>
-			High quality, full card images are available in zip files. Images are named in <a href="mtgjson.com">mtgjson.com</a> imageName format.<br>
+			Card images are available in zip files. Images are named in <a href="mtgjson.com">mtgjson.com</a> imageName format.<br>
 			<br>
+			The default zip files are full card images in compressed format.<br>
+			<br>
+			High quality card images are available by chaning the URL to end with '.hq.zip' instead of '.zip'<br>
+			<br>
+			Crops are also available in both compressed '.crop.zip' and high quality '.crop.hq.zip' versions.<br>
+			<br> 
 			Individual set zip file links can be found on the <a href="#setList">set list</a>.<br>
 			<br>
-			All sets can be downloaded in a single zip file: <a href="/zip/AllSets.zip">AllSets.zip</a> (<span class="size">4.5GB</span>)<br>
-			WARNING: This file is HUGE at <span class="size">{4.5GB}</span><br>
-			<br>
-			<strong>Windows Warning</strong>: Microsoft Windows does not allow files or folders to be named 'CON' (<a href="http://superuser.com/questions/86999/unable-to-rename-a-folder-or-a-file-as-con">see here</a>). Thus the AllSets.zip file can't be extracted on windows (it contains the Conflux set folder 'CON'). Windows users should instead download: <a href="/zip/AllSetsWindows.zip">AllSetsWindows.zip</a> which has renamed 'CON' to '_CON'. Likewise the individual set zip file can be downloaded as <a href="/zip/_CON.zip">_CON.zip</a><br>
+			All images for every set can be downloaded as a single zip file:<br>
+			<table class="zips">
+				<tr><td><a href="/zip/AllSets.zip">AllSets.zip</a></td><td>1.6GB</td></tr>
+				<tr><td><a href="/zip/AllSets.hq.zip">AllSets.hq.zip</a></td><td>4.3GB</td></tr>
+				<tr><td><a href="/zip/AllSets.crop.zip">AllSets.crop.zip</a></td><td>0.6GB</td></tr>
+				<tr><td><a href="/zip/AllSets.crop.hq.zip">AllSets.crop.hq.zip</a></td><td>1.8GB</td></tr>
+			</table>
+			<strong>Windows Warning</strong>: Microsoft Windows does not allow files or folders to be named 'CON' (<a href="http://superuser.com/questions/86999/unable-to-rename-a-folder-or-a-file-as-con">see here</a>). Thus the AllSets zip files can't be extracted on windows (it contains the Conflux set folder 'CON'). Windows users should instead alter the URL to end with 'Windows.zip' instead of '.zip' like so <a href="/zip/AllSetsWindows.zip">AllSetsWindows.zip</a> which has renamed 'CON' to '_CON'. Likewise the individual set zip file can be downloaded as <a href="/zip/_CON.zip">_CON.zip</a><br>
 			</p>
 		</div>
 		<br>
@@ -369,7 +379,7 @@
 		<ul>
 			<li>Thank you <strong>VERY MUCH</strong> to these folks who reported bugs and helped in other ways:
 				<ul>
-					<li>Nathan Nelson, Michael Wybrow, Eric Richards, Eric, Adam Blinkinsop</li>
+					<li>Nathan Nelson, Michael Wybrow, Eric Richards, Eric, Adam Blinkinsop, Christopher</li>
 				</ul>
 			</li>
 			<li>HUGE thanks to <a href="http://www.slightlymagic.net/forum/viewforum.php?f=15">CCGHQ</a>. Without their awesome work, this site would not be possible.</li>
