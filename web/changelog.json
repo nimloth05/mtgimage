@@ -1,5 +1,12 @@
 [
 	{
+		"version" : "5.8.6",
+		"when" : "2014-12-12",
+		"changes" : [
+			"M15: Added missing token images."
+		]
+	},
+	{
 		"version" : "5.8.5",
 		"when" : "2014-12-11",
 		"changes" : [
