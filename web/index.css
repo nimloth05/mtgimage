@@ -1174,9 +1174,9 @@ table.setListTable td:nth-child(2) {
 #otherSymbolsSection div.symbol div {
   background-image: url("/otherSymbolsSprite.png");
 }
-#otherSymbolsSection div.symbol div.planeswalker {
-  width: 32px;
-  height: 28px;
+#otherSymbolsSection div.symbol div.forwardslash {
+  width: 12px;
+  height: 32px;
   background-position: 0px 0px;
   background-repeat: no-repeat;
   background-clip: content-box;
@@ -1185,159 +1185,15 @@ table.setListTable td:nth-child(2) {
   padding-bottom: 0px;
   padding-left: 0px;
 }
-#otherSymbolsSection div.symbol div.planeswalker.selected {
-  background-position: 50% 50%, 0px 0px;
-  background-repeat: no-repeat, no-repeat;
-  background-clip: border-box, content-box;
-}
-#otherSymbolsSection div.symbol div.forwardslash {
-  width: 12px;
-  height: 32px;
-  background-position: 0px -28px;
-  background-repeat: no-repeat;
-  background-clip: content-box;
-  padding-top: 0px;
-  padding-right: 0px;
-  padding-bottom: 0px;
-  padding-left: 0px;
-}
 #otherSymbolsSection div.symbol div.forwardslash.selected {
-  background-position: 50% 50%, 0px -28px;
-  background-repeat: no-repeat, no-repeat;
-  background-clip: border-box, content-box;
-}
-#otherSymbolsSection div.symbol div.q {
-  width: 32px;
-  height: 32px;
-  background-position: -12px -28px;
-  background-repeat: no-repeat;
-  background-clip: content-box;
-  padding-top: 0px;
-  padding-right: 0px;
-  padding-bottom: 0px;
-  padding-left: 0px;
-}
-#otherSymbolsSection div.symbol div.q.selected {
-  background-position: 50% 50%, -12px -28px;
-  background-repeat: no-repeat, no-repeat;
-  background-clip: border-box, content-box;
-}
-#otherSymbolsSection div.symbol div.creature {
-  width: 32px;
-  height: 28px;
-  background-position: -32px 0px;
-  background-repeat: no-repeat;
-  background-clip: content-box;
-  padding-top: 0px;
-  padding-right: 0px;
-  padding-bottom: 0px;
-  padding-left: 0px;
-}
-#otherSymbolsSection div.symbol div.creature.selected {
-  background-position: 50% 50%, -32px 0px;
-  background-repeat: no-repeat, no-repeat;
-  background-clip: border-box, content-box;
-}
-#otherSymbolsSection div.symbol div.t {
-  width: 32px;
-  height: 32px;
-  background-position: -12px -60px;
-  background-repeat: no-repeat;
-  background-clip: content-box;
-  padding-top: 0px;
-  padding-right: 0px;
-  padding-bottom: 0px;
-  padding-left: 0px;
-}
-#otherSymbolsSection div.symbol div.t.selected {
-  background-position: 50% 50%, -12px -60px;
-  background-repeat: no-repeat, no-repeat;
-  background-clip: border-box, content-box;
-}
-#otherSymbolsSection div.symbol div.sorcery {
-  width: 25px;
-  height: 32px;
-  background-position: -12px -92px;
-  background-repeat: no-repeat;
-  background-clip: content-box;
-  padding-top: 0px;
-  padding-right: 0px;
-  padding-bottom: 0px;
-  padding-left: 0px;
-}
-#otherSymbolsSection div.symbol div.sorcery.selected {
-  background-position: 50% 50%, -12px -92px;
-  background-repeat: no-repeat, no-repeat;
-  background-clip: border-box, content-box;
-}
-#otherSymbolsSection div.symbol div.artifact {
-  width: 23px;
-  height: 32px;
-  background-position: -44px -28px;
-  background-repeat: no-repeat;
-  background-clip: content-box;
-  padding-top: 0px;
-  padding-right: 0px;
-  padding-bottom: 0px;
-  padding-left: 0px;
-}
-#otherSymbolsSection div.symbol div.artifact.selected {
-  background-position: 50% 50%, -44px -28px;
-  background-repeat: no-repeat, no-repeat;
-  background-clip: border-box, content-box;
-}
-#otherSymbolsSection div.symbol div.chaosdice {
-  width: 32px;
-  height: 27px;
-  background-position: -64px 0px;
-  background-repeat: no-repeat;
-  background-clip: content-box;
-  padding-top: 0px;
-  padding-right: 0px;
-  padding-bottom: 0px;
-  padding-left: 0px;
-}
-#otherSymbolsSection div.symbol div.chaosdice.selected {
-  background-position: 50% 50%, -64px 0px;
-  background-repeat: no-repeat, no-repeat;
-  background-clip: border-box, content-box;
-}
-#otherSymbolsSection div.symbol div.toughness {
-  width: 18px;
-  height: 32px;
-  background-position: -67px -28px;
-  background-repeat: no-repeat;
-  background-clip: content-box;
-  padding-top: 0px;
-  padding-right: 0px;
-  padding-bottom: 0px;
-  padding-left: 0px;
-}
-#otherSymbolsSection div.symbol div.toughness.selected {
-  background-position: 50% 50%, -67px -28px;
-  background-repeat: no-repeat, no-repeat;
-  background-clip: border-box, content-box;
-}
-#otherSymbolsSection div.symbol div.enchantment {
-  width: 32px;
-  height: 25px;
-  background-position: -85px -28px;
-  background-repeat: no-repeat;
-  background-clip: content-box;
-  padding-top: 0px;
-  padding-right: 0px;
-  padding-bottom: 0px;
-  padding-left: 0px;
-}
-#otherSymbolsSection div.symbol div.enchantment.selected {
-  background-position: 50% 50%, -85px -28px;
+  background-position: 50% 50%, 0px 0px;
   background-repeat: no-repeat, no-repeat;
   background-clip: border-box, content-box;
 }
 #otherSymbolsSection div.symbol div.instant {
   width: 24px;
   height: 32px;
-  background-position: -44px -60px;
+  background-position: -12px 0px;
   background-repeat: no-repeat;
   background-clip: content-box;
   padding-top: 0px;
@@ -1346,14 +1202,30 @@ table.setListTable td:nth-child(2) {
   padding-left: 0px;
 }
 #otherSymbolsSection div.symbol div.instant.selected {
-  background-position: 50% 50%, -44px -60px;
+  background-position: 50% 50%, -12px 0px;
+  background-repeat: no-repeat, no-repeat;
+  background-clip: border-box, content-box;
+}
+#otherSymbolsSection div.symbol div.enchantment {
+  width: 32px;
+  height: 25px;
+  background-position: -36px 0px;
+  background-repeat: no-repeat;
+  background-clip: content-box;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+}
+#otherSymbolsSection div.symbol div.enchantment.selected {
+  background-position: 50% 50%, -36px 0px;
   background-repeat: no-repeat, no-repeat;
   background-clip: border-box, content-box;
 }
 #otherSymbolsSection div.symbol div.planeswalk {
   width: 17px;
   height: 32px;
-  background-position: -44px -92px;
+  background-position: -68px 0px;
   background-repeat: no-repeat;
   background-clip: content-box;
   padding-top: 0px;
@@ -1362,46 +1234,14 @@ table.setListTable td:nth-child(2) {
   padding-left: 0px;
 }
 #otherSymbolsSection div.symbol div.planeswalk.selected {
-  background-position: 50% 50%, -44px -92px;
-  background-repeat: no-repeat, no-repeat;
-  background-clip: border-box, content-box;
-}
-#otherSymbolsSection div.symbol div.multiple {
-  width: 32px;
-  height: 32px;
-  background-position: -68px -60px;
-  background-repeat: no-repeat;
-  background-clip: content-box;
-  padding-top: 0px;
-  padding-right: 0px;
-  padding-bottom: 0px;
-  padding-left: 0px;
-}
-#otherSymbolsSection div.symbol div.multiple.selected {
-  background-position: 50% 50%, -68px -60px;
-  background-repeat: no-repeat, no-repeat;
-  background-clip: border-box, content-box;
-}
-#otherSymbolsSection div.symbol div.land {
-  width: 32px;
-  height: 25px;
-  background-position: -68px -92px;
-  background-repeat: no-repeat;
-  background-clip: content-box;
-  padding-top: 0px;
-  padding-right: 0px;
-  padding-bottom: 0px;
-  padding-left: 0px;
-}
-#otherSymbolsSection div.symbol div.land.selected {
-  background-position: 50% 50%, -68px -92px;
+  background-position: 50% 50%, -68px 0px;
   background-repeat: no-repeat, no-repeat;
   background-clip: border-box, content-box;
 }
 #otherSymbolsSection div.symbol div.power {
   width: 18px;
   height: 32px;
-  background-position: -100px -60px;
+  background-position: -85px 0px;
   background-repeat: no-repeat;
   background-clip: content-box;
   padding-top: 0px;
@@ -1410,7 +1250,183 @@ table.setListTable td:nth-child(2) {
   padding-left: 0px;
 }
 #otherSymbolsSection div.symbol div.power.selected {
-  background-position: 50% 50%, -100px -60px;
+  background-position: 50% 50%, -85px 0px;
+  background-repeat: no-repeat, no-repeat;
+  background-clip: border-box, content-box;
+}
+#otherSymbolsSection div.symbol div.artifact {
+  width: 23px;
+  height: 32px;
+  background-position: -103px 0px;
+  background-repeat: no-repeat;
+  background-clip: content-box;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+}
+#otherSymbolsSection div.symbol div.artifact.selected {
+  background-position: 50% 50%, -103px 0px;
+  background-repeat: no-repeat, no-repeat;
+  background-clip: border-box, content-box;
+}
+#otherSymbolsSection div.symbol div.planeswalker {
+  width: 32px;
+  height: 28px;
+  background-position: -12px -32px;
+  background-repeat: no-repeat;
+  background-clip: content-box;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+}
+#otherSymbolsSection div.symbol div.planeswalker.selected {
+  background-position: 50% 50%, -12px -32px;
+  background-repeat: no-repeat, no-repeat;
+  background-clip: border-box, content-box;
+}
+#otherSymbolsSection div.symbol div.creature {
+  width: 32px;
+  height: 28px;
+  background-position: -12px -60px;
+  background-repeat: no-repeat;
+  background-clip: content-box;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+}
+#otherSymbolsSection div.symbol div.creature.selected {
+  background-position: 50% 50%, -12px -60px;
+  background-repeat: no-repeat, no-repeat;
+  background-clip: border-box, content-box;
+}
+#otherSymbolsSection div.symbol div.toughness {
+  width: 18px;
+  height: 32px;
+  background-position: -126px 0px;
+  background-repeat: no-repeat;
+  background-clip: content-box;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+}
+#otherSymbolsSection div.symbol div.toughness.selected {
+  background-position: 50% 50%, -126px 0px;
+  background-repeat: no-repeat, no-repeat;
+  background-clip: border-box, content-box;
+}
+#otherSymbolsSection div.symbol div.land {
+  width: 32px;
+  height: 25px;
+  background-position: -12px -88px;
+  background-repeat: no-repeat;
+  background-clip: content-box;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+}
+#otherSymbolsSection div.symbol div.land.selected {
+  background-position: 50% 50%, -12px -88px;
+  background-repeat: no-repeat, no-repeat;
+  background-clip: border-box, content-box;
+}
+#otherSymbolsSection div.symbol div.tombstone {
+  width: 21px;
+  height: 32px;
+  background-position: -44px -32px;
+  background-repeat: no-repeat;
+  background-clip: content-box;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+}
+#otherSymbolsSection div.symbol div.tombstone.selected {
+  background-position: 50% 50%, -44px -32px;
+  background-repeat: no-repeat, no-repeat;
+  background-clip: border-box, content-box;
+}
+#otherSymbolsSection div.symbol div.sorcery {
+  width: 25px;
+  height: 32px;
+  background-position: -65px -32px;
+  background-repeat: no-repeat;
+  background-clip: content-box;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+}
+#otherSymbolsSection div.symbol div.sorcery.selected {
+  background-position: 50% 50%, -65px -32px;
+  background-repeat: no-repeat, no-repeat;
+  background-clip: border-box, content-box;
+}
+#otherSymbolsSection div.symbol div.q {
+  width: 32px;
+  height: 32px;
+  background-position: -90px -32px;
+  background-repeat: no-repeat;
+  background-clip: content-box;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+}
+#otherSymbolsSection div.symbol div.q.selected {
+  background-position: 50% 50%, -90px -32px;
+  background-repeat: no-repeat, no-repeat;
+  background-clip: border-box, content-box;
+}
+#otherSymbolsSection div.symbol div.chaosdice {
+  width: 32px;
+  height: 27px;
+  background-position: -12px -113px;
+  background-repeat: no-repeat;
+  background-clip: content-box;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+}
+#otherSymbolsSection div.symbol div.chaosdice.selected {
+  background-position: 50% 50%, -12px -113px;
+  background-repeat: no-repeat, no-repeat;
+  background-clip: border-box, content-box;
+}
+#otherSymbolsSection div.symbol div.multiple {
+  width: 32px;
+  height: 32px;
+  background-position: -44px -64px;
+  background-repeat: no-repeat;
+  background-clip: content-box;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+}
+#otherSymbolsSection div.symbol div.multiple.selected {
+  background-position: 50% 50%, -44px -64px;
+  background-repeat: no-repeat, no-repeat;
+  background-clip: border-box, content-box;
+}
+#otherSymbolsSection div.symbol div.t {
+  width: 32px;
+  height: 32px;
+  background-position: -44px -96px;
+  background-repeat: no-repeat;
+  background-clip: content-box;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+}
+#otherSymbolsSection div.symbol div.t.selected {
+  background-position: 50% 50%, -44px -96px;
   background-repeat: no-repeat, no-repeat;
   background-clip: border-box, content-box;
 }
