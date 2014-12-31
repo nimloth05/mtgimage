@@ -1,5 +1,14 @@
 [
 	{
+		"version" : "5.8.7",
+		"when" : "2014-12-12",
+		"changes" : [
+			"Added Tombstone icon",
+			"C14: Updated set icon to hgh quality",
+			"pFNM, pHHO, pWPN: Added some additional promo cards"
+		]
+	},
+	{
 		"version" : "5.8.6",
 		"when" : "2014-12-12",
 		"changes" : [
