@@ -67,13 +67,14 @@ function downloadCard(card, cb)
 	tiptoe(
 		function downloadImage()
 		{
-			base.info("Downloading: %s", card.name);
 			var spoilerCardName = card.name.replaceAll("Æ", "ae").toLowerCase().replace(/[^A-Za-z0-9]/g, "");
 			var numSuffix = card.imageName.replace(/^.*([0-9])$/g, "$1");
 			if(C.SET_SPOILER_IMAGE_DIFF_SRC_NUMBER.hasOwnProperty(targetSet.code.toUpperCase()) && C.SET_SPOILER_IMAGE_DIFF_SRC_NUMBER[targetSet.code.toUpperCase()].hasOwnProperty(card.name))
 				spoilerCardName += C.SET_SPOILER_IMAGE_DIFF_SRC_NUMBER[targetSet.code.toUpperCase()][card.name];
 			else if(numSuffix && numSuffix.length===1 && +numSuffix>=1 && +numSuffix<=9)
-				spoilerCardName += numSuffix;
+				spoilerCardName += +numSuffix===1 ? "" : (+numSuffix)-1;
+
+			base.info("Downloading: %s (%s)", card.name, spoilerCardName);
 			httpUtil.download("http://mythicspoiler.com/" + targetSet.code.toLowerCase() + "/cards/" + spoilerCardName + ".jpg", targetFilename, this);
 		},
 		function handleError(err)

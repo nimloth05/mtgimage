@@ -1,10 +1,17 @@
 [
 	{
+		"version" : "5.9.0",
+		"when" : "2015-01-13",
+		"changes" : [
+			"Added set: Fate Reforged (FRF)"
+		]
+	},
+	{
 		"version" : "5.8.7",
 		"when" : "2014-12-12",
 		"changes" : [
 			"Added Tombstone icon",
-			"C14: Updated set icon to hgh quality",
+			"C14: Updated set icon to high quality",
 			"pFNM, pHHO, pWPN: Added some additional promo cards"
 		]
 	},
