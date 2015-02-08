@@ -340,6 +340,10 @@ tiptoe(
 
 		fs.symlink(path.relative(CARD_PATH, path.join(__dirname, "actual", "cardback.jpg")), path.join(CARD_PATH, path.basename("cardback.jpg")), this.parallel());
 		fs.symlink(path.relative(CARD_PATH, path.join(__dirname, "actual", "cardback.hq.jpg")), path.join(CARD_PATH, path.basename("cardback.hq.jpg")), this.parallel());
+		fs.symlink(path.relative(CARD_PATH, path.join(__dirname, "actual", "collectorscardback.jpg")), path.join(CARD_PATH, path.basename("collectorscardback.jpg")), this.parallel());
+		fs.symlink(path.relative(CARD_PATH, path.join(__dirname, "actual", "collectorscardback.hq.jpg")), path.join(CARD_PATH, path.basename("collectorscardback.hq.jpg")), this.parallel());
+		fs.symlink(path.relative(CARD_PATH, path.join(__dirname, "actual", "internationalcollectorscardback.jpg")), path.join(CARD_PATH, path.basename("internationalcollectorscardback.jpg")), this.parallel());
+		fs.symlink(path.relative(CARD_PATH, path.join(__dirname, "actual", "internationalcollectorscardback.hq.jpg")), path.join(CARD_PATH, path.basename("internationalcollectorscardback.hq.jpg")), this.parallel());
 	},
 	function finish(err)
 	{
@@ -434,9 +438,9 @@ function createSetCardSymlinks(setCode, cb)
 
 function createLegacySetSymlinks(cb)
 {
-	base.info("Creating legacy set symlinks for PPR and 8/9 Boxed sets...");
+	base.info("Creating legacy set symlinks for PPR...");
 
-	var LEGACY_SET_CODES = {"PPR":["pMEI", "pPRE"],"9ED":["9BS"],"8ED":["8BS"]};
+	var LEGACY_SET_CODES = {"PPR":["pMEI", "pPRE"]};
 	var SET_DATA = {};
 	Object.keys(LEGACY_SET_CODES).concat(Object.values(LEGACY_SET_CODES).flatten()).forEach(function(SET_CODE)
 	{

@@ -1,12 +1,12 @@
 /---------------\
 | High Priority |
 \---------------/ 
+* Create a 'Symbols.zip' file (and one for windows) that has all symbol images. Might as well start out by including all sizes and formats and SVG too.
+  Probably won't be that big to just include everything. Make this part of the 'zipper' program. Then e-mail tomo.nippon@gmail.com
+
 * Fix the crops for Rough/Tumble under C13. Right now they are just the full cards but smaller.
   Other split cards in other sets may also have this issue, so double check them.
   I should make an imageMagick line in info.txt that can handle new card split layout crops automatically
-
-* Vintage Masters images may be wrong according to luis_neto@yahoo.com
-  Compare http://mtgimage.com/actual/setname/vintage%20masters/ vs http://magiccards.info/vma/en.html 
 
 * Add all tokens and ensure sliver token in M14 is working then e-mail Darek Gołąb
 
@@ -26,6 +26,6 @@
 \----------------/
 * Add a search page (different page) that does the 'instant' search like my mtginstant search engine did, except only search the name of the card and provide data a bit differently, making sure to place emphasis on the link to the cards found (maybe just the links (along with data) and hover shows the image, or maybe show images, hrm)
 
-* Add pre-rendered cardname-bordered.png files that have the correct border around the cards
+* Add pre-rendered cardname-bordered.png files that have the correct rounded border around the cards
 
 

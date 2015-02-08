@@ -139,7 +139,7 @@ function downloadImages(setCode, cb)
 					},
 					function makeCrop()
 					{
-						runUtil.run("convert", [targetImagePath, "-crop", (set.isMCISet ? "276x203+18+45" : "182x134+20+37"), targetImagePath.replaceAll(".jpg", ".crop.jpg")], {silent:true}, this);
+						runUtil.run("convert", [targetImagePath, "-crop", (set.isMCISet ? "276x203+18+45" : "223x163+21+42"), targetImagePath.replaceAll(".jpg", ".crop.jpg")], {silent:true}, this);
 					},
 					function compressImages()
 					{

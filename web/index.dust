@@ -148,12 +148,20 @@
 		<br>
 		<br>
 		<hr>
-		<h1>Card Back</h1>
+		<h1>Card Backs</h1>
 		<p>
-		The back of a card is available here:<br>
+		The backs of cards are available here:<br>
 		<ul>
-			<li><a href="/card/cardback.jpg">http://mtgimage.com/card/cardback.jpg</a></li>
-			<li><a href="/card/cardback.hq.jpg">http://mtgimage.com/card/cardback.hq.jpg</a></li>
+			<li>Regular Card Back: <a href="/card/cardback.jpg">http://mtgimage.com/card/cardback.jpg</a></li>
+			<li>Regular Card Back (HQ):<a href="/card/cardback.hq.jpg">http://mtgimage.com/card/cardback.hq.jpg</a></li>
+		</ul>
+		<ul>
+			<li>Collectors Edition Card Back: <a href="/card/collectorscardback.jpg">http://mtgimage.com/card/collectorscardback.jpg</a></li>
+			<li>Collectors Edition Card Back (HQ):<a href="/card/collectorscardback.hq.jpg">http://mtgimage.com/card/collectorscardback.hq.jpg</a></li>
+		</ul>
+		<ul>
+			<li>International Collectors Edition Card Back: <a href="/card/internationalcollectorscardback.jpg">http://mtgimage.com/card/internationalcollectorscardback.jpg</a></li>
+			<li>International Collectors Edition Card Back (HQ):<a href="/card/internationalcollectorscardback.hq.jpg">http://mtgimage.com/card/internationalcollectorscardback.hq.jpg</a></li>
 		</ul>
 		<br>
 		</p>
@@ -381,7 +389,7 @@
 		<ul>
 			<li>Thank you <strong>VERY MUCH</strong> to these folks who reported bugs and helped in other ways:
 				<ul>
-					<li>Nathan Nelson, Michael Wybrow, Eric Richards, Eric, Adam Blinkinsop, Christopher</li>
+					<li>Nathan Nelson, Michael Wybrow, Eric Richards, Eric, Adam Blinkinsop, Christopher, tenminutegod</li>
 				</ul>
 			</li>
 			<li>HUGE thanks to <a href="http://www.slightlymagic.net/forum/viewforum.php?f=15">CCGHQ</a>. Without their awesome work, this site would not be possible.</li>

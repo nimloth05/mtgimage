@@ -25,6 +25,7 @@ Card Images:
 http://bit.ly/ccghq-releases
 http://www.slightlymagic.net/forum/viewforum.php?f=15
 http://www.mediafire.com/folder/qifk53rxg2dhx/Magic_The_Gathering_sets
+https://mega.co.nz/#F!7w12XQYI!1wucMyjfuO3VKfE005YciQ
 
 Mana/Set Symbols:
 http://ma.slightlymagic.net/Graphics/Sets.zip
@@ -88,6 +89,9 @@ find ./ -type f -name "*.jpg" -exec convert {} -crop 421x309+30+70 {}.crop.jpg \
 #Gatherer New Card:
 find ./ -type f -name "*.jpg" -exec convert {} -crop 182x134+20+37 {}.crop.jpg \;
 
+#Gatherer New Card 2015 Style:
+find ./ -type f -name "*.jpg" -exec convert {} -crop 223x163+21+42 {}.crop.jpg \;
+
 #Promo LARGE ART full-Size NEW card (480x480)
 find ./ -type f -name "*.jpg" -exec convert {} -crop 421x372+30+70 {}.crop.jpg \;
 
@@ -106,6 +110,9 @@ find ./ -type f -name "*.jpg" -exec convert {} -crop 223x163+22+43 {}.crop.jpg \
 #Spoiler New Card COMANDER PLANESWALKERS ONLY (265x370)
 find ./ -type f -name "*.jpg" -exec convert {} -crop 208x141+28+38 {}.crop.jpg \;
 
+#VMA Magic Online renders new layout:
+find ./ -type f -name "*.jpg" -exec convert {} -crop 420x298+32+72 {}.crop.jpg \;
+
 
 
 # For all cards after making crops
@@ -122,6 +129,8 @@ node createNewImageSymlinks.js DDM
 
 # Generate SVG symbol set icons: node util/downloadSetIcons.js <code>
 # MAKE SURE TO UPDATE mtgimage.com.conf expiration AND ALSO C.SETS_LACKING_HQ_SVG_SYMBOL_ICONS
+
+# WARNING: If the set code has an underscore (such as DD3_EVG) then you need to make a actual/set/DD3_DVD symlink to one with spaces: ln -s DD3_DVD "DD3 DVD"
 
 node web/generate.js createlinks
 
