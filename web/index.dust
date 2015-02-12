@@ -209,6 +209,8 @@
 		<br>
 		URLs are case insensitive.<br>
 		<br>
+		Zips of symbol images are also available. They contain the source SVG and all PNG sizes.<br>
+		<br>
 		</p>
 		<br>
 		<br>
@@ -238,6 +240,10 @@
 			The JSON file <a href="/SetSymbols.json">SetSymbols.json</a> also list which rarity symbols are available for each set.<br>
 			<br>
 			Set symbols are rendered in 'accurate' style.<br>
+			<br>
+			A zip of all set symbols is available at: <a href="/zip/symbol_set.zip">symbol_set.zip</a> (89MB)<br>
+			<br>
+			<strong>Windows Warning</strong>: Microsoft Windows does not allow files or folders to be named 'CON' (<a href="http://superuser.com/questions/86999/unable-to-rename-a-folder-or-a-file-as-con">see here</a>). Thus the symbol_set.zip files can't be extracted on windows (it contains the Conflux set folder 'CON'). Windows users should instead alter the URL to end with 'Windows.zip' instead of '.zip' like so <a href="/zip/symbol_setWindows.zip">symbol_setWindows.zip</a> which has renamed 'CON' to '_CON'.<br>
 			</p>
 		</div>
 		<br>
@@ -266,6 +272,8 @@
 			You can also spell out the mana codes, such as 'green' for 'g', 'bluewhite' for 'uw', 'infinity' for '∞', "halfwhite" for "hw", etc.<br>
 			<br>
 			You can also reverse any dual symbols, such as 'ru' for 'ur', 'r2' for '2r', 'pg' for 'gp', etc.<br>
+			<br>
+			A zip of all mana symbols is available at: <a href="/zip/symbol_mana.zip">symbol_mana.zip</a> (6.8MB)<br>
 			</p>
 		</div>
 		<br>
@@ -295,6 +303,8 @@
 			The card types (enchantment, instant, etc) come from Future Sight.<br>
 			The power and toughness come from Portal.<br>
 			The chaosdice and planeswalk come from Planechase.<br>
+			<br>
+			A zip of all other symbols is available at: <a href="/zip/symbol_other.zip">symbol_other.zip</a> (1.2MB)<br>
 			</p>
 		</div>
 		<p>
@@ -390,6 +400,7 @@
 			<li>Thank you <strong>VERY MUCH</strong> to these folks who reported bugs and helped in other ways:
 				<ul>
 					<li>Nathan Nelson, Michael Wybrow, Eric Richards, Eric, Adam Blinkinsop, Christopher, tenminutegod</li>
+					<li>Psithief</li>
 				</ul>
 			</li>
 			<li>HUGE thanks to <a href="http://www.slightlymagic.net/forum/viewforum.php?f=15">CCGHQ</a>. Without their awesome work, this site would not be possible.</li>

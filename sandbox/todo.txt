@@ -1,9 +1,6 @@
 /---------------\
 | High Priority |
 \---------------/ 
-* Create a 'Symbols.zip' file (and one for windows) that has all symbol images. Might as well start out by including all sizes and formats and SVG too.
-  Probably won't be that big to just include everything. Make this part of the 'zipper' program. Then e-mail tomo.nippon@gmail.com
-
 * Fix the crops for Rough/Tumble under C13. Right now they are just the full cards but smaller.
   Other split cards in other sets may also have this issue, so double check them.
   I should make an imageMagick line in info.txt that can handle new card split layout crops automatically

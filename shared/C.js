@@ -1643,7 +1643,7 @@
 			type : "duel deck"
 		},
 		{
-			name : "Duel Decks Anthology, Elves vs. Dragons",
+			name : "Duel Decks Anthology, Elves vs. Goblins",
 			code : "DD3_EVG",
 			releaseDate : "2014-12-05",
 			border : "black",
@@ -1674,6 +1674,11 @@
 			booster : [["rare", "mythic rare"], "uncommon", "uncommon", "uncommon", "common", "common", "common", "common", "common", "common", "common", "common", "common", "common", "land", "marketing"]
 		}
 	];
+
+	exports.GATHERER_SET_RENAMES =
+	{
+		"Duel Decks Anthology, Elves vs. Dragons" : "Duel Decks Anthology, Elves vs. Goblins"
+	};
 
 	exports.NON_GATHERER_SET_CARD_LISTS =
 	{
