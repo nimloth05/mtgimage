@@ -3,7 +3,6 @@
 
 var base = require("xbase"),
 	C = require("C"),
-	request = require("request"),
 	fs = require("fs"),
 	url = require("url"),
 	moment = require("moment"),

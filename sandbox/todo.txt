@@ -5,7 +5,7 @@
   Other split cards in other sets may also have this issue, so double check them.
   I should make an imageMagick line in info.txt that can handle new card split layout crops automatically
 
-* Add all tokens and ensure sliver token in M14 is working then e-mail Darek Gołąb
+* Add all tokens (like C14) and ensure sliver token in M14 is working then e-mail Darek Gołąb. Do this only after MTGJSON has all tokens
 
 * Crop gatherer images so that they don't have rounded borders. This introduces consistency to the card images.
   For more details see e-mail from: mysterious.mister.p@gmail.com   (reply to him when the feature is added)

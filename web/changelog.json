@@ -1,5 +1,20 @@
 [
 	{
+		"version" : "5.11.0",
+		"when" : "2015-02-25",
+		"changes" : [
+			"Added set: Duel Decks: Elspeth vs. Kiora (DDO)",
+			"FRF: Updated card images to high resolution versions"
+		]
+	},
+	{
+		"version" : "5.10.2",
+		"when" : "2015-02-22",
+		"changes" : [
+			"C14: Updated card images to high resolution versions"
+		]
+	},
+	{
 		"version" : "5.10.1",
 		"when" : "2015-02-11",
 		"changes" : [

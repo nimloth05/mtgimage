@@ -2,7 +2,6 @@
 /*global setImmediate: true*/
 
 var base = require("xbase"),
-	hyperquest = require("hyperquest"),
 	fs = require("fs"),
 	C = require("C"),
 	url = require("url"),

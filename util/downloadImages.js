@@ -8,6 +8,7 @@ var base = require("xbase"),
 	moment = require("moment"),
 	runUtil = require("xutil").run,
 	httpUtil = require("xutil").http,
+	imageUtil = require("xutil").image,
 	unicodeUtil = require("xutil").unicode,
 	path = require("path"),
 	querystring = require("querystring"),
@@ -137,9 +138,14 @@ function downloadImages(setCode, cb)
 						else
 							this();
 					},
-					function makeCrop()
+					function getSize()
 					{
-						runUtil.run("convert", [targetImagePath, "-crop", (set.isMCISet ? "276x203+18+45" : "223x163+21+42"), targetImagePath.replaceAll(".jpg", ".crop.jpg")], {silent:true}, this);
+						imageUtil.getWidthHeight(targetImagePath, this);
+					},
+					function makeCrop(size)
+					{
+						var cropSize = (set.isMCISet ? "276x203+18+45" : (size[0]===265 ? "223x163+21+42" : "182x134+20+37"));
+						runUtil.run("convert", [targetImagePath, "-crop", cropSize, targetImagePath.replaceAll(".jpg", ".crop.jpg")], {silent:true}, this);
 					},
 					function compressImages()
 					{

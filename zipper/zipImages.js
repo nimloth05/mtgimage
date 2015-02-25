@@ -2,7 +2,6 @@
 var base = require("xbase"),
 	fs = require("fs"),
 	C = require("./C.js"),
-	httpUtil = require("xutil").http,
 	fileUtil = require("xutil").file,
 	path = require("path"),
 	rimraf = require("rimraf"),

@@ -2,7 +2,7 @@
 /*global setImmediate: true*/
 
 var base = require("xbase"),
-	hyperquest = require("hyperquest"),
+	httpUtil = require("xutil").http,
 	fs = require("fs"),
 	ProgressBar = require("progress"),
 	path = require("path"),
@@ -34,12 +34,12 @@ function testSource(source, cb)
 	tiptoe(
 		function performHTTPHEAD()
 		{
-			hyperquest(source, {method : "HEAD"}, this);
+			httpUtil.head(source, this);
 		},
-		function finish(err, response, body)
+		function finish(err, responseHeaders, statusCode)
 		{
-			if(!err && (!response || response.statusCode!==200 || !response.headers || +response.headers["content-length"]<=0))
-				base.error("\nFailed to access [" + source + "] with statusCode: " + (response ? response.statusCode : "UNKNOWN"));
+			if(!err && (!responseHeaders || statusCode!==200 || !responseHeaders || +responseHeaders["content-length"]<=0))
+				base.error("\nFailed to access [" + source + "] with statusCode: " + statusCode);
 			else if(err)
 				base.error("\nFailed to access [" + source + "]");
 

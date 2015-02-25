@@ -8,9 +8,9 @@
 	// Unglued/Unhinged types
 	exports.TYPES.push("Enchant", "Player", "Summon", "Interrupt", "Scariest", "You'll", "Ever", "See", "Eaturecray");
 
-	exports.LAST_PRINTINGS_RESET = "FRF";
+	exports.LAST_PRINTINGS_RESET = "V14";
 
-	exports.SETS_LACKING_HQ_SVG_SYMBOL_ICONS = [];
+	exports.SETS_LACKING_HQ_SVG_SYMBOL_ICONS = ["DDO"];
 
 	exports.SETS_NOT_ON_GATHERER = ["ATH", "ITP", "DKM", "RQS", "DPA"];
 	exports.SETS_WITH_NO_IMAGES = [];
@@ -1672,13 +1672,21 @@
 			type : "expansion",
 			block : "Khans of Tarkir",
 			booster : [["rare", "mythic rare"], "uncommon", "uncommon", "uncommon", "common", "common", "common", "common", "common", "common", "common", "common", "common", "common", "land", "marketing"]
-		}
+		},
+		{
+			name : "Duel Decks: Elspeth vs. Kiora",
+			code : "DDO",
+			releaseDate : "2015-02-27",
+			border : "black",
+			type : "duel deck"
+		},
 	];
 
 	exports.GATHERER_SET_RENAMES =
 	{
-		"Duel Decks Anthology, Elves vs. Dragons" : "Duel Decks Anthology, Elves vs. Goblins"
+		"Duel Decks: Kiora vs. Elspeth" : "Duel Decks: Elspeth vs. Kiora"
 	};
+	exports.GATHERER_SET_RENAMES_REVERSED = Object.swapKeyValues(exports.GATHERER_SET_RENAMES);
 
 	exports.NON_GATHERER_SET_CARD_LISTS =
 	{
