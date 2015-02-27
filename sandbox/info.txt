@@ -69,7 +69,7 @@ find ./ -type f -name "*.jpg" -exec convert {} -crop 1255x520+117+135 {}.crop.jp
 find ./ -type f -name "*.jpg" -exec convert {} -crop 494x519+93+104 {}.crop.jpg \;
 
 #Token CARD No text box
-find ./ -type f -name "*.jpg" -exec convert {} -crop 421x300+30+163 {}.crop.jpg \;
+find ./ -type f -name "*.jpg" -exec convert {} -crop 421x295+30+163 {}.crop.jpg \;
 
 #NEW Token Layout (post KTK) CARD No text box
 find ./ -type f -name "*.jpg" -exec convert {} -crop 420x380+29+176 {}.crop.jpg \;
@@ -112,6 +112,9 @@ find ./ -type f -name "*.jpg" -exec convert {} -crop 208x141+28+38 {}.crop.jpg \
 
 #VMA Magic Online renders new layout:
 find ./ -type f -name "*.jpg" -exec convert {} -crop 420x298+32+72 {}.crop.jpg \;
+
+# CCGHQ Planeswalker (C14)
+find ./ -type f -name "*.jpg" -exec convert {} -crop 393x267+42+62 {}.crop.jpg \;
 
 
 

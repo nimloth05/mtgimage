@@ -1,5 +1,13 @@
 [
 	{
+		"version" : "5.11.1",
+		"when" : "2015-02-27",
+		"changes" : [
+			"C14: Added tokens and emblems",
+			"C14: Fixed planeswalker crops"
+		]
+	},
+	{
 		"version" : "5.11.0",
 		"when" : "2015-02-25",
 		"changes" : [

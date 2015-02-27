@@ -137,10 +137,10 @@
 			<br>
 			All images for every set can be downloaded as a single zip file:<br>
 			<table class="zips">
-				<tr><td><a href="/zip/AllSets.zip">AllSets.zip</a></td><td>1.7GB</td></tr>
-				<tr><td><a href="/zip/AllSets.hq.zip">AllSets.hq.zip</a></td><td>4.4GB</td></tr>
+				<tr><td><a href="/zip/AllSets.zip">AllSets.zip</a></td><td>1.8GB</td></tr>
+				<tr><td><a href="/zip/AllSets.hq.zip">AllSets.hq.zip</a></td><td>4.5GB</td></tr>
 				<tr><td><a href="/zip/AllSets.crop.zip">AllSets.crop.zip</a></td><td>0.6GB</td></tr>
-				<tr><td><a href="/zip/AllSets.crop.hq.zip">AllSets.crop.hq.zip</a></td><td>1.8GB</td></tr>
+				<tr><td><a href="/zip/AllSets.crop.hq.zip">AllSets.crop.hq.zip</a></td><td>1.9GB</td></tr>
 			</table>
 			<strong>Windows Warning</strong>: Microsoft Windows does not allow files or folders to be named 'CON' (<a href="http://superuser.com/questions/86999/unable-to-rename-a-folder-or-a-file-as-con">see here</a>). Thus the AllSets zip files can't be extracted on windows (it contains the Conflux set folder 'CON'). Windows users should instead alter the URL to end with 'Windows.zip' instead of '.zip' like so <a href="/zip/AllSetsWindows.zip">AllSetsWindows.zip</a> which has renamed 'CON' to '_CON'. Likewise the individual set zip file can be downloaded as <a href="/zip/_CON.zip">_CON.zip</a><br>
 			</p>
