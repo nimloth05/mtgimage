@@ -31,6 +31,8 @@ var SET_PATH = path.join(ACTUAL_PATH, "set");
 var MULTIVERSEID_PATH = path.join(ACTUAL_PATH, "multiverseid");
 var SETNAME_PATH = path.join(ACTUAL_PATH, "setname");
 
+var SITE_TAKEN_DOWN = true;
+
 var EXTRA_CARD_SYMLINKS =
 [
 	"ugl/b.f.m. (big furry monster)",
@@ -217,6 +219,9 @@ tiptoe(
 	},
 	function getSetSymbols()
 	{
+		if(SITE_TAKEN_DOWN)
+			return this();
+
 		base.info("Checking for set symbols...");
 
 		VALID_SETS.forEach(function(SET)
@@ -239,6 +244,9 @@ tiptoe(
 	},
 	function countImages()
 	{
+		if(SITE_TAKEN_DOWN)
+			return this();
+
 		base.info("Counting images...");
 
 		VALID_SETS.forEach(function(SET)
@@ -248,6 +256,9 @@ tiptoe(
 	},
 	function populateDustData()
 	{
+		if(SITE_TAKEN_DOWN)
+			return this();
+
 		var args=arguments;
 
 		dustData.symbolSizes = C.SYMBOL_SIZES.join(", ");
@@ -280,17 +291,21 @@ tiptoe(
 	{
 		base.info("Rendering...");
 
-		dustData.sets.forEach(function(dustDataSet, i)
+		if(!SITE_TAKEN_DOWN)
 		{
-			dustDataSet.resolution = Object.keys(widthHeightCountMaps[i]).sort(function(a, b) { return (+(b.split("x")[0]))-(+(a.split("x")[0])); }).join("<br>");
-			if(dustDataSet.code.length===3)
-				dustDataSet.shortCode = true;
-		});
+			dustData.sets.forEach(function(dustDataSet, i)
+			{
+				dustDataSet.resolution = Object.keys(widthHeightCountMaps[i]).sort(function(a, b) { return (+(b.split("x")[0]))-(+(a.split("x")[0])); }).join("<br>");
+				if(dustDataSet.code.length===3)
+					dustDataSet.shortCode = true;
+			});
 
-		dustData.sets = dustData.sets.sort(function(a, b) { return moment(a.releaseDate, "YYYY-MM-DD").unix()-moment(b.releaseDate, "YYYY-MM-DD").unix(); });
-		dustData.changeLog = JSON.parse(fs.readFileSync(path.join(__dirname, "changelog.json"), {encoding : "utf8"})).map(function(o) { o.when = moment(o.when, "YYYY-MM-DD").format("MMM D, YYYY"); return o; });
-		dustData.lastUpdated = dustData.changeLog[0].when;
-		dustData.version = dustData.changeLog[0].version;
+			dustData.sets = dustData.sets.sort(function(a, b) { return moment(a.releaseDate, "YYYY-MM-DD").unix()-moment(b.releaseDate, "YYYY-MM-DD").unix(); });
+			dustData.changeLog = JSON.parse(fs.readFileSync(path.join(__dirname, "changelog.json"), {encoding : "utf8"})).map(function(o) { o.when = moment(o.when, "YYYY-MM-DD").format("MMM D, YYYY"); return o; });
+			dustData.lastUpdated = dustData.changeLog[0].when;
+			dustData.version = dustData.changeLog[0].version;
+		}
+
 		dustUtil.render(__dirname, "index", dustData, { keepWhitespace : true }, this);
 	},
 	function saveIndex(html)
